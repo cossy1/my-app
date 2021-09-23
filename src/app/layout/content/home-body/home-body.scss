@@ -1,0 +1,52 @@
+.app-home-body {
+  .body-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 43px;
+
+    .photo {
+      line-height: 33px;
+      color: #000000;
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .sort-by {
+      color: #9b9b9b;
+      line-height: 24px;
+      font-size: 22px;
+      font-weight: normal;
+    }
+
+    .premium {
+      position: absolute;
+      font-weight: normal;
+      font-size: 30px;
+      line-height: 33px;
+      color: #9b9b9b;
+      padding-left: 10px;
+    }
+  }
+  .items{
+    .category{
+      color: #000000;
+      font-size: 22px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    .seller{
+      font-size: 20px;
+      position: absolute;
+      background-color: #ffffff;
+      width: 127px;
+      text-align: center;
+    }
+    .items-list{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+    }
+  }
+}
