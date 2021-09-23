@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./home-body.scss";
 import { ReactComponent as Arrow } from "../../../../assets/svg/arrow.svg";
 import { ReactComponent as FilterSvg } from "../../../../assets/svg/filter.svg";
@@ -10,8 +10,12 @@ import EggBallon from "../../../../assets/image/egg-ballon.png";
 import Man from "../../../../assets/image/man.png";
 import Architecture from "../../../../assets/image/architecture.png";
 import { isMobile } from "react-device-detect";
+import FilterModal from "../../../../component/filterModal";
 
 const HomeBody = () => {
+    const [visible, setVisible] = useState(false);
+
+    const onCancel = () => setVisible(!visible);
   const onChange = () => {
     console.log("Onchange");
   };
@@ -46,7 +50,10 @@ const HomeBody = () => {
     </Menu>
   );
 
+
+
   return (
+      <>
     <div className="app-home-body">
       <div className="body-header">
         <div>
@@ -79,7 +86,7 @@ const HomeBody = () => {
               </Dropdown>
             </Space>
           ) : (
-                  <FilterSvg onClick={_ => console.log('xup:::::')}/>
+                  <FilterSvg onClick={() => setVisible(true)}/>
           )}
         </div>
       </div>
@@ -271,6 +278,8 @@ const HomeBody = () => {
         </>
       )}
     </div>
+          <FilterModal visible={visible} onCancel={onCancel}/>
+          </>
   );
 };
 
