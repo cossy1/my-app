@@ -1,4 +1,27 @@
 .app-header{
-  display: flex;
-  justify-content: space-between;
+  .header{
+    display: flex;
+    justify-content: space-between;
+  }
+  hr{
+    border: 4px solid #E4E4E4;
+
+  }
+}
+
+// header for mobile phones styling
+@media (max-width: 575.98px) {
+  .app-header{
+    .header{
+      padding: 10px 10px;
+    }
+
+    hr{
+      width: 414px;
+      border: 4px solid #E4E4E4;
+      margin-bottom: 32px;
+
+    }
+  }
+
 }

@@ -61,7 +61,7 @@ const HomeBody = () => {
             <span className="sort-by">Sort By</span>
             <span style={{ color: "#000000", fontSize: 22 }}>Price</span>
 
-            <Dropdown overlay={menu} trigger={["click"]}>
+            <Dropdown overlay={menu} trigger={["click"]} placement="bottomRight">
               <a
                 href={"/"}
                 className="ant-dropdown-link"

@@ -1,11 +1,12 @@
 import React, { Suspense, lazy } from 'react';
 import 'antd/dist/antd.min.css';
+import './App.scss'
 
 
 const AppLayout = lazy(() => import('./app/layout'));
 function App() {
   return (
-   <main style={{padding: '0 82px 0 82px'}}>
+   <main className='app-entry'>
      <Suspense fallback={null}>
        <AppLayout />
      </Suspense>

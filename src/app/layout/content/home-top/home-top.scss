@@ -7,8 +7,8 @@
   }
 
   .dog {
-    min-width: 100vw !important;
     margin-top: 20px;
+    width: 100vw;
   }
 
   .photo {
@@ -20,6 +20,9 @@
     font-size: 20px;
     line-height: 60px;
     text-align: center;
+    color: #000000;
+    font-weight: bold;
+
   }
 
   .about-pet-row {
@@ -106,4 +109,126 @@
     line-height: 50.02px;
     font-size: 23px;
   }
+}
+
+
+// header for mobile phones styling
+@media (max-width: 575.98px) {
+  .app-home-top {
+    .top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 20px 0;
+    }
+
+    img {
+      margin-top: 20px;
+     width: 100vw;
+      height: 239px;
+    }
+
+    .photo {
+      position: absolute;
+      margin-top: -40px;
+      font-weight: bold;
+      font-size: 15px;
+      height: 56.54px;
+      background: #ffffff;
+      width: 227px;
+      line-height: 60px;
+      text-align: center;
+      color: #000000;
+    }
+
+    .about-pet-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 42px;
+
+      .about {
+       // width: 690px;
+
+        .a {
+          font-size: 22px;
+          font-weight: bold;
+          line-height: 24px;
+        }
+
+        .pets {
+          font-size: 22px;
+          line-height: 24px;
+          color: #656565;
+          font-weight: bold;
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
+
+        .so {
+          line-height: 150%;
+          font-size: 18px;
+          font-weight: normal;
+          color: #656565;
+        }
+      }
+
+      .people {
+        .buy {
+          text-align: right;
+          color: #000000;
+          line-height: 24px;
+          font-size: 22px;
+          font-weight: bold;
+        }
+
+        .detail {
+          text-align: right;
+          line-height: 17px;
+          font-size: 16px;
+          color: #656565;
+          margin-top: 9px;
+        }
+
+        .details {
+          font-size: 22px;
+          text-align: right;
+          line-height: 24px;
+          font-weight: bold;
+          color: #000000;
+          margin-top: 10px;
+        }
+
+        .images {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          margin-top: 27px;
+        }
+      }
+    }
+
+    .sam {
+      font-weight: bold;
+      font-size: 32px;
+      line-height: 35px;
+      font-style: normal;
+      text-align: center;
+    }
+
+    .addCart {
+      background-color: #000000;
+      letter-spacing: 0.07em;
+      color: #ffffff;
+      text-align: center;
+      line-height: 60.02px;
+      font-size: 23px;
+      position: absolute;
+      margin-top: 30px;
+      height: 61px;
+      width: 386px;
+
+    }
+  }
+
 }
