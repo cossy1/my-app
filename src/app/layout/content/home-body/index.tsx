@@ -94,7 +94,7 @@ const HomeBody = () => {
       {!isMobile ? (
         <div className="items">
           <Row>
-            <Col span={6}>
+            <Col span={7}>
               <div style={{ width: 140, height: 500 }}>
                 <div className="category">Category</div>
                 <div>
@@ -117,7 +117,7 @@ const HomeBody = () => {
               </div>
             </Col>
 
-            <Col>
+            <Col span={17}>
               <div className="seller">Best Seller</div>
               <div className="items-list">
                 <div>

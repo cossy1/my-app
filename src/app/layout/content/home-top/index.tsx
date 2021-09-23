@@ -5,7 +5,6 @@ import Premium from "../../../../component/premium";
 import Flower from "../../../../assets/image/flower.png";
 import Yellow from "../../../../assets/image/yellow.png";
 import EggBallon from "../../../../assets/image/egg-ballon1.png";
-import { Space } from "antd";
 import { isMobile } from "react-device-detect";
 import { ReactComponent as FlowerSvg } from "../../../../assets/svg/flower.svg";
 import { ReactComponent as EggBallSvg } from "../../../../assets/svg/egg-ball.svg";
