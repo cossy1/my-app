@@ -54,6 +54,8 @@
         font-size: 18px;
         font-weight: normal;
         color: #656565;
+        text-align: justify;
+
       }
     }
 
@@ -142,71 +144,75 @@
     }
 
     .about-pet-row {
-      display: flex;
-      justify-content: space-between;
       align-items: center;
       margin-top: 42px;
 
       .about {
-       // width: 690px;
+        width: 100vw;
 
-        .a {
+        .a{
           font-size: 22px;
           font-weight: bold;
-          line-height: 24px;
+          line-height: 150%;
+          color: #000000;
+          text-align: center;
+          width: 382px;
+
         }
 
         .pets {
-          font-size: 22px;
-          line-height: 24px;
-          color: #656565;
-          font-weight: bold;
-          margin-top: 10px;
-          margin-bottom: 10px;
+         display: none;
         }
 
         .so {
-          line-height: 150%;
+          line-height: 27px;
           font-size: 18px;
           font-weight: normal;
           color: #656565;
+          text-align: justify;
         }
       }
 
-      .people {
-        .buy {
-          text-align: right;
-          color: #000000;
-          line-height: 24px;
-          font-size: 22px;
-          font-weight: bold;
-        }
+    }
 
-        .detail {
-          text-align: right;
-          line-height: 17px;
-          font-size: 16px;
-          color: #656565;
-          margin-top: 9px;
-        }
+    .people {
+      .buy {
+        text-align: left;
+        color: #000000;
+        line-height: 24px;
+        font-size: 22px;
+        font-weight: bold;
+        margin: 20px 0;
+      }
 
-        .details {
-          font-size: 22px;
-          text-align: right;
-          line-height: 24px;
-          font-weight: bold;
-          color: #000000;
-          margin-top: 10px;
-        }
+      .detail {
+        text-align: right;
+        line-height: 17px;
+        font-size: 16px;
+        color: #656565;
+        margin-top: 9px;
+      }
 
-        .images {
-          display: flex;
-          justify-content: flex-end;
-          align-items: center;
-          margin-top: 27px;
-        }
+      .details {
+        font-size: 22px;
+        text-align: right;
+        line-height: 24px;
+        font-weight: bold;
+        color: #000000;
+        margin-top: 10px;
+      }
+
+      .images {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 10vw;
+        height: 100px;
+        background-color: red;
+       // margin-top: 27px;
       }
     }
+
 
     .sam {
       font-weight: bold;
@@ -223,7 +229,7 @@
       text-align: center;
       line-height: 60.02px;
       font-size: 23px;
-      position: absolute;
+     // position: absolute;
       margin-top: 30px;
       height: 61px;
       width: 386px;

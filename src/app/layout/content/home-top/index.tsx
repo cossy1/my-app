@@ -8,6 +8,7 @@ import EggBallon from "../../../../assets/image/egg-ballon1.png";
 import { Space } from "antd";
 import { isMobile } from "react-device-detect";
 
+
 const HomeTop = () => {
   return (
     <div className="app-home-top">
@@ -38,50 +39,61 @@ const HomeTop = () => {
         </>
       )}
 
-      {!isMobile ? (
-        <>
-          {" "}
-          <div className="about-pet-row">
+        <div className="about-pet-row">
             <div className="about">
-              <div className="a">About the Samurai King Resting</div>
-              <div className="pets">Pets</div>
-              <div className="so">
-                So how did the classical Latin become so incoherent? According
-                to McClintock, a 15th century typesetter likely scrambled part
-                of Cicero's De Finibus in order to provide placeholder text to
-                mockup various fonts for a type specimen book.So how did the
-                classical Latin become so incoherent? According to McClintock, a
-                15th century typesetter likely scrambled part of Cicero's De
-                Finibus in order to provide placeholder text to mockup various
-                fonts for a type specimen book.So how did the classical Latin
-                become so incoherent? According to McClintock.
-              </div>
+                <div className="a">About the Samurai King Resting</div>
+                <div className="pets">Pets</div>
+                <div className="so">
+                    So how did the classical Latin become so incoherent? According
+                    to McClintock, a 15th century typesetter likely scrambled part
+                    of Cicero's De Finibus in order to provide placeholder text to
+                    mockup various fonts for a type specimen book.So how did the
+                    classical Latin become so incoherent? According to McClintock, a
+                    15th century typesetter likely scrambled part of Cicero's De
+                    Finibus in order to provide placeholder text to mockup various
+                    fonts for a type specimen book.So how did the classical Latin
+                    become so incoherent? According to McClintock.
+                </div>
             </div>
 
             <div className="people">
-              <div className="buy">People also buy</div>
-              <div className="images">
-                <Space size={"large"}>
-                  <div>
-                    <Premium src={Yellow} />
-                  </div>
-                  <div>
-                    <Premium src={Flower} />
-                  </div>
-                  <div>
-                    <Premium src={EggBallon} />
-                  </div>
-                </Space>
-              </div>
-              <div className="details">Details</div>
-              <div className="detail">Size: 1020 x 1020 pixel</div>
-              <div className="detail">Size: 15 mb</div>
+                <div className="buy">People also buy</div>
+                <div className="images">
+                    <Space size={"large"}>
+                        <div>
+                            <Premium src={Yellow} />
+                        </div>
+                        <div>
+                            <Premium src={Flower} />
+                        </div>
+                        <div>
+                            <Premium src={EggBallon} />
+                        </div>
+                    </Space>
+                </div>
+                <div className="details">Details</div>
+                <div className="detail">Size: 1020 x 1020 pixel</div>
+                <div className="detail">Size: 15 mb</div>
             </div>
-          </div>{" "}
-        </>
-      ) : (
-        <> </>
-      )}
+        </div>
+
+        {isMobile && <div className="people">
+            <div className="buy">People also buy</div>
+            <div className="images">
+                    <div>
+                        <Premium src={Yellow} />
+                    </div>
+                    <div>
+                        <Premium src={Flower} />
+                    </div>
+                    <div>
+                        <Premium src={EggBallon} />
+                    </div>
+            </div>
+            <div className="details">Details</div>
+            <div className="detail">Size: 1020 x 1020 pixel</div>
+            <div className="detail">Size: 15 mb</div>
+        </div>}
 
       <hr style={{ marginTop: 65 }} />
     </div>
