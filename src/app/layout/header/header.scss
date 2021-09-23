@@ -1,4 +1,46 @@
 .app-header{
-  display: flex;
-  justify-content: space-between;
+  .header{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  hr{
+    border: 4px solid #E4E4E4;
+    max-width: 100vw;
+  }
+}
+
+// header for mobile phones styling
+@media (max-width: 575.98px) {
+  .app-header{
+    max-width: 100vw;
+
+    .header{
+      padding: 10px 10px;
+    }
+
+    hr{
+      max-width: 100vw;
+      border: 4px solid #E4E4E4;
+      margin-bottom: 32px;
+
+    }
+  }
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .app-header{
+    .header{
+      padding: 10px 10px;
+    }
+
+    hr{
+      min-width: 90vw;
+      border: 4px solid #E4E4E4;
+      margin-bottom: 32px;
+    }
+  }
+
 }

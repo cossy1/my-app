@@ -17,7 +17,8 @@
     "web-vitals": "^1.0.1",
     "node-sass": "^5.0.0",
     "antd": "^4.16.13",
-    "prettier": "^2.3.2"
+    "prettier": "^2.3.2",
+    "react-device-detect": "^1.17.0"
   },
   "scripts": {
     "start": "react-scripts start",
