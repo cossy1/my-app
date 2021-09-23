@@ -7,7 +7,8 @@ import Yellow from "../../../../assets/image/yellow.png";
 import EggBallon from "../../../../assets/image/egg-ballon1.png";
 import { Space } from "antd";
 import { isMobile } from "react-device-detect";
-
+import { ReactComponent as FlowerSvg } from "../../../../assets/svg/flower.svg";
+import { ReactComponent as EggBallSvg } from "../../../../assets/svg/egg-ball.svg";
 
 const HomeTop = () => {
   return (
@@ -39,63 +40,67 @@ const HomeTop = () => {
         </>
       )}
 
-        <div className="about-pet-row">
-            <div className="about">
-                <div className="a">About the Samurai King Resting</div>
-                <div className="pets">Pets</div>
-                <div className="so">
-                    So how did the classical Latin become so incoherent? According
-                    to McClintock, a 15th century typesetter likely scrambled part
-                    of Cicero's De Finibus in order to provide placeholder text to
-                    mockup various fonts for a type specimen book.So how did the
-                    classical Latin become so incoherent? According to McClintock, a
-                    15th century typesetter likely scrambled part of Cicero's De
-                    Finibus in order to provide placeholder text to mockup various
-                    fonts for a type specimen book.So how did the classical Latin
-                    become so incoherent? According to McClintock.
-                </div>
-            </div>
-
-            <div className="people">
-                <div className="buy">People also buy</div>
-                <div className="images">
-                    <Space size={"large"}>
-                        <div>
-                            <Premium src={Yellow} />
-                        </div>
-                        <div>
-                            <Premium src={Flower} />
-                        </div>
-                        <div>
-                            <Premium src={EggBallon} />
-                        </div>
-                    </Space>
-                </div>
-                <div className="details">Details</div>
-                <div className="detail">Size: 1020 x 1020 pixel</div>
-                <div className="detail">Size: 15 mb</div>
-            </div>
+      <div className="about-pet-row">
+        <div className="about">
+          <div className="a">About the Samurai King Resting</div>
+          <div className="pets">Pets</div>
+          <div className="so">
+            So how did the classical Latin become so incoherent? According to
+            McClintock, a 15th century typesetter likely scrambled part of
+            Cicero's De Finibus in order to provide placeholder text to mockup
+            various fonts for a type specimen book.So how did the classical
+            Latin become so incoherent? According to McClintock, a 15th century
+            typesetter likely scrambled part of Cicero's De Finibus in order to
+            provide placeholder text to mockup various fonts for a type specimen
+            book.So how did the classical Latin become so incoherent? According
+            to McClintock.
+          </div>
         </div>
 
-        {isMobile && <div className="people">
+        {!isMobile && (
+          <div className="people">
             <div className="buy">People also buy</div>
             <div className="images">
-                    <div>
-                        <Premium src={Yellow} />
-                    </div>
-                    <div>
-                        <Premium src={Flower} />
-                    </div>
-                    <div>
-                        <Premium src={EggBallon} />
-                    </div>
+              <Space size={"large"}>
+                <div>
+                  <Premium src={Yellow} />
+                </div>
+                <div>
+                  <Premium src={Flower} />
+                </div>
+                <div>
+                  <Premium src={EggBallon} />
+                </div>
+              </Space>
             </div>
             <div className="details">Details</div>
             <div className="detail">Size: 1020 x 1020 pixel</div>
             <div className="detail">Size: 15 mb</div>
-        </div>}
+          </div>
+        )}
+      </div>
 
-      <hr style={{ marginTop: 65 }} />
+      {isMobile && (
+        <div className="people">
+          <div className="buy">People also buy</div>
+          <div className="images">
+            <div>
+              <EggBallSvg />
+            </div>
+            <div>
+              <FlowerSvg />
+            </div>
+            <div>
+              <EggBallSvg />
+            </div>
+          </div>
+          <div className="details">Details</div>
+          <div className="detail">Size: 1020 x 1020 pixel</div>
+          <div className="detail">Size: 15 mb</div>
+        </div>
+      )}
+
+      {isMobile ? <hr style={{ marginTop: 49 }} /> : <hr style={{ marginTop: 65 }} />}
     </div>
   );
 };

@@ -41,7 +41,9 @@
       background-color: #ffffff;
       width: 127px;
       text-align: center;
+      left: -10px;
     }
+
     .items-list{
       display: flex;
       justify-content: space-between;
@@ -49,4 +51,99 @@
 
     }
   }
+}
+
+// mobile phones styling
+@media (max-width: 575.98px) {
+  .app-home-body {
+    padding: 0 20px;
+    .body-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+
+      .photo {
+        line-height: 20px;
+        color: #000000;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .sort-by {
+        color: #9b9b9b;
+        line-height: 24px;
+        font-size: 22px;
+        font-weight: normal;
+      }
+
+      .premium {
+        position: absolute;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 20px;
+        color: #9b9b9b;
+        padding-left: 10px;
+      }
+    }
+      .seller{
+        font-size: 20px;
+        position: absolute;
+        background-color: #ffffff;
+        width: 163.7px;
+        text-align: center;
+        left: 22px;
+      }
+      .items-list{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+
+      }
+    }
+  }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .app-home-body {
+   // padding: 0 10px;
+    .body-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+
+      .photo {
+        line-height: 20px;
+        color: #000000;
+        font-size: 32px;
+        font-weight: bold;
+      }
+
+      .premium {
+        position: absolute;
+        font-weight: normal;
+        font-size: 32px;
+        line-height: 20px;
+        color: #9b9b9b;
+        padding-left: 10px;
+      }
+    }
+    .seller{
+      font-size: 32px;
+      position: absolute;
+      background-color: #ffffff;
+      width: 163.7px;
+      text-align: center;
+      left: 72px;
+    }
+    .items-list{
+      display: flex;
+      justify-content: space-evenly;
+      padding-right: 10px;
+      align-items: center;
+    }
+  }
+
 }
