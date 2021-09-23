@@ -15,7 +15,7 @@ const Premium = (props: PremiumProps) => {
     const { height, width, title, subTitle, amount, src, addCart = false } = props;
 
     return(
-        <div className='app-premium'>
+        <div className='app-premium' style={{paddingLeft: 40}}>
             <div className='image'>
                 <img src={src} alt='img' width={width} height={height} />
             </div>

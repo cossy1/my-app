@@ -61,7 +61,6 @@ const HomeTop = () => {
           <div className="people">
             <div className="buy">People also buy</div>
             <div className="images">
-              <Space size={"large"}>
                 <div>
                   <Premium src={Yellow} />
                 </div>
@@ -71,7 +70,6 @@ const HomeTop = () => {
                 <div>
                   <Premium src={EggBallon} />
                 </div>
-              </Space>
             </div>
             <div className="details">Details</div>
             <div className="detail">Size: 1020 x 1020 pixel</div>
