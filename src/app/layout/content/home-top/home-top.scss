@@ -283,6 +283,10 @@
 @media (min-width: 768px) {
   .app-home-top {
 
+    .mobile-cart{
+      display: none;
+    }
+
     .top-row {
       display: flex;
       align-items: center;
