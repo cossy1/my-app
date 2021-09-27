@@ -7,7 +7,8 @@ const Header = () => {
     <div className='app-header'>
       <div className="header">
         <div>
-          <ShoppingCart />
+            <div className="addCart-row">Logo</div>
+
         </div>
 
         <div>

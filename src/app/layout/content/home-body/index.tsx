@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import "./home-body.scss";
 import { ReactComponent as Arrow } from "../../../../assets/svg/arrow.svg";
-import { ReactComponent as FilterSvg } from "../../../../assets/svg/filter.svg";
 import { Checkbox, Col, Dropdown, Menu, Row, Space } from "antd";
 import { DownOutlined } from "@ant-design/icons";
 import Premium from "../../../../component/premium";
@@ -9,7 +8,6 @@ import RedBench from "../../../../assets/image/red-bench.png";
 import EggBallon from "../../../../assets/image/egg-ballon.png";
 import Man from "../../../../assets/image/man.png";
 import Architecture from "../../../../assets/image/architecture.png";
-import { isMobile } from "react-device-detect";
 import FilterModal from "../../../../component/filterModal";
 
 const HomeBody = () => {
@@ -62,7 +60,7 @@ const HomeBody = () => {
         </div>
 
         <div>
-          {!isMobile ? (
+
             <Space>
               <span>
                 <Arrow />
@@ -85,13 +83,9 @@ const HomeBody = () => {
                 </a>
               </Dropdown>
             </Space>
-          ) : (
-                  <FilterSvg onClick={() => setVisible(true)}/>
-          )}
         </div>
       </div>
 
-      {!isMobile ? (
         <div className="items">
           <Row>
             <Col span={7}>
@@ -101,7 +95,7 @@ const HomeBody = () => {
                   <Checkbox.Group
                     options={options}
                     onChange={onChange}
-                    style={{ fontSize: 22, paddingBottom: 20, lineHeight: 3 }}
+                    style={{ fontSize: 22,  paddingBottom: 20, lineHeight: 3 }}
                   />
                 </div>
                 <hr style={{ marginTop: 20, width: 268 }} />
@@ -197,86 +191,7 @@ const HomeBody = () => {
             </Col>
           </Row>
         </div>
-      ) : (
-        <>
-          <div className="seller">Best Seller</div>
-          <div className="items-list">
-            <div>
-              <Premium
-                src={RedBench}
-                width={281}
-                title={"People"}
-                subTitle={"Red Bench"}
-                amount={3.89}
-                height={390.67}
-                addCart
-              />
-            </div>
 
-            <div>
-              <Premium
-                src={EggBallon}
-                width={281}
-                title={"Food"}
-                subTitle={"Egg Ballon"}
-                amount={93.89}
-                height={390.67}
-                addCart
-              />
-            </div>
-
-            <div>
-              <Premium
-                src={EggBallon}
-                width={281}
-                title={"Food"}
-                subTitle={"Egg Ballon"}
-                amount={93.89}
-                height={390.67}
-                addCart
-              />
-            </div>
-          </div>
-
-          <div className="items-list" style={{ margin: "10px 0" }}>
-            <div>
-              <Premium
-                src={Man}
-                width={281}
-                title={"People"}
-                subTitle={"Man"}
-                amount={100.0}
-                height={390.67}
-                addCart
-              />
-            </div>
-
-            <div>
-              <Premium
-                src={Architecture}
-                width={281}
-                title={"LandMarks"}
-                subTitle={"Architecture"}
-                amount={101.0}
-                height={390.67}
-                addCart
-              />
-            </div>
-
-            <div>
-              <Premium
-                src={Architecture}
-                width={281}
-                title={"LandMarks"}
-                subTitle={"Architecture"}
-                amount={101.0}
-                height={390.67}
-                addCart
-              />
-            </div>
-          </div>
-        </>
-      )}
     </div>
           <FilterModal visible={visible} onCancel={onCancel}/>
           </>
