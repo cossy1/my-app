@@ -213,10 +213,6 @@
     }
 
     .mobile-people{
-      img{
-        width: 50px;
-        height: 122.58px;
-      }
       .buy {
         text-align: left;
         color: #000000;
@@ -250,6 +246,11 @@
         align-items: center;
         margin-top: 27px;
         max-width: 100vw;
+
+        img{
+          width: 30vw;
+          height: 122.58px;
+        }
       }
     }
 
