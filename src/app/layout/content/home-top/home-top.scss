@@ -116,17 +116,18 @@
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 575.98px) {
   .app-home-top {
-
     .mobile-cart{
       background-color: #000000;
       letter-spacing: 0.07em;
       color: #ffffff;
-      width: 100vw;
       text-align: center;
       vertical-align: middle;
       line-height: 50.02px;
       font-size: 23px;
       margin-top: 30px;
+      margin-right: 10px;
+      margin-left: 10px;
+
     }
 
     .top-row {
@@ -149,7 +150,7 @@
 
     hr{
       width: 414px;
-      border: 4px solid #E4E4E4;
+      border: 2px solid #E4E4E4;
       margin-bottom: 32px;
     }
 
@@ -157,6 +158,7 @@
       margin-top: 20px;
       width: 100vw;
       height: 239px;
+      padding: 0 10px;
     }
 
     .photo {
@@ -173,21 +175,21 @@
     }
 
     .about-pet-row {
-      padding: 0 20px;
-
       align-items: center;
-      margin-top: 42px;
+      margin-top: 2rem;
 
       .about {
         width: 100vw;
+        padding: 0 10px;
 
         .a{
           font-size: 22px;
           font-weight: bold;
           line-height: 150%;
           color: #000000;
+          width: 100vw;
+          margin: 0 auto;
           text-align: center;
-          width: 382px;
 
         }
 
@@ -204,53 +206,56 @@
         }
       }
 
+      .people {
+        display: none;
+      }
+
     }
 
-    .people {
+    .mobile-people{
+      img{
+        width: 100px;
+        height: 122.58px;
+      }
       .buy {
         text-align: left;
         color: #000000;
         line-height: 24px;
-        font-size: 22px;
+        font-size: 1.5rem;
         font-weight: bold;
-        margin: 20px 0;
-        padding: 0 20px;
+        margin: 20px 10px;
       }
 
       .detail {
         text-align: left;
-        padding: 0 20px;
         line-height: 17px;
-        font-size: 22px;
+        font-size: 0.8rem;
         color: #656565;
-        margin-top: 9px;
+        margin: 15px 10px;
+
       }
 
       .details {
-        padding: 0 20px;
-        font-size: 22px;
+        font-size: 1rem;
         text-align: left;
         line-height: 24px;
         font-weight: bold;
         color: #000000;
-        margin-top: 40px;
+        margin: 20px 10px;
       }
 
       .images {
         display: flex;
         justify-content: space-between;
         align-items: center;
-       // width: 10vw;
-        height: 122.58px;
-        padding: 0 20px;
-       // margin-top: 27px;
+        margin-top: 27px;
       }
     }
 
     .sam {
       font-weight: bold;
-      font-size: 32px;
-      line-height: 35px;
+      font-size: 1.7rem;
+      margin: 0 10px;
       font-style: normal;
       text-align: center;
     }
@@ -276,6 +281,121 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+  .app-home-top {
+    .top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 20px 0;
+    }
+
+    .dog {
+      margin-top: 20px;
+      width: 100vw;
+    }
+
+    .photo {
+      position: absolute;
+      margin-top: -65px;
+      height: 67px;
+      background: #ffffff;
+      width: 271.95px;
+      font-size: 20px;
+      line-height: 60px;
+      text-align: center;
+      color: #000000;
+      font-weight: bold;
+
+    }
+
+    .about-pet-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 42px;
+
+      .about {
+        width: 50vw;
+
+        .a {
+          font-size: 22px;
+          font-weight: bold;
+          line-height: 24px;
+        }
+
+        .pets {
+          font-size: 22px;
+          line-height: 24px;
+          color: #656565;
+          font-weight: bold;
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
+
+        .so {
+          line-height: 150%;
+          font-size: 18px;
+          font-weight: normal;
+          color: #656565;
+          text-align: justify;
+
+        }
+      }
+
+      .people {
+        .buy {
+          text-align: right;
+          color: #000000;
+          line-height: 24px;
+          font-size: 22px;
+          font-weight: bold;
+        }
+
+        .detail {
+          text-align: right;
+          line-height: 17px;
+          font-size: 16px;
+          color: #656565;
+          margin-top: 9px;
+        }
+
+        .details {
+          font-size: 22px;
+          text-align: right;
+          line-height: 24px;
+          font-weight: bold;
+          color: #000000;
+          margin-top: 10px;
+        }
+
+        .images {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          margin-top: 27px;
+        }
+      }
+    }
+
+    .sam {
+      font-weight: bold;
+      font-size: 32px;
+      line-height: 35px;
+      font-style: normal;
+    }
+
+    .addCart-row {
+      background-color: #000000;
+      letter-spacing: 0.07em;
+      color: #ffffff;
+      width: 257px;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 50.02px;
+      font-size: 23px;
+    }
+  }
+
 }
 
 // Large devices (desktops, 992px and up)

@@ -20,7 +20,9 @@ const HomeTop = () => {
       </div>
       <div className="photo">Photo of the day</div>
 
-      {isMobile && <div className="mobile-cart">ADD TO CART</div>}
+      <div>
+          {isMobile && <div className="mobile-cart">ADD TO CART</div>}
+      </div>
 
       <div className="about-pet-row">
         <div className="about">
@@ -43,20 +45,43 @@ const HomeTop = () => {
           <div className="buy">People also buy</div>
           <div className="images">
             <div>
-              <Premium src={Yellow} />
+              <Premium padLeft src={Yellow} />
             </div>
             <div>
-              <Premium src={Flower} />
+              <Premium padLeft src={Flower} />
             </div>
             <div>
-              <Premium src={EggBallon} />
+              <Premium padLeft src={EggBallon} />
             </div>
           </div>
           <div className="details">Details</div>
           <div className="detail">Size: 1020 x 1020 pixel</div>
           <div className="detail">Size: 15 mb</div>
         </div>
+
       </div>
+
+       <div>
+           {isMobile && (
+               <div className="mobile-people">
+                   <div className="buy">People also buy</div>
+                   <div className="images">
+                       <div>
+                           <Premium src={Yellow} />
+                       </div>
+                       <div>
+                           <Premium src={Flower} />
+                       </div>
+                       <div>
+                           <Premium src={EggBallon} />
+                       </div>
+                   </div>
+                   <div className="details">Details</div>
+                   <div className="detail">Size: 1020 x 1020 pixel</div>
+                   <div className="detail">Size: 15 mb</div>
+               </div>
+           )}
+       </div>
 
       <hr style={{ marginTop: 65 }} />
     </div>

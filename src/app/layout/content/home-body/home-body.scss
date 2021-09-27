@@ -4,6 +4,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 43px;
+    margin-top: 3rem;
 
     .photo {
       line-height: 33px;
@@ -56,18 +57,19 @@
 // mobile phones styling
 @media (max-width: 575.98px) {
   .app-home-body {
-    padding: 0 20px;
     .body-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 30px;
+      margin-top: 1rem;
 
       .photo {
         line-height: 20px;
         color: #000000;
-        font-size: 18px;
+        font-size: 0.8rem;
         font-weight: bold;
+        margin-left: 10px;
       }
 
       .sort-by {
@@ -80,7 +82,7 @@
       .premium {
         position: absolute;
         font-weight: normal;
-        font-size: 18px;
+        font-size: 0.8rem;
         line-height: 20px;
         color: #9b9b9b;
         padding-left: 10px;
