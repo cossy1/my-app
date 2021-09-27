@@ -92,28 +92,31 @@ const HomeBody = () => {
       {!isMobile ?
           <div className="items">
             <Row>
-              <Col span={7}>
-                <div style={{ width: 140, height: 500 }}>
-                  <div className="category">Category</div>
-                  <div>
-                    <Checkbox.Group
-                        options={options}
-                        onChange={onChange}
-                        style={{ fontSize: 22,  paddingBottom: 20, lineHeight: 3 }}
-                    />
-                  </div>
-                  <hr style={{ marginTop: 20, width: 268 }} />
 
-                  <div className="category">Price range</div>
-                  <div>
-                    <Checkbox.Group
-                        options={options1}
-                        onChange={onChange}
-                        style={{ fontSize: 22, paddingBottom: 20, lineHeight: 3 }}
-                    />
-                  </div>
-                </div>
-              </Col>
+                 <Col span={7}>
+                     <div className='col'>
+                         <div style={{ width: 140, height: 500 }}>
+                             <div className="category">Category</div>
+                             <div>
+                                 <Checkbox.Group
+                                     options={options}
+                                     onChange={onChange}
+                                     style={{ fontSize: 22,  paddingBottom: 20, lineHeight: 3 }}
+                                 />
+                             </div>
+                             <hr style={{ marginTop: 20, width: 268 }} />
+
+                             <div className="category">Price range</div>
+                             <div>
+                                 <Checkbox.Group
+                                     options={options1}
+                                     onChange={onChange}
+                                     style={{ fontSize: 22, paddingBottom: 20, lineHeight: 3 }}
+                                 />
+                             </div>
+                         </div>
+                     </div>
+                 </Col>
 
               <Col span={17}>
                 <div className="seller">Best Seller</div>
@@ -194,7 +197,9 @@ const HomeBody = () => {
                 </div>
               </Col>
             </Row>
-          </div> : <>
+          </div> :
+
+          <>
             <div className="seller">Best Seller</div>
             <div className="items-list">
               <div>
