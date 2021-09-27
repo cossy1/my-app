@@ -282,11 +282,12 @@
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .app-home-top {
+
     .top-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin: 20px 0;
+      margin: 20px;
     }
 
     .dog {

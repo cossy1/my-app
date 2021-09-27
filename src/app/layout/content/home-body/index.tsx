@@ -90,7 +90,6 @@ const HomeBody = () => {
         </div>
       </div>
       {!isMobile ?
-
           <div className="items">
             <Row>
               <Col span={7}>
