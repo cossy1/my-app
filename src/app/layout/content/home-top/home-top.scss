@@ -314,74 +314,82 @@
     }
 
     .about-pet-row {
-      display: flex;
-      justify-content: space-between;
       align-items: center;
-      margin-top: 42px;
+      margin-top: 2rem;
 
       .about {
-        width: 50vw;
+        width: 100vw;
+        padding: 0 10px;
 
-        .a {
+        .a{
           font-size: 22px;
           font-weight: bold;
-          line-height: 24px;
+          line-height: 150%;
+          color: #000000;
+          width: 100vw;
+          margin: 0 auto;
+          text-align: center;
+
         }
 
         .pets {
-          font-size: 22px;
-          line-height: 24px;
-          color: #656565;
-          font-weight: bold;
-          margin-top: 10px;
-          margin-bottom: 10px;
+          display: none;
         }
 
         .so {
-          line-height: 150%;
+          line-height: 27px;
           font-size: 18px;
           font-weight: normal;
           color: #656565;
           text-align: justify;
-
         }
       }
 
       .people {
-        .buy {
-          text-align: right;
-          color: #000000;
-          line-height: 24px;
-          font-size: 22px;
-          font-weight: bold;
-        }
-
-        .detail {
-          text-align: right;
-          line-height: 17px;
-          font-size: 16px;
-          color: #656565;
-          margin-top: 9px;
-        }
-
-        .details {
-          font-size: 22px;
-          text-align: right;
-          line-height: 24px;
-          font-weight: bold;
-          color: #000000;
-          margin-top: 10px;
-        }
-
-        .images {
-          display: flex;
-          justify-content: flex-end;
-          align-items: center;
-          margin-top: 27px;
-        }
+        display: none;
       }
+
     }
 
+    .mobile-people{
+      img{
+        width: 10rem;
+        height: 122.58px;
+      }
+      .buy {
+        text-align: left;
+        color: #000000;
+        line-height: 24px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 20px 10px;
+      }
+
+      .detail {
+        text-align: left;
+        line-height: 17px;
+        font-size: 0.8rem;
+        color: #656565;
+        margin: 15px 10px;
+
+      }
+
+      .details {
+        font-size: 1rem;
+        text-align: left;
+        line-height: 24px;
+        font-weight: bold;
+        color: #000000;
+        margin: 20px 10px;
+      }
+
+      .images {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 27px;
+      }
+    }
     .sam {
       font-weight: bold;
       font-size: 32px;
