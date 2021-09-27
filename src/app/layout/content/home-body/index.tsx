@@ -89,195 +89,115 @@ const HomeBody = () => {
           )}
         </div>
       </div>
-      {!isMobile ?
-          <div className="items">
+
+        <div className="items">
             <Row>
 
-                 <Col span={7}>
-                     <div className='col'>
-                         <div style={{ width: 140, height: 500 }}>
-                             <div className="category">Category</div>
-                             <div>
-                                 <Checkbox.Group
-                                     options={options}
-                                     onChange={onChange}
-                                     style={{ fontSize: 22,  paddingBottom: 20, lineHeight: 3 }}
-                                 />
-                             </div>
-                             <hr style={{ marginTop: 20, width: 268 }} />
+                <Col span={7}>
+                    <div className='col'>
+                        <div style={{ width: 140, height: 500 }}>
+                            <div className="category">Category</div>
+                            <div>
+                                <Checkbox.Group
+                                    options={options}
+                                    onChange={onChange}
+                                    style={{ fontSize: 22,  paddingBottom: 20, lineHeight: 3 }}
+                                />
+                            </div>
+                            <hr style={{ marginTop: 20, width: 268 }} />
 
-                             <div className="category">Price range</div>
-                             <div>
-                                 <Checkbox.Group
-                                     options={options1}
-                                     onChange={onChange}
-                                     style={{ fontSize: 22, paddingBottom: 20, lineHeight: 3 }}
-                                 />
-                             </div>
-                         </div>
-                     </div>
-                 </Col>
+                            <div className="category">Price range</div>
+                            <div>
+                                <Checkbox.Group
+                                    options={options1}
+                                    onChange={onChange}
+                                    style={{ fontSize: 22, paddingBottom: 20, lineHeight: 3 }}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </Col>
 
-              <Col span={17}>
-                <div className="seller">Best Seller</div>
-                <div className="items-list">
-                  <div>
-                    <Premium
-                        src={RedBench}
-                        width={281}
-                        title={"People"}
-                        subTitle={"Red Bench"}
-                        amount={3.89}
-                        height={390.67}
-                        addCart
-                    />
-                  </div>
+                <Col span={17}>
+                    <div className="seller">Best Seller</div>
+                    <div className="items-list">
+                        <div>
+                            <Premium
+                                src={RedBench}
+                                width={281}
+                                title={"People"}
+                                subTitle={"Red Bench"}
+                                amount={3.89}
+                                height={390.67}
+                                addCart
+                            />
+                        </div>
 
-                  <div>
-                    <Premium
-                        src={EggBallon}
-                        width={281}
-                        title={"Food"}
-                        subTitle={"Egg Ballon"}
-                        amount={93.89}
-                        height={390.67}
-                        addCart
-                    />
-                  </div>
+                        <div>
+                            <Premium
+                                src={EggBallon}
+                                width={281}
+                                title={"Food"}
+                                subTitle={"Egg Ballon"}
+                                amount={93.89}
+                                height={390.67}
+                                addCart
+                            />
+                        </div>
 
-                  <div>
-                    <Premium
-                        src={EggBallon}
-                        width={281}
-                        title={"Food"}
-                        subTitle={"Egg Ballon"}
-                        amount={93.89}
-                        height={390.67}
-                        addCart
-                    />
-                  </div>
-                </div>
+                        <div>
+                            <Premium
+                                src={EggBallon}
+                                width={281}
+                                title={"Food"}
+                                subTitle={"Egg Ballon"}
+                                amount={93.89}
+                                height={390.67}
+                                addCart
+                            />
+                        </div>
+                    </div>
 
-                <div className="items-list" style={{ margin: "10px 0" }}>
-                  <div>
-                    <Premium
-                        src={Man}
-                        width={281}
-                        title={"People"}
-                        subTitle={"Man"}
-                        amount={100.0}
-                        height={390.67}
-                        addCart
-                    />
-                  </div>
+                    <div className="items-list" style={{ margin: "10px 0" }}>
+                        <div>
+                            <Premium
+                                src={Man}
+                                width={281}
+                                title={"People"}
+                                subTitle={"Man"}
+                                amount={100.0}
+                                height={390.67}
+                                addCart
+                            />
+                        </div>
 
-                  <div>
-                    <Premium
-                        src={Architecture}
-                        width={281}
-                        title={"LandMarks"}
-                        subTitle={"Architecture"}
-                        amount={101.0}
-                        height={390.67}
-                        addCart
-                    />
-                  </div>
+                        <div>
+                            <Premium
+                                src={Architecture}
+                                width={281}
+                                title={"LandMarks"}
+                                subTitle={"Architecture"}
+                                amount={101.0}
+                                height={390.67}
+                                addCart
+                            />
+                        </div>
 
-                  <div>
-                    <Premium
-                        src={Architecture}
-                        width={281}
-                        title={"LandMarks"}
-                        subTitle={"Architecture"}
-                        amount={101.0}
-                        height={390.67}
-                        addCart
-                    />
-                  </div>
-                </div>
-              </Col>
+                        <div>
+                            <Premium
+                                src={Architecture}
+                                width={281}
+                                title={"LandMarks"}
+                                subTitle={"Architecture"}
+                                amount={101.0}
+                                height={390.67}
+                                addCart
+                            />
+                        </div>
+                    </div>
+                </Col>
             </Row>
-          </div> :
-
-          <>
-            <div className="seller">Best Seller</div>
-            <div className="items-list">
-              <div>
-                <Premium
-                    src={RedBench}
-                    width={281}
-                    title={"People"}
-                    subTitle={"Red Bench"}
-                    amount={3.89}
-                    height={390.67}
-                    addCart
-                />
-              </div>
-
-              <div>
-                <Premium
-                    src={EggBallon}
-                    width={281}
-                    title={"Food"}
-                    subTitle={"Egg Ballon"}
-                    amount={93.89}
-                    height={390.67}
-                    addCart
-                />
-              </div>
-
-              <div>
-                <Premium
-                    src={EggBallon}
-                    width={281}
-                    title={"Food"}
-                    subTitle={"Egg Ballon"}
-                    amount={93.89}
-                    height={390.67}
-                    addCart
-                />
-              </div>
-            </div>
-
-            <div className="items-list" style={{ margin: "10px 0" }}>
-              <div>
-                <Premium
-                    src={Man}
-                    width={281}
-                    title={"People"}
-                    subTitle={"Man"}
-                    amount={100.0}
-                    height={390.67}
-                    addCart
-                />
-              </div>
-
-              <div>
-                <Premium
-                    src={Architecture}
-                    width={281}
-                    title={"LandMarks"}
-                    subTitle={"Architecture"}
-                    amount={101.0}
-                    height={390.67}
-                    addCart
-                />
-              </div>
-
-              <div>
-                <Premium
-                    src={Architecture}
-                    width={281}
-                    title={"LandMarks"}
-                    subTitle={"Architecture"}
-                    amount={101.0}
-                    height={390.67}
-                    addCart
-                />
-              </div>
-            </div>
-          </>
-      }
+        </div>
 
     </div>
           <FilterModal visible={visible} onCancel={onCancel}/>
