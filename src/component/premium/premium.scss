@@ -1,10 +1,11 @@
 .app-premium {
+  overflow: hidden;
   .add-cart {
     position: relative;
     width: 282px;
     height: 46px;
     text-align: center;
-    font-size: 23px;
+    font-size: 1.5rem;
     font-weight: 500;
     line-height: 40px;
     color: #ffffff;
@@ -14,20 +15,20 @@
 
   .title{
     color: #656565;
-    font-size: 22px;
+    font-size: 1.2rem;
     font-weight: 700;
   }
 
   .subtitle{
     color: #000000;
-    font-size: 34px;
+    font-size: 1.4rem;
     font-weight: 700;
 
   }
 
   .amount{
     color: #656565;
-    font-size: 29px;
+    font-size: 1rem;
     font-weight: normal;
   ;
   }
