@@ -9,7 +9,7 @@ interface PremiumProps {
     amount?: number;
     src: any;
     addCart?: boolean;
-    padLeft?: boolean;
+    padLeft?: boolean
 }
 
 const Premium = (props: PremiumProps) => {

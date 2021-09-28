@@ -119,7 +119,6 @@ const HomeBody = () => {
                  </Col>
 
               <Col span={17}>
-                <div className="seller">Best Seller</div>
                 <div className="items-list">
                   <div>
                     <Premium
@@ -200,7 +199,6 @@ const HomeBody = () => {
           </div> :
 
           <>
-            <div className="seller">Best Seller</div>
             <div className="items-list">
               <div>
                 <Premium
