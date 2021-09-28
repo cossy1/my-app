@@ -134,3 +134,47 @@
   }
 
 }
+
+@media (max-width: 1024px) {
+  .app-home-body {
+    .body-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      margin-top: 1rem;
+
+      .photo {
+        line-height: 20px;
+        color: #000000;
+        font-size: 0.8rem;
+        font-weight: bold;
+        margin-left: 10px;
+      }
+
+      .premium {
+        position: absolute;
+        font-weight: normal;
+        font-size: 0.8rem;
+        line-height: 20px;
+        color: #9b9b9b;
+        padding-left: 10px;
+      }
+    }
+    .seller{
+      font-size: 20px;
+      position: absolute;
+      background-color: #ffffff;
+      width: 163.7px;
+      text-align: center;
+      left: 22px;
+    }
+    .items-list{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+

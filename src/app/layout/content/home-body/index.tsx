@@ -211,14 +211,12 @@ const HomeBody = () => {
                     amount={3.89}
                     height={390.67}
                     addCart
-                    className='prem'
                 />
               </div>
 
               <div>
                 <Premium
                     src={EggBallon}
-                    className='prem'
                     width={281}
                     title={"Food"}
                     subTitle={"Egg Ballon"}
@@ -231,7 +229,6 @@ const HomeBody = () => {
               <div>
                 <Premium
                     src={EggBallon}
-                    className='prem'
                     width={281}
                     title={"Food"}
                     subTitle={"Egg Ballon"}
@@ -252,7 +249,6 @@ const HomeBody = () => {
                     amount={100.0}
                     height={390.67}
                     addCart
-                    className='prem'
                 />
               </div>
 
@@ -265,7 +261,6 @@ const HomeBody = () => {
                     amount={101.0}
                     height={390.67}
                     addCart
-                    className='prem'
                 />
               </div>
 
@@ -278,7 +273,6 @@ const HomeBody = () => {
                     amount={101.0}
                     height={390.67}
                     addCart
-                    className='prem'
                 />
               </div>
             </div>
