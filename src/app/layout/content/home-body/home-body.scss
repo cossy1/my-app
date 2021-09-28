@@ -147,7 +147,7 @@
       .photo {
         line-height: 20px;
         color: #000000;
-        font-size: 0.8rem;
+        font-size: 1.8rem;
         font-weight: bold;
         margin-left: 10px;
       }
@@ -155,7 +155,7 @@
       .premium {
         position: absolute;
         font-weight: normal;
-        font-size: 0.8rem;
+        font-size: 1.8rem;
         line-height: 20px;
         color: #9b9b9b;
         padding-left: 10px;
@@ -176,5 +176,93 @@
     }
   }
 }
+
+@media (max-width: 360px) {
+  .app-home-body {
+    .body-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 43px;
+      margin-top: 3rem;
+
+      .photo {
+        line-height: 33px;
+        color: #000000;
+        font-size: 1.2rem !important;
+        font-weight: bold;
+      }
+
+      .premium {
+        position: absolute;
+        font-weight: normal;
+        font-size: 1.2rem !important;
+        line-height: 33px;
+        color: #9b9b9b;
+        padding-left: 10px;
+      }
+    }
+  }
+
+}
+
+@media (max-width: 384px) {
+  .app-home-body {
+    .body-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 43px;
+      margin-top: 3rem;
+
+      .photo {
+        line-height: 33px;
+        color: #000000;
+        font-size: 1.2rem !important;
+        font-weight: bold;
+      }
+
+      .premium {
+        position: absolute;
+        font-weight: normal;
+        font-size: 1.2rem !important;
+        line-height: 33px;
+        color: #9b9b9b;
+        padding-left: 10px;
+      }
+    }
+  }
+
+}
+
+@media (max-width: 412px) {
+  .app-home-body {
+    .body-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 43px;
+      margin-top: 3rem;
+
+      .photo {
+        line-height: 33px;
+        color: #000000;
+        font-size: 1.2rem !important;
+        font-weight: bold;
+      }
+
+      .premium {
+        position: absolute;
+        font-weight: normal;
+        font-size: 1.2rem !important;
+        line-height: 33px;
+        color: #9b9b9b;
+        padding-left: 10px;
+      }
+    }
+  }
+
+}
+
 
 
