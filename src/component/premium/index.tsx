@@ -9,14 +9,15 @@ interface PremiumProps {
     amount?: number;
     src: any;
     addCart?: boolean;
-    padLeft?: boolean
+    padLeft?: boolean;
+    className?: any
 }
 
 const Premium = (props: PremiumProps) => {
-    const { height, width, title, subTitle, amount, padLeft, src, addCart = false } = props;
+    const { height, width, title, subTitle, amount, padLeft, className, src, addCart = false } = props;
 
     return(
-        <div className='app-premium' style={{paddingLeft: `${padLeft && '40px'}`}}>
+        <div className='app-premium' style={{paddingLeft: `${padLeft && '40px'}`}} {...className}>
             <div className='image'>
                 <img src={src} alt='img' width={width} height={height} />
             </div>
