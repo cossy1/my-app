@@ -22,7 +22,6 @@
     text-align: center;
     color: #000000;
     font-weight: bold;
-
   }
 
   .about-pet-row {
@@ -278,7 +277,6 @@
 
 }
 
-
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .app-home-top {
@@ -354,9 +352,10 @@
 
         .so {
           line-height: 3rem;
-          font-size: 2rem;
+          font-size: 1.5rem;
           font-weight: normal;
           color: #656565;
+          padding-right: 10px;
           text-align: justify;
         }
       }
