@@ -11,9 +11,12 @@
     overflow: hidden;
     margin: 0;
   }
-
 }
 
 // Medium devices (tablets, less than 992px)
-@media (max-width: 991.98px) {
+@media (min-width: 768px) {
+  .app-entry{
+    overflow: hidden;
+    margin: 0 10px;
+  }
 }

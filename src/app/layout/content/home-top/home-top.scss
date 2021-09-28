@@ -281,6 +281,129 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+  .app-home-top {
+    .mobile-cart{
+      display: none;
+    }
+    .top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 20px 0;
+    }
+
+    .dog {
+      margin-top: 20px;
+      width: 100vw;
+    }
+
+    .photo {
+      position: absolute;
+      margin-top: -65px;
+      height: 67px;
+      background: #ffffff;
+      width: 271.95px;
+      font-size: 20px;
+      line-height: 60px;
+      text-align: center;
+      color: #000000;
+      font-weight: bold;
+
+    }
+
+    .about-pet-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 42px;
+
+      .about {
+        width: 50vw;
+
+        .a {
+          font-size: 22px;
+          font-weight: bold;
+          line-height: 24px;
+          text-align: left;
+        }
+
+        .pets {
+          font-size: 22px;
+          line-height: 24px;
+          color: #656565;
+          font-weight: bold;
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
+
+        .so {
+          line-height: 150%;
+          font-size: 18px;
+          font-weight: normal;
+          color: #656565;
+          text-align: justify;
+
+        }
+      }
+
+      .people {
+        .buy {
+          text-align: right;
+          color: #000000;
+          line-height: 24px;
+          font-size: 22px;
+          font-weight: bold;
+        }
+
+        .detail {
+          text-align: right;
+          line-height: 17px;
+          font-size: 16px;
+          color: #656565;
+          margin-top: 9px;
+        }
+
+        .details {
+          font-size: 22px;
+          text-align: right;
+          line-height: 24px;
+          font-weight: bold;
+          color: #000000;
+          margin-top: 10px;
+        }
+
+        .images {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          margin-top: 27px;
+        }
+      }
+    }
+
+    .sam {
+      font-weight: bold;
+      font-size: 32px;
+      line-height: 35px;
+      font-style: normal;
+    }
+
+    .mobile-people{
+      display: none;
+    }
+
+    .addCart-row {
+      background-color: #000000;
+      letter-spacing: 0.07em;
+      color: #ffffff;
+      width: 257px;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 50.02px;
+      font-size: 23px;
+    }
+  }
+
 }
 
 // Large devices (desktops, 992px and up)
