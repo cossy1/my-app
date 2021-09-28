@@ -440,6 +440,24 @@
       align-items: center;
       justify-content: space-between;
       margin: 20px;
+
+      .addCart-row {
+        background-color: #000000;
+        letter-spacing: 0.07em;
+        color: #ffffff;
+        width: 257px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 50.02px;
+        font-size: 23px;
+      }
+
+      .sam {
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 35px;
+        font-style: normal;
+      }
     }
 
     .dog {
@@ -470,7 +488,7 @@
         padding: 0 10px;
 
         .a{
-          font-size: 22px;
+          font-size: 2rem;
           font-weight: bold;
           line-height: 150%;
           color: #000000;
@@ -486,7 +504,7 @@
 
         .so {
           line-height: 27px;
-          font-size: 18px;
+          font-size: 1.5rem;
           font-weight: normal;
           color: #656565;
           text-align: justify;
@@ -516,14 +534,14 @@
       .detail {
         text-align: left;
         line-height: 17px;
-        font-size: 0.8rem;
+        font-size: 1.3rem;
         color: #656565;
         margin: 15px 10px;
 
       }
 
       .details {
-        font-size: 1rem;
+        font-size: 2rem;
         text-align: left;
         line-height: 24px;
         font-weight: bold;
@@ -538,23 +556,8 @@
         margin-top: 27px;
       }
     }
-    .sam {
-      font-weight: bold;
-      font-size: 32px;
-      line-height: 35px;
-      font-style: normal;
-    }
 
-    .addCart-row {
-      background-color: #000000;
-      letter-spacing: 0.07em;
-      color: #ffffff;
-      width: 257px;
-      text-align: center;
-      vertical-align: middle;
-      line-height: 50.02px;
-      font-size: 23px;
-    }
+
   }
 
 }
