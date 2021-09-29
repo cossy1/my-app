@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./home-top.scss";
 import Dog from "../../../../assets/image/dog.png";
 import Premium from "../../../../component/premium";
@@ -6,14 +6,22 @@ import Flower from "../../../../assets/image/flower.png";
 import Yellow from "../../../../assets/image/yellow.png";
 import EggBallon from "../../../../assets/image/egg-ballon1.png";
 import { isMobile } from "react-device-detect";
+import Header from "../../header";
 
 const HomeTop = () => {
+    const [count, setCount] = useState(1);
+
+    const addItem = () => {
+        console.log('add item');
+        setCount(count+1);
+    };
+
   return (
     <div className="app-home-top">
       <div className="top-row">
         <div className="sam">Samurai King Resting</div>
 
-        <div className="addCart-row">ADD TO CART</div>
+        <div className="addCart-row" onClick={addItem}>ADD TO CART</div>
       </div>
       <div className="dog">
         <img alt="img" src={Dog} style={{ width: "100vw" }} />
@@ -84,6 +92,8 @@ const HomeTop = () => {
        </div>
 
       <hr style={{ marginTop: 65 }} />
+
+      <Header show={false} count={count} />
     </div>
   );
 };

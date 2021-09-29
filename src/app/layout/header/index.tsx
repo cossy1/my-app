@@ -3,20 +3,26 @@ import "./header.scss";
 import { ReactComponent as ShoppingCart } from "../../../assets/svg/shopping-cart.svg";
 import { Badge } from "antd";
 
-const Header = () => {
+interface HeaderProps {
+    show: boolean;
+    count?: number;
+}
+
+const Header = ({show, count= 0}: HeaderProps) => {
+    const arr: number[] = [1];
   return (
     <div className='app-header'>
-      <div className="header">
-        <div>
-          <ShoppingCart />
-        </div>
-
-        <div>
-            <Badge count={5} offset={[0, 50]}>
+        {show &&  <div className="header">
+            <div>
                 <ShoppingCart />
-            </Badge>,
-        </div>
-      </div>
+            </div>
+
+            <div>
+                <Badge count={arr.length} offset={[0, 50]}>
+                    <ShoppingCart />
+                </Badge>,
+            </div>
+        </div>}
 
       <hr />
     </div>
