@@ -22,7 +22,7 @@ export const Products = [
       src: "https://images.pexels.com/photos/35638/labrador-breed-dogs-animal.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     },
     bestseller: false,
-    featured: false,
+    featured: true,
     details: null,
   },
   {
@@ -87,7 +87,7 @@ export const Products = [
       alt: "dog",
     },
     bestseller: false,
-    featured: false,
+    featured: true,
     details: null,
   },
   {
@@ -125,7 +125,10 @@ export const Products = [
       width: 1020,
       height: 1020,
     },
-    image: "",
+    image: {
+      src: "https://images.pexels.com/photos/9327037/pexels-photo-9327037.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      alt: 'img'
+    },
     bestseller: false,
     featured: false,
     details: null,
@@ -137,6 +140,26 @@ export const Products = [
     currency: "USD",
     image: {
       src: "https://images.pexels.com/photos/4000092/pexels-photo-4000092.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      alt: "",
+    },
+    bestseller: false,
+    featured: true,
+    details: {
+      dimmentions: {
+        width: 1020,
+        height: 1020,
+      },
+      size: 15000,
+      description:
+        "So how did the classical Latin become so incoherent? According to McClintock, a 15th century typesetter likely",
+    },
+  },{
+    name: "Samurai King Restling",
+    category: "landmarks",
+    price: 101,
+    currency: "USD",
+    image: {
+      src: "https://images.pexels.com/photos/4083443/pexels-photo-4083443.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
       alt: "",
     },
     bestseller: false,

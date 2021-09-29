@@ -31,26 +31,27 @@
     margin-top: 42px;
 
     .about {
-      width: 50vw;
+      width: 54vw;
 
       .a {
-        font-size: 22px;
+        font-size: 2rem;
         font-weight: bold;
         line-height: 24px;
+        margin: 10px 0;
       }
 
       .pets {
-        font-size: 22px;
+        font-size: 2rem;
         line-height: 24px;
         color: #656565;
         font-weight: bold;
-        margin-top: 10px;
+        margin-top: 20px;
         margin-bottom: 10px;
       }
 
       .so {
         line-height: 150%;
-        font-size: 18px;
+        font-size: 1.8rem;
         font-weight: normal;
         color: #656565;
         text-align: justify;
@@ -278,7 +279,7 @@
 }
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .app-home-top {
     .mobile-cart{
       display: none;

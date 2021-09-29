@@ -1,6 +1,7 @@
 import React from "react";
 import "./header.scss";
 import { ReactComponent as ShoppingCart } from "../../../assets/svg/shopping-cart.svg";
+import { Badge } from "antd";
 
 const Header = () => {
   return (
@@ -11,7 +12,9 @@ const Header = () => {
         </div>
 
         <div>
-          <ShoppingCart />
+            <Badge count={5} offset={[0, 50]}>
+                <ShoppingCart />
+            </Badge>,
         </div>
       </div>
 

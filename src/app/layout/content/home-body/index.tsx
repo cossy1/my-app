@@ -4,16 +4,11 @@ import { ReactComponent as Arrow } from "../../../../assets/svg/arrow.svg";
 import { Checkbox, Col, Dropdown, Menu, Row, Space } from "antd";
 import { DownOutlined } from "@ant-design/icons";
 import Premium from "../../../../component/premium";
-import RedBench from "../../../../assets/image/red-bench.png";
-import EggBallon from "../../../../assets/image/egg-ballon.png";
-import Man from "../../../../assets/image/man.png";
-import Architecture from "../../../../assets/image/architecture.png";
 import FilterModal from "../../../../component/filterModal";
 import { isMobile } from "react-device-detect";
 import { ReactComponent as FilterSvg } from "../../../../assets/svg/filter.svg";
 import { Products } from "../../../../_shared/dummyData";
 import { isEmpty } from "lodash";
-
 
 const HomeBody = () => {
   const [visible, setVisible] = useState(false);
@@ -101,7 +96,7 @@ const HomeBody = () => {
         {!isMobile ? (
           <div className="items">
             <Row>
-              <Col span={7}>
+              <Col span={4}>
                 <div style={{ width: 140, height: 500 }}>
                   <div className="category">Category</div>
                   <div>
@@ -124,25 +119,20 @@ const HomeBody = () => {
                 </div>
               </Col>
 
-              <Col span={17}>
-                <div
-                  className="items-list"
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    flexWrap: "wrap",
-                  }}
-                >
+              <Col span={20}>
+                <div className="items-list">
                   {Products.map((e: any) =>
                     !isEmpty(e.image?.src) ? (
-                      // <img
-                      //   width={300}
-                      //   height={400}
-                      //   src={e.image?.src}
-                      //   alt=""
-                      //   style={{ marginBottom: 20 }}
-                      // />
-                        <Premium src={e.image?.src} height={400} width={300} amount={e.price} addCart title={e.category}/>
+                      <Premium
+                        bestSeller={e.bestseller}
+                        name={e.name}
+                        src={e.image?.src}
+                        height={400}
+                        width={300}
+                        price={e.price}
+                        addCart
+                        category={e.category}
+                      />
                     ) : null
                   )}
                   {/*<Premium*/}
@@ -222,82 +212,112 @@ const HomeBody = () => {
           </div>
         ) : (
           <>
+            <div
+              className="items-list"
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                flexWrap: "wrap",
+              }}
+            >
+              {Products.map((e: any) =>
+                !isEmpty(e && e.image?.src) ? (
+                  // <img
+                  //   width={300}
+                  //   height={400}
+                  //   src={e.image?.src}
+                  //   alt=""
+                  //   style={{ marginBottom: 20 }}
+                  // />
+                  <Premium
+                    name={e.name}
+                    src={e.image?.src}
+                    height={400}
+                    width={300}
+                    price={e.price}
+                    featured={e.featured}
+                    addCart
+                    category={e.category}
+                  />
+                ) : null
+              )}
+            </div>
             {/*<div className="seller">Best Seller</div>*/}
-            <div className="items-list">
-              <div>
-                <Premium
-                  src={RedBench}
-                  width={281}
-                  title={"People"}
-                  subTitle={"Red Bench"}
-                  amount={3.89}
-                  height={390.67}
-                  addCart
-                />
-              </div>
+            {/*<div className="items-list">*/}
+            {/*  <div>*/}
+            {/*    <Premium*/}
+            {/*      src={RedBench}*/}
+            {/*      width={281}*/}
+            {/*      title={"People"}*/}
+            {/*      subTitle={"Red Bench"}*/}
+            {/*      amount={3.89}*/}
+            {/*      height={390.67}*/}
+            {/*      addCart*/}
+            {/*    />*/}
+            {/*  </div>*/}
 
-              <div>
-                <Premium
-                  src={EggBallon}
-                  width={281}
-                  title={"Food"}
-                  subTitle={"Egg Ballon"}
-                  amount={93.89}
-                  height={390.67}
-                  addCart
-                />
-              </div>
+            {/*  <div>*/}
+            {/*    <Premium*/}
+            {/*      src={EggBallon}*/}
+            {/*      width={281}*/}
+            {/*      title={"Food"}*/}
+            {/*      subTitle={"Egg Ballon"}*/}
+            {/*      amount={93.89}*/}
+            {/*      height={390.67}*/}
+            {/*      addCart*/}
+            {/*    />*/}
+            {/*  </div>*/}
 
-              <div>
-                <Premium
-                  src={EggBallon}
-                  width={281}
-                  title={"Food"}
-                  subTitle={"Egg Ballon"}
-                  amount={93.89}
-                  height={390.67}
-                  addCart
-                />
-              </div>
-            </div>
+            {/*  <div>*/}
+            {/*    <Premium*/}
+            {/*      src={EggBallon}*/}
+            {/*      width={281}*/}
+            {/*      title={"Food"}*/}
+            {/*      subTitle={"Egg Ballon"}*/}
+            {/*      amount={93.89}*/}
+            {/*      height={390.67}*/}
+            {/*      addCart*/}
+            {/*    />*/}
+            {/*  </div>*/}
+            {/*</div>*/}
 
-            <div className="items-list" style={{ margin: "10px 0" }}>
-              <div>
-                <Premium
-                  src={Man}
-                  width={281}
-                  title={"People"}
-                  subTitle={"Man"}
-                  amount={100.0}
-                  height={390.67}
-                  addCart
-                />
-              </div>
+            {/*<div className="items-list" style={{ margin: "10px 0" }}>*/}
+            {/*  <div>*/}
+            {/*    <Premium*/}
+            {/*      src={Man}*/}
+            {/*      width={281}*/}
+            {/*      title={"People"}*/}
+            {/*      subTitle={"Man"}*/}
+            {/*      amount={100.0}*/}
+            {/*      height={390.67}*/}
+            {/*      addCart*/}
+            {/*    />*/}
+            {/*  </div>*/}
 
-              <div>
-                <Premium
-                  src={Architecture}
-                  width={281}
-                  title={"LandMarks"}
-                  subTitle={"Architecture"}
-                  amount={101.0}
-                  height={390.67}
-                  addCart
-                />
-              </div>
+            {/*  <div>*/}
+            {/*    <Premium*/}
+            {/*      src={Architecture}*/}
+            {/*      width={281}*/}
+            {/*      title={"LandMarks"}*/}
+            {/*      subTitle={"Architecture"}*/}
+            {/*      amount={101.0}*/}
+            {/*      height={390.67}*/}
+            {/*      addCart*/}
+            {/*    />*/}
+            {/*  </div>*/}
 
-              <div>
-                <Premium
-                  src={Architecture}
-                  width={281}
-                  title={"LandMarks"}
-                  subTitle={"Architecture"}
-                  amount={101.0}
-                  height={390.67}
-                  addCart
-                />
-              </div>
-            </div>
+            {/*  <div>*/}
+            {/*    <Premium*/}
+            {/*      src={Architecture}*/}
+            {/*      width={281}*/}
+            {/*      title={"LandMarks"}*/}
+            {/*      subTitle={"Architecture"}*/}
+            {/*      amount={101.0}*/}
+            {/*      height={390.67}*/}
+            {/*      addCart*/}
+            {/*    />*/}
+            {/*  </div>*/}
+            {/*</div>*/}
           </>
         )}
       </div>

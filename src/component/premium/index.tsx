@@ -1,44 +1,54 @@
 import React from "react";
-import './premium.scss';
+import "./premium.scss";
 
 interface PremiumProps {
-    height?: number;
-    width?: number;
-    title?: string;
-    subTitle?: string;
-    amount?: number;
-    src: any;
-    addCart?: boolean;
-    padLeft?: boolean
+  height?: number | string;
+  width?: number | string;
+  category?: string;
+  name?: string;
+  price?: number;
+  src: any;
+  addCart?: boolean;
+  padLeft?: boolean;
+  bestSeller?: boolean;
+  featured?: boolean;
 }
 
 const Premium = (props: PremiumProps) => {
-    const { height, width, title, subTitle, amount, padLeft, src, addCart = false } = props;
+  const {
+    height,
+    width,
+    category,
+    name,
+    price,
+    padLeft,
+    bestSeller,
+    featured,
+    src,
+    addCart = false,
+  } = props;
 
-    return(
-        <div className='app-premium' style={{paddingLeft: `${padLeft && '40px'}`}}>
-            <div className='image'>
-                <img src={src} alt='img' width={width} height={height} />
-            </div>
+  return (
+    <div
+      className="app-premium"
+      style={{ paddingLeft: `${padLeft && "40px"}` }}
+    >
+      <div className="image">
+        <img src={src} alt="img" width={width} height={height} />
+      </div>
 
-            {addCart &&  <div className='add-cart'>
-                ADD TO CART
-            </div>}
+      {addCart && <div className="add-cart">ADD TO CART</div>}
 
-            {title &&  <div className='title'>
-                {title}
-            </div>}
+      {category && <div className="title">{category}</div>}
 
-            {subTitle &&  <div className='subtitle'>
-                {subTitle}
-            </div>}
+      {name && <div className="name">{name}</div>}
 
-            {amount &&  <div className='amount'>
-                {`$${amount}`}
-            </div>}
+      {price && <div className="price">{`$${price}`}</div>}
 
-        </div>
-    );
+      {bestSeller && <div className='best-seller'>Best Seller</div>}
+
+    </div>
+  );
 };
 
 export default Premium;
