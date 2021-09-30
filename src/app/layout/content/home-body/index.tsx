@@ -9,13 +9,18 @@ import { isMobile } from "react-device-detect";
 import { ReactComponent as FilterSvg } from "../../../../assets/svg/filter.svg";
 import { Products } from "../../../../_shared/dummyData";
 import { isEmpty } from "lodash";
+import {addCart} from "../../../../redux/action/cart";
+import {connect} from "react-redux";
+import Header from "../../header";
 
-const HomeBody = () => {
+const HomeBody = ({addCart, cartItems}: any) => {
   const [visible, setVisible] = useState(false);
+  const [showItem, setShowItem] = useState(false);
+
 
   const products = Products.map((item) => item);
 
-  console.log("products::::", products);
+  console.log('cartItems:::', cartItems);
 
   const onCancel = () => setVisible(!visible);
   const onChange = () => {
@@ -122,18 +127,16 @@ const HomeBody = () => {
               <Col span={20}>
                 <div className="items-list">
                   {Products.map((e: any) =>
-                    !isEmpty(e.image?.src) ? (
-                      <Premium
-                        bestSeller={e.bestseller}
-                        name={e.name}
-                        src={e.image?.src}
-                        height={400}
-                        width={300}
-                        price={e.price}
-                        addCart
-                        category={e.category}
-                      />
-                    ) : null
+                    !isEmpty(e.image?.src) && (
+
+                          <Premium
+                              bestSeller={e.bestseller}
+                              height={400}
+                              width={300}
+                              addCartBtn
+                             value={e}
+                          />
+                    )
                   )}
                   {/*<Premium*/}
                   {/*    src={RedBench}*/}
@@ -221,25 +224,15 @@ const HomeBody = () => {
               }}
             >
               {Products.map((e: any) =>
-                !isEmpty(e && e.image?.src) ? (
-                  // <img
-                  //   width={300}
-                  //   height={400}
-                  //   src={e.image?.src}
-                  //   alt=""
-                  //   style={{ marginBottom: 20 }}
-                  // />
-                  <Premium
-                    name={e.name}
-                    src={e.image?.src}
-                    height={400}
-                    width={300}
-                    price={e.price}
-                    featured={e.featured}
-                    addCart
-                    category={e.category}
-                  />
-                ) : null
+                  !isEmpty(e.image?.src) && (
+                      <Premium
+                          bestSeller={e.bestseller}
+                          height={400}
+                          width={300}
+                          addCartBtn
+                          value={e}
+                      />
+                  )
               )}
             </div>
             {/*<div className="seller">Best Seller</div>*/}
@@ -322,8 +315,18 @@ const HomeBody = () => {
         )}
       </div>
       <FilterModal visible={visible} onCancel={onCancel} />
+      <Header visible={showItem} show={false}/>
+
     </>
   );
 };
 
-export default HomeBody;
+const stateProps = (state: any) => ({
+  cartItems: state.cart.carts,
+});
+
+const dispatchProps = {
+  addCart,
+};
+
+export default connect(stateProps, dispatchProps)(HomeBody);
