@@ -26,12 +26,25 @@ export const Products = [
     details: null,
   },
   {
-    name: "Dog with kids",
+    name: "Dog",
     category: "animal",
     price: 100,
     currency: "USD",
     image: {
       src: "https://images.pexels.com/photos/8499234/pexels-photo-8499234.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      alt: "dog",
+    },
+    bestseller: false,
+    featured: false,
+    details: null,
+  },
+  {
+    name: "Dog",
+    category: "animal",
+    price: 100,
+    currency: "USD",
+    image: {
+      src: "https://images.pexels.com/photos/38008/pexels-photo-38008.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
       alt: "dog",
     },
     bestseller: false,
@@ -65,7 +78,7 @@ export const Products = [
     details: null,
   },
   {
-    name: "Dog with kids",
+    name: "Dog kids",
     category: "animal",
     price: 100,
     currency: "USD",
@@ -117,6 +130,19 @@ export const Products = [
     details: null,
   },
   {
+    name: "lone Dog",
+    category: "animal",
+    price: 100,
+    currency: "USD",
+    image: {
+      src: "https://images.pexels.com/photos/1406506/pexels-photo-1406506.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      alt: "dog",
+    },
+    bestseller: false,
+    featured: false,
+    details: null,
+  },
+  {
     name: "Architecture",
     category: "landmarks",
     price: 101,
@@ -153,7 +179,8 @@ export const Products = [
       description:
         "So how did the classical Latin become so incoherent? According to McClintock, a 15th century typesetter likely",
     },
-  },{
+  },
+  {
     name: "Samurai King Restling",
     category: "landmarks",
     price: 101,
@@ -173,5 +200,83 @@ export const Products = [
       description:
         "So how did the classical Latin become so incoherent? According to McClintock, a 15th century typesetter likely",
     },
+  },
+  {
+    name: "Dog",
+    category: "animal",
+    price: 100,
+    currency: "USD",
+    image: {
+      src: "https://images.pexels.com/photos/8499234/pexels-photo-8499234.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      alt: "dog",
+    },
+    bestseller: false,
+    featured: false,
+    details: null,
+  },
+  {
+    name: "Dog",
+    category: "animal",
+    price: 100,
+    currency: "USD",
+    image: {
+      src: "https://images.pexels.com/photos/4130054/pexels-photo-4130054.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      alt: "dog",
+    },
+    bestseller: false,
+    featured: false,
+    details: null,
+  },
+  {
+    name: "Dog",
+    category: "animal",
+    price: 100,
+    currency: "USD",
+    image: {
+      src: "https://images.pexels.com/photos/6291572/pexels-photo-6291572.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      alt: "dog",
+    },
+    bestseller: false,
+    featured: false,
+    details: null,
+  },
+  {
+    name: "Dog",
+    category: "animal",
+    price: 100,
+    currency: "USD",
+    image: {
+      src: "https://images.pexels.com/photos/8499859/pexels-photo-8499859.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      alt: "dog",
+    },
+    bestseller: false,
+    featured: false,
+    details: null,
+  },
+  {
+    name: "Dog",
+    category: "animal",
+    price: 100,
+    currency: "USD",
+    image: {
+      src: "https://images.pexels.com/photos/6302310/pexels-photo-6302310.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      alt: "dog",
+    },
+    bestseller: false,
+    featured: false,
+    details: null,
+  },
+  {
+    name: "Dog",
+    category: "animal",
+    price: 100,
+    currency: "USD",
+    image: {
+      src: "https://images.pexels.com/photos/532310/pexels-photo-532310.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      alt: "dog",
+    },
+    bestseller: false,
+    featured: false,
+    details: null,
   },
 ];

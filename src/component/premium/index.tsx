@@ -3,6 +3,7 @@ import "./premium.scss";
 import {addCart} from "../../redux/action/cart";
 import {connect} from "react-redux";
 import Header from "../../app/layout/header";
+import { Tooltip, Button } from "antd";
 
 interface PremiumProps {
   height?: number | string;
@@ -41,7 +42,12 @@ const Premium = (props: PremiumProps) => {
       style={{ paddingLeft: `${padLeft && "40px"}` }}
     >
       <div className="image">
-        <img src={src ?? value.image.src} alt="img" width={width} height={height} />
+        <Tooltip title={
+          <Button type='text' style={{color: 'white'}} onClick={_ => addToCart(value)}>Add to Cart</Button>
+        }>
+          <img src={src ?? value.image.src} alt="img" width={width} height={height} />
+
+        </Tooltip>
       </div>
 
       {addCartBtn && <div className="add-cart" onClick={_ => addToCart(value)}>ADD TO CART</div>}

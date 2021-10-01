@@ -103,6 +103,18 @@
         flex-direction: column;
 
       }
+
+    .page-numbers {
+      color: #000000;
+      user-select: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      padding: 50px 0;
+      font-size: 20px;
+      list-style: none;
+      text-indent: 0.5in;
+    }
     }
   }
 
@@ -145,6 +157,18 @@
       padding-right: 10px;
       align-items: center;
       flex-wrap: wrap;
+    }
+
+    .page-numbers {
+      color: #000000;
+      user-select: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      padding: 50px 0;
+      font-size: 29px;
+      list-style: none;
+      text-indent: 0.5in;
     }
   }
 

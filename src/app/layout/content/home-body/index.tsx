@@ -9,18 +9,58 @@ import { isMobile } from "react-device-detect";
 import { ReactComponent as FilterSvg } from "../../../../assets/svg/filter.svg";
 import { Products } from "../../../../_shared/dummyData";
 import { isEmpty } from "lodash";
-import {addCart} from "../../../../redux/action/cart";
-import {connect} from "react-redux";
-import Header from "../../header";
+import { addCart } from "../../../../redux/action/cart";
+import { connect } from "react-redux";
 
-const HomeBody = ({addCart, cartItems}: any) => {
+const HomeBody = () => {
   const [visible, setVisible] = useState(false);
-  const [showItem, setShowItem] = useState(false);
 
+  // PAGINATION
+  const [paginate, setPaginate] = useState({
+    currentPage: 1,
+    itemsPerPage: isMobile ? 4 : 8,
+  });
 
-  const products = Products.map((item) => item);
+  const handleClick = (e: any) => {
+    setPaginate((prevState) => ({
+      ...prevState,
+      currentPage: Number(e),
+    }));
+  };
 
-  console.log('cartItems:::', cartItems);
+  const indexOfLastItem = paginate.currentPage * paginate.itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - paginate.itemsPerPage;
+  const currentItem = Products.slice(indexOfFirstItem, indexOfLastItem);
+
+  const renderImages = currentItem.map((item, index) => {
+    return !isEmpty(item.image?.src) && (
+          <div key={index}>
+            <Premium
+                bestSeller={item.bestseller}
+                height={400}
+                width={300}
+                addCartBtn
+                value={item}
+            />
+          </div>
+    );
+  });
+
+  const pageNumbers = [];
+  for (let i = 1; i <= Math.ceil(Products.length / paginate.itemsPerPage); i++) {
+    pageNumbers.push(i);
+  }
+
+  const renderPageNumbers = pageNumbers.map(number => {
+    return (
+        <div
+            key={number}
+            onClick={() => handleClick(number)}
+        >
+          {number}
+        </div>
+    );
+  });
 
   const onCancel = () => setVisible(!visible);
   const onChange = () => {
@@ -125,91 +165,12 @@ const HomeBody = ({addCart, cartItems}: any) => {
               </Col>
 
               <Col span={20}>
-                <div className="items-list">
-                  {Products.map((e: any) =>
-                    !isEmpty(e.image?.src) && (
-
-                          <Premium
-                              bestSeller={e.bestseller}
-                              height={400}
-                              width={300}
-                              addCartBtn
-                             value={e}
-                          />
-                    )
-                  )}
-                  {/*<Premium*/}
-                  {/*    src={RedBench}*/}
-                  {/*    width={281}*/}
-                  {/*    title={"People"}*/}
-                  {/*    subTitle={"Red Bench"}*/}
-                  {/*    amount={3.89}*/}
-                  {/*    height={390.67}*/}
-                  {/*    addCart*/}
-                  {/*/>*/}
-
-                  {/*<div>*/}
-                  {/*  <Premium*/}
-                  {/*      src={EggBallon}*/}
-                  {/*      width={281}*/}
-                  {/*      title={"Food"}*/}
-                  {/*      subTitle={"Egg Ballon"}*/}
-                  {/*      amount={93.89}*/}
-                  {/*      height={390.67}*/}
-                  {/*      addCart*/}
-                  {/*  />*/}
-                  {/*</div>*/}
-
-                  {/*<div>*/}
-                  {/*  <Premium*/}
-                  {/*      src={EggBallon}*/}
-                  {/*      width={281}*/}
-                  {/*      title={"Food"}*/}
-                  {/*      subTitle={"Egg Ballon"}*/}
-                  {/*      amount={93.89}*/}
-                  {/*      height={390.67}*/}
-                  {/*      addCart*/}
-                  {/*  />*/}
-                  {/*</div>*/}
+                <div className="items-list" style={{ cursor: "pointer" }}>
+                    {renderImages}
                 </div>
-
-                {/*<div className="items-list" style={{ margin: "10px 0" }}>*/}
-                {/*  <div>*/}
-                {/*    <Premium*/}
-                {/*        src={Man}*/}
-                {/*        width={281}*/}
-                {/*        title={"People"}*/}
-                {/*        subTitle={"Man"}*/}
-                {/*        amount={100.0}*/}
-                {/*        height={390.67}*/}
-                {/*        addCart*/}
-                {/*    />*/}
-                {/*  </div>*/}
-
-                {/*  <div>*/}
-                {/*    <Premium*/}
-                {/*        src={Architecture}*/}
-                {/*        width={281}*/}
-                {/*        title={"LandMarks"}*/}
-                {/*        subTitle={"Architecture"}*/}
-                {/*        amount={101.0}*/}
-                {/*        height={390.67}*/}
-                {/*        addCart*/}
-                {/*    />*/}
-                {/*  </div>*/}
-
-                {/*  <div>*/}
-                {/*    <Premium*/}
-                {/*        src={Architecture}*/}
-                {/*        width={281}*/}
-                {/*        title={"LandMarks"}*/}
-                {/*        subTitle={"Architecture"}*/}
-                {/*        amount={101.0}*/}
-                {/*        height={390.67}*/}
-                {/*        addCart*/}
-                {/*    />*/}
-                {/*  </div>*/}
-                {/*</div>*/}
+                <div className="page-numbers">
+                  {renderPageNumbers}
+                </div>
               </Col>
             </Row>
           </div>
@@ -221,102 +182,19 @@ const HomeBody = ({addCart, cartItems}: any) => {
                 display: "flex",
                 justifyContent: "space-between",
                 flexWrap: "wrap",
+                cursor: "pointer",
               }}
             >
-              {Products.map((e: any) =>
-                  !isEmpty(e.image?.src) && (
-                      <Premium
-                          bestSeller={e.bestseller}
-                          height={400}
-                          width={300}
-                          addCartBtn
-                          value={e}
-                      />
-                  )
-              )}
+              {renderImages}
+
+              <div className="page-numbers">
+                {renderPageNumbers}
+              </div>
             </div>
-            {/*<div className="seller">Best Seller</div>*/}
-            {/*<div className="items-list">*/}
-            {/*  <div>*/}
-            {/*    <Premium*/}
-            {/*      src={RedBench}*/}
-            {/*      width={281}*/}
-            {/*      title={"People"}*/}
-            {/*      subTitle={"Red Bench"}*/}
-            {/*      amount={3.89}*/}
-            {/*      height={390.67}*/}
-            {/*      addCart*/}
-            {/*    />*/}
-            {/*  </div>*/}
-
-            {/*  <div>*/}
-            {/*    <Premium*/}
-            {/*      src={EggBallon}*/}
-            {/*      width={281}*/}
-            {/*      title={"Food"}*/}
-            {/*      subTitle={"Egg Ballon"}*/}
-            {/*      amount={93.89}*/}
-            {/*      height={390.67}*/}
-            {/*      addCart*/}
-            {/*    />*/}
-            {/*  </div>*/}
-
-            {/*  <div>*/}
-            {/*    <Premium*/}
-            {/*      src={EggBallon}*/}
-            {/*      width={281}*/}
-            {/*      title={"Food"}*/}
-            {/*      subTitle={"Egg Ballon"}*/}
-            {/*      amount={93.89}*/}
-            {/*      height={390.67}*/}
-            {/*      addCart*/}
-            {/*    />*/}
-            {/*  </div>*/}
-            {/*</div>*/}
-
-            {/*<div className="items-list" style={{ margin: "10px 0" }}>*/}
-            {/*  <div>*/}
-            {/*    <Premium*/}
-            {/*      src={Man}*/}
-            {/*      width={281}*/}
-            {/*      title={"People"}*/}
-            {/*      subTitle={"Man"}*/}
-            {/*      amount={100.0}*/}
-            {/*      height={390.67}*/}
-            {/*      addCart*/}
-            {/*    />*/}
-            {/*  </div>*/}
-
-            {/*  <div>*/}
-            {/*    <Premium*/}
-            {/*      src={Architecture}*/}
-            {/*      width={281}*/}
-            {/*      title={"LandMarks"}*/}
-            {/*      subTitle={"Architecture"}*/}
-            {/*      amount={101.0}*/}
-            {/*      height={390.67}*/}
-            {/*      addCart*/}
-            {/*    />*/}
-            {/*  </div>*/}
-
-            {/*  <div>*/}
-            {/*    <Premium*/}
-            {/*      src={Architecture}*/}
-            {/*      width={281}*/}
-            {/*      title={"LandMarks"}*/}
-            {/*      subTitle={"Architecture"}*/}
-            {/*      amount={101.0}*/}
-            {/*      height={390.67}*/}
-            {/*      addCart*/}
-            {/*    />*/}
-            {/*  </div>*/}
-            {/*</div>*/}
           </>
         )}
       </div>
       <FilterModal visible={visible} onCancel={onCancel} />
-      <Header visible={showItem} show={false}/>
-
     </>
   );
 };

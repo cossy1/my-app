@@ -46,3 +46,56 @@
   }
 
 }
+
+@media (max-width: 575.98px) {
+  .app-premium {
+    overflow: hidden;
+    margin-bottom: 52px;
+    .add-cart {
+      position: relative;
+      width: 18.75rem;
+      height: 46px;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 44px;
+      color: #ffffff;
+      top: -18px;
+      background-color: #000000;
+    }
+
+    .title{
+      color: #656565;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .name{
+      color: #000000;
+      font-size: 1.4rem;
+      font-weight: 700;
+
+    }
+
+    .price{
+      color: #656565;
+      font-size: 1rem;
+      font-weight: normal;
+    }
+
+    .best-seller{
+      position: relative;
+      background-color: #FFFFFF;
+      width: 127.4px;
+      height: 29.17px;
+      top: calc(25vh - 702px);
+      font-size: 1.2rem;
+      font-weight: normal;
+      color: #000000;
+      text-align: center;
+    }
+
+  }
+
+}
+

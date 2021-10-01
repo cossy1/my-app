@@ -1,7 +1,7 @@
-import {createActionType, createActionString} from "../../../_shared/utils";
+import {createActionType} from "../../../_shared/utils";
 
 export const ADD_CART = createActionType("ADD_CART", "cart");
-export const CLEAR_CART = createActionType("ADD_CART", "cart");
+export const CLEAR_CART = createActionType("CLEAR_CART", "cart");
 
 
 export const addCart = (payload: any) => ({
@@ -9,7 +9,6 @@ export const addCart = (payload: any) => ({
     payload
 });
 
-export const clearCart = (payload: any) => ({
+export const clearCart = () => ({
     type: CLEAR_CART.START,
-    payload
 });

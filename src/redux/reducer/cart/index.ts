@@ -1,20 +1,22 @@
-import {ADD_CART} from "../../action/cart";
+import { ADD_CART, CLEAR_CART } from "../../action/cart";
 
 interface initialState {
-    carts: Record<string, any>[];
+  carts: Record<string, any>[];
 }
 
 const initialStateDefault: initialState = {
-    carts: []
+  carts: [],
 };
 
 export default (state = initialStateDefault, action: any) => {
-    if (action.type === ADD_CART.SUCCESS) {
-        console.log('REDUCER HITS::::',action.payload);
-        const newCart = [...state.carts, action.payload];
-        return { carts: [...state.carts, action.payload] };
+  if (action.type === ADD_CART.SUCCESS) {
+    const newCart = [...state.carts, action.payload];
+    return { carts: newCart };
+  }
 
-    } else {
-        return state;
-    }
+  if (action.type === CLEAR_CART.SUCCESS) {
+      return {carts: []};
+  } else {
+    return state;
+  }
 };
