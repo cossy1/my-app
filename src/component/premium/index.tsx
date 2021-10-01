@@ -4,6 +4,7 @@ import {addCart} from "../../redux/action/cart";
 import {connect} from "react-redux";
 import Header from "../../app/layout/header";
 import { Tooltip, Button } from "antd";
+import {isMobile} from "react-device-detect";
 
 interface PremiumProps {
   height?: number | string;
@@ -58,7 +59,7 @@ const Premium = (props: PremiumProps) => {
 
       {value?.price && <div className="price">{`$${value?.price}`}</div>}
 
-      {bestSeller && <div className='best-seller'>Best Seller</div>}
+      {bestSeller && <div className={isMobile ? 'best-seller-mobile' : 'best-seller'}>Best Seller</div>}
 
       <Header show={false} visible={showItems}/>
     </div>

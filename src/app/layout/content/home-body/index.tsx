@@ -10,19 +10,24 @@ import { Products } from "../../../../_shared/dummyData";
 import { isEmpty } from "lodash";
 import { addCart } from "../../../../redux/action/cart";
 import { connect } from "react-redux";
-import {sortArray} from "../../../../_shared/hooks";
+import {filterProducts, sortProducts} from "../../../../_shared/hooks";
 
 const HomeBody = () => {
   const [visible, setVisible] = useState(false);
   const [choice, setChoice] = useState(true);
   const [toggle, setToggle] = useState(true);
+  const [filter, setFilter] = useState(undefined);
 
-   let newProduct = sortArray(Products, choice, toggle);
+   let newProduct = sortProducts(Products, choice, toggle);
+
+   if(filter){
+     newProduct = filterProducts(newProduct, filter);
+   }
 
   // PAGINATION
   const [paginate, setPaginate] = useState({
     currentPage: 1,
-    itemsPerPage: isMobile ? 4 : 8,
+    itemsPerPage: isMobile ? 6 : 8,
   });
 
   const handleClick = (e: any) => {
@@ -69,8 +74,14 @@ const HomeBody = () => {
   // PAGINATION END
 
   const onCancel = () => setVisible(!visible);
-  const onChange = () => {
-    console.log("Onchange");
+  const onChange = (e:any) => {
+    let res: any;
+    console.log("Onchange", e);
+    for(let i=0; i<e.length; i++){
+      res = e[i];
+    }
+    setFilter(res);
+
   };
 
   const selectChange = (e: any) => {
@@ -84,7 +95,7 @@ const HomeBody = () => {
     { label: "Pets", value: "Pets" },
     { label: "Food", value: "Food" },
     { label: "Landmarks", value: "Landmarks" },
-    { label: "Cities", value: "Cities" },
+    { label: "animal", value: "animal" },
     { label: "Nature", value: "Nature" },
   ];
 
@@ -115,8 +126,7 @@ const HomeBody = () => {
                 <span className="sort-by">Sort By</span>
                 <select name="choice" onChange={selectChange} defaultValue={'price'}>
                   <option value="price">Price</option>
-                  <option value="letter
-                  '">letter</option>
+                  <option value="letter">letter</option>
                 </select>
 
               </Space>

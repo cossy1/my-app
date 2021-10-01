@@ -23,11 +23,11 @@ const HomeTop = () => {
       </div>
       <div className="photo">Photo of the day</div>
 
-      <div>{isMobile && <div className="mobile-cart">ADD TO CART</div>}</div>
+      <div>{isMobile && <div className="add-mobile-cart">ADD TO CART</div>}</div>
 
       <div className="about-pet-row">
         <div className="about">
-          <div className="a">About the Samurai King Resting</div>
+          <div className="ar">About the Samurai King Resting</div>
           <div className="pets">Pets</div>
           <div className="so">
             So how did the classical Latin become so incoherent? According to
@@ -83,7 +83,7 @@ const HomeTop = () => {
         )}
       </div>
 
-      <hr style={{ marginTop: 65 }} />
+      <hr style={{ marginTop: 65, width: '100vw' }} />
 
     </div>
   );

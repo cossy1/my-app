@@ -33,7 +33,7 @@
     .about {
       width: 54vw;
 
-      .a {
+      .ar {
         font-size: 2rem;
         font-weight: bold;
         line-height: 24px;
@@ -117,17 +117,17 @@
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 575.98px) {
   .app-home-top {
-    .mobile-cart{
+    .add-mobile-cart{
       background-color: #000000;
       letter-spacing: 0.07em;
       color: #ffffff;
       text-align: center;
       vertical-align: middle;
       line-height: 50.02px;
-      font-size: 23px;
-      margin-top: 30px;
-      margin-right: 10px;
-      margin-left: 10px;
+      font-size: 1.4rem;
+      margin-top: 1.8rem;
+      margin-right: 0.6rem;
+      margin-left: 0.6rem;
 
     }
 
@@ -164,13 +164,13 @@
 
     .photo {
       position: absolute;
-      margin-top: -30px;
+      margin-top: -1.8rem;
       font-weight: bold;
-      font-size: 15px;
-      height: 50px;
+      font-size: 0.9rem;
+      height: 3rem;
       background: #ffffff;
-      width: 200px;
-      line-height: 50px;
+      width: 14rem;
+      line-height: 3rem;
       text-align: center;
       color: #000000;
     }
@@ -183,8 +183,8 @@
         width: 100vw;
         padding: 0 10px;
 
-        .a{
-          font-size: 22px;
+        .ar{
+          font-size: 1.3rem;
           font-weight: bold;
           line-height: 150%;
           color: #000000;
@@ -199,8 +199,8 @@
         }
 
         .so {
-          line-height: 27px;
-          font-size: 18px;
+          line-height: 1.6rem;
+          font-size: 1.1rem;
           font-weight: normal;
           color: #656565;
           text-align: justify;
@@ -215,48 +215,48 @@
 
     .mobile-people{
       img{
-        width: 100px;
-        height: 122.58px;
+        width: 6.25rem;
+        height: 7.6rem;
       }
       .buy {
         text-align: left;
         color: #000000;
-        line-height: 24px;
+        line-height: 1.5rem;
         font-size: 1.5rem;
         font-weight: bold;
-        margin: 20px 10px;
+        margin: 1.25rem 0.625rem;
       }
 
       .detail {
         text-align: left;
-        line-height: 17px;
-        font-size: 0.8rem;
+        line-height: 1rem;
+        font-size: 1.3rem;
         color: #656565;
-        margin: 15px 10px;
+        margin: 0.9rem 0.6rem;
 
       }
 
       .details {
         font-size: 1rem;
         text-align: left;
-        line-height: 24px;
+        line-height: 1.5rem;
         font-weight: bold;
         color: #000000;
-        margin: 20px 10px;
+        margin: 1.2rem 0.6rem;
       }
 
       .images {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-top: 27px;
+        margin-top: 1.6rem;
       }
     }
 
     .sam {
       font-weight: bold;
       font-size: 1.7rem;
-      margin: 0 10px;
+      margin: 0 0.6rem;
       font-style: normal;
       text-align: center;
     }
@@ -267,11 +267,11 @@
       letter-spacing: 0.07em;
       color: #ffffff;
       text-align: center;
-      line-height: 60.02px;
-      font-size: 23px;
+      line-height: 3.7rem;
+      font-size: 1.4rem;
      // position: absolute;
-      margin-top: 30px;
-      height: 61px;
+      margin-top: 1.8rem;
+      height: 3.8rem;
       max-width: 100vw;
       cursor: pointer;
 
@@ -281,9 +281,13 @@
 }
 
 // Medium devices (tablets, 768px and up)
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .app-home-top {
     .mobile-cart{
+      display: none;
+    }
+
+    .add-mobile-cart{
       display: none;
     }
     .top-row {
