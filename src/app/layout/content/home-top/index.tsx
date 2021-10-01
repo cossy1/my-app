@@ -6,42 +6,28 @@ import Flower from "../../../../assets/image/flower.png";
 import Yellow from "../../../../assets/image/yellow.png";
 import EggBallon from "../../../../assets/image/egg-ballon1.png";
 import { isMobile } from "react-device-detect";
-import { ReactComponent as FlowerSvg } from "../../../../assets/svg/flower.svg";
-import { ReactComponent as EggBallSvg } from "../../../../assets/svg/egg-ball.svg";
 
 const HomeTop = () => {
+
   return (
     <div className="app-home-top">
-      {!isMobile ? (
-        <>
-          <div className="top-row">
-            <div className="sam">Samurai King Resting</div>
+      <div className="top-row">
+        <div className="sam">Samurai King Resting</div>
 
-            <div className="addCart-row">ADD TO CART</div>
-          </div>
-          <div className="dog">
-            <img
-              alt="img"
-              src={Dog}
-              style={{ width: "100vw", paddingRight: "9.5vw" }}
-            />
-          </div>
-          <div className="photo">Photo of the day</div>{" "}
-        </>
-      ) : (
-        <>
-          <div className="sam">Samurai King Resting</div>
-          <div className="dog">
-            <img alt="img" src={Dog} />
-          </div>
-          <div className="photo">Photo of the day</div>{" "}
-          <div className="addCart">ADD TO CART</div>
-        </>
-      )}
+        <div className="addCart-row">
+          ADD TO CART
+        </div>
+      </div>
+      <div className="dog">
+        <img alt="img" src={Dog} style={{ width: "100vw" }} />
+      </div>
+      <div className="photo">Photo of the day</div>
+
+      <div>{isMobile && <div className="add-mobile-cart">ADD TO CART</div>}</div>
 
       <div className="about-pet-row">
         <div className="about">
-          <div className="a">About the Samurai King Resting</div>
+          <div className="ar">About the Samurai King Resting</div>
           <div className="pets">Pets</div>
           <div className="so">
             So how did the classical Latin become so incoherent? According to
@@ -56,19 +42,39 @@ const HomeTop = () => {
           </div>
         </div>
 
-        {!isMobile && (
-          <div className="people">
+        <div className="people">
+          <div className="buy">People also buy</div>
+          <div className="images">
+            <div>
+              <Premium padLeft src={Yellow} />
+            </div>
+            <div>
+              <Premium padLeft src={Flower} />
+            </div>
+            <div>
+              <Premium padLeft src={EggBallon} />
+            </div>
+          </div>
+          <div className="details">Details</div>
+          <div className="detail">Size: 1020 x 1020 pixel</div>
+          <div className="detail">Size: 15 mb</div>
+        </div>
+      </div>
+
+      <div>
+        {isMobile && (
+          <div className="mobile-people">
             <div className="buy">People also buy</div>
             <div className="images">
-                <div>
-                  <Premium src={Yellow} />
-                </div>
-                <div>
-                  <Premium src={Flower} />
-                </div>
-                <div>
-                  <Premium src={EggBallon} />
-                </div>
+              <div>
+                <Premium src={Yellow} />
+              </div>
+              <div>
+                <Premium src={Flower} />
+              </div>
+              <div>
+                <Premium src={EggBallon} />
+              </div>
             </div>
             <div className="details">Details</div>
             <div className="detail">Size: 1020 x 1020 pixel</div>
@@ -77,27 +83,8 @@ const HomeTop = () => {
         )}
       </div>
 
-      {isMobile && (
-        <div className="people">
-          <div className="buy">People also buy</div>
-          <div className="images">
-            <div>
-              <EggBallSvg />
-            </div>
-            <div>
-              <FlowerSvg />
-            </div>
-            <div>
-              <EggBallSvg />
-            </div>
-          </div>
-          <div className="details">Details</div>
-          <div className="detail">Size: 1020 x 1020 pixel</div>
-          <div className="detail">Size: 15 mb</div>
-        </div>
-      )}
+      <hr style={{ marginTop: 65, width: '100vw' }} />
 
-      {isMobile ? <hr style={{ marginTop: 49 }} /> : <hr style={{ marginTop: 65 }} />}
     </div>
   );
 };

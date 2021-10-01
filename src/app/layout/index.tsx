@@ -5,7 +5,7 @@ import Content from "./content";
 const Layout = () => {
     return(
        <div>
-           <Header />
+           <Header show/>
            <Content />
        </div>
     );

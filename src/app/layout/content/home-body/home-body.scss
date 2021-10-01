@@ -3,45 +3,43 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 43px;
+    margin-bottom: 2.6rem;
+    margin-top: 3rem;
 
     .photo {
-      line-height: 33px;
+      line-height: 2rem;
       color: #000000;
-      font-size: 30px;
+      font-size: 1.8rem;
       font-weight: bold;
+    }
+
+    select {
+      border: 0;
+      outline: 0;
     }
 
     .sort-by {
       color: #9b9b9b;
-      line-height: 24px;
-      font-size: 22px;
+      line-height: 1.5rem;
+      font-size: 1.3rem;
       font-weight: normal;
     }
 
     .premium {
       position: absolute;
       font-weight: normal;
-      font-size: 30px;
-      line-height: 33px;
+      font-size: 1.8rem;
+      line-height: 2rem;
       color: #9b9b9b;
-      padding-left: 10px;
+      padding-left: 0.6rem;
     }
   }
   .items{
     .category{
       color: #000000;
-      font-size: 22px;
+      font-size: 1.3rem;
       font-weight: bold;
-      margin: 10px 0;
-    }
-    .seller{
-      font-size: 20px;
-      position: absolute;
-      background-color: #ffffff;
-      width: 127px;
-      text-align: center;
-      left: 20px;
+      margin: 0.6rem 0;
     }
 
     .items-list{
@@ -56,44 +54,32 @@
 // mobile phones styling
 @media (max-width: 575.98px) {
   .app-home-body {
-    padding: 0 20px;
+    overflow: hidden;
     .body-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 30px;
+      margin-bottom: 1.8rem;
+      margin-top: 1rem;
 
       .photo {
-        line-height: 20px;
+        line-height: 1rem;
         color: #000000;
-        font-size: 18px;
+        font-size: 0.8rem;
         font-weight: bold;
-      }
-
-      .sort-by {
-        color: #9b9b9b;
-        line-height: 24px;
-        font-size: 22px;
-        font-weight: normal;
+        margin-left: 0.6rem;
       }
 
       .premium {
         position: absolute;
         font-weight: normal;
-        font-size: 18px;
-        line-height: 20px;
+        font-size: 0.8rem;
+        line-height: 1.5rem;
         color: #9b9b9b;
-        padding-left: 10px;
+        padding-left: 0.6rem;
       }
     }
-      .seller{
-        font-size: 20px;
-        position: absolute;
-        background-color: #ffffff;
-        width: 163.7px;
-        text-align: center;
-        left: 22px;
-      }
+
       .items-list{
         display: flex;
         justify-content: space-between;
@@ -101,13 +87,24 @@
         flex-direction: column;
 
       }
+
+    .page-numbers {
+      color: #000000;
+      user-select: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      padding: 50px 0;
+      font-size: 20px;
+      list-style: none;
+      text-indent: 0.5in;
+    }
     }
   }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .app-home-body {
-   // padding: 0 10px;
     .body-header {
       display: flex;
       justify-content: space-between;
@@ -143,6 +140,19 @@
       justify-content: space-evenly;
       padding-right: 10px;
       align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .page-numbers {
+      color: #000000;
+      user-select: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      padding: 50px 0;
+      font-size: 29px;
+      list-style: none;
+      text-indent: 0.5in;
     }
   }
 
