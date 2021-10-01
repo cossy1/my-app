@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import "./home-body.scss";
 import { ReactComponent as Arrow } from "../../../../assets/svg/arrow.svg";
-import { Checkbox, Col, Dropdown, Menu, Row, Space } from "antd";
-import { DownOutlined } from "@ant-design/icons";
+import { Checkbox, Col, Row, Space } from "antd";
 import Premium from "../../../../component/premium";
 import FilterModal from "../../../../component/filterModal";
 import { isMobile } from "react-device-detect";
@@ -11,9 +10,14 @@ import { Products } from "../../../../_shared/dummyData";
 import { isEmpty } from "lodash";
 import { addCart } from "../../../../redux/action/cart";
 import { connect } from "react-redux";
+import {sortArray} from "../../../../_shared/hooks";
 
 const HomeBody = () => {
   const [visible, setVisible] = useState(false);
+  const [choice, setChoice] = useState(true);
+  const [toggle, setToggle] = useState(true);
+
+   let newProduct = sortArray(Products, choice, toggle);
 
   // PAGINATION
   const [paginate, setPaginate] = useState({
@@ -30,9 +34,9 @@ const HomeBody = () => {
 
   const indexOfLastItem = paginate.currentPage * paginate.itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - paginate.itemsPerPage;
-  const currentItem = Products.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItem = newProduct.slice(indexOfFirstItem, indexOfLastItem);
 
-  const renderImages = currentItem.map((item, index) => {
+  const renderImages = currentItem.map((item:any, index: any) => {
     return !isEmpty(item.image?.src) && (
           <div key={index}>
             <Premium
@@ -47,7 +51,7 @@ const HomeBody = () => {
   });
 
   const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(Products.length / paginate.itemsPerPage); i++) {
+  for (let i = 1; i <= Math.ceil(newProduct.length / paginate.itemsPerPage); i++) {
     pageNumbers.push(i);
   }
 
@@ -62,9 +66,16 @@ const HomeBody = () => {
     );
   });
 
+  // PAGINATION END
+
   const onCancel = () => setVisible(!visible);
   const onChange = () => {
     console.log("Onchange");
+  };
+
+  const selectChange = (e: any) => {
+    const type: boolean = e.target.value === 'price';
+    setChoice(type);
   };
 
   const options = [
@@ -84,18 +95,6 @@ const HomeBody = () => {
     { label: "More than $200", value: "More than $200" },
   ];
 
-  const menu = (
-    <Menu>
-      <Menu.Item key="0">
-        <a href="/">1st menu item</a>
-      </Menu.Item>
-      <Menu.Item key="1">
-        <a href="/">2nd menu item</a>
-      </Menu.Item>
-      <Menu.Divider />
-      <Menu.Item key="3">3rd menu item</Menu.Item>
-    </Menu>
-  );
 
   return (
     <>
@@ -109,26 +108,17 @@ const HomeBody = () => {
           <div>
             {!isMobile ? (
               <Space>
-                <span>
+                <span onClick={_ => setToggle(!toggle)}>
                   <Arrow />
                 </span>
 
                 <span className="sort-by">Sort By</span>
-                <span style={{ color: "#000000", fontSize: 22 }}>Price</span>
+                <select name="choice" onChange={selectChange} defaultValue={'price'}>
+                  <option value="price">Price</option>
+                  <option value="letter
+                  '">letter</option>
+                </select>
 
-                <Dropdown
-                  overlay={menu}
-                  trigger={["click"]}
-                  placement="bottomRight"
-                >
-                  <a
-                    href={"/"}
-                    className="ant-dropdown-link"
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    <DownOutlined />
-                  </a>
-                </Dropdown>
               </Space>
             ) : (
               <FilterSvg
