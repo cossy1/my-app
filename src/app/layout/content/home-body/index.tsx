@@ -10,18 +10,22 @@ import { Products } from "../../../../_shared/dummyData";
 import { isEmpty } from "lodash";
 import { addCart } from "../../../../redux/action/cart";
 import { connect } from "react-redux";
-import {filterProducts, sortProducts} from "../../../../_shared/hooks";
+import {filterProducts, filterProductsByPrice, sortProducts} from "../../../../_shared/hooks";
 
 const HomeBody = () => {
   const [visible, setVisible] = useState(false);
   const [choice, setChoice] = useState(true);
   const [toggle, setToggle] = useState(true);
   const [filter, setFilter] = useState(undefined);
+  const [price, setPrice] = useState(undefined);
 
    let newProduct = sortProducts(Products, choice, toggle);
 
    if(filter){
      newProduct = filterProducts(newProduct, filter);
+   }
+   if(price){
+     newProduct = filterProductsByPrice(newProduct, price);
    }
 
   // PAGINATION
@@ -39,7 +43,7 @@ const HomeBody = () => {
 
   const indexOfLastItem = paginate.currentPage * paginate.itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - paginate.itemsPerPage;
-  const currentItem = newProduct.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItem = newProduct?.slice(indexOfFirstItem, indexOfLastItem);
 
   const renderImages = currentItem.map((item:any, index: any) => {
     return !isEmpty(item.image?.src) && (
@@ -50,6 +54,7 @@ const HomeBody = () => {
                 width={300}
                 addCartBtn
                 value={item}
+                featured={item.featured}
             />
           </div>
     );
@@ -74,14 +79,13 @@ const HomeBody = () => {
   // PAGINATION END
 
   const onCancel = () => setVisible(!visible);
-  const onChange = (e:any) => {
-    let res: any;
-    console.log("Onchange", e);
-    for(let i=0; i<e.length; i++){
-      res = e[i];
-    }
-    setFilter(res);
 
+  const onChange = (e:any) => {
+    setFilter(e);
+  };
+
+  const onChange1 = (e:any) => {
+    setPrice(e);
   };
 
   const selectChange = (e: any) => {
@@ -90,13 +94,13 @@ const HomeBody = () => {
   };
 
   const options = [
-    { label: "People", value: "People" },
-    { label: "Premium", value: "Premium" },
-    { label: "Pets", value: "Pets" },
-    { label: "Food", value: "Food" },
-    { label: "Landmarks", value: "Landmarks" },
+    { label: "People", value: "people" },
+    { label: "Premium", value: "premium" },
+    { label: "Pets", value: "pets" },
+    { label: "Food", value: "food" },
+    { label: "Landmarks", value: "landmarks" },
     { label: "animal", value: "animal" },
-    { label: "Nature", value: "Nature" },
+    { label: "Nature", value: "nature" },
   ];
 
   const options1 = [
@@ -157,7 +161,7 @@ const HomeBody = () => {
                   <div>
                     <Checkbox.Group
                       options={options1}
-                      onChange={onChange}
+                      onChange={onChange1}
                       style={{ fontSize: 22, paddingBottom: 20, lineHeight: 3 }}
                     />
                   </div>

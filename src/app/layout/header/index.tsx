@@ -2,23 +2,21 @@ import React from "react";
 import "./header.scss";
 import { ReactComponent as ShoppingCart } from "../../../assets/svg/shopping-cart.svg";
 import { Badge, Popover } from "antd";
-import { clearCart } from "../../../redux/action/cart";
+import {clearCart, closeCart, openCart} from "../../../redux/action/cart";
 import { connect } from "react-redux";
 import { ReactComponent as CloseSvg } from "../../../assets/svg/close.svg";
 
 interface HeaderProps {
   show: boolean;
+  showCart: boolean;
   cartItems?: any;
   clearCart?: any;
-  visible?: boolean;
+  closeCart?: any;
+  openCart?: any;
 }
 
 const Header = (props: HeaderProps) => {
-  const { clearCart, visible, cartItems, show } = props;
-
-  const emptyCart = () => {
-    clearCart();
-  };
+  const { clearCart, cartItems, showCart, show, openCart, closeCart } = props;
 
   return (
     <div className="app-header">
@@ -31,11 +29,11 @@ const Header = (props: HeaderProps) => {
           <div>
             <Popover
               content={
-                cartItems.length > 0 ? (
+                cartItems?.length > 0 ? (
                   <>
                     <div>
-                      {cartItems.length > 0 &&
-                        cartItems.map((e: any) => (
+                      {cartItems?.length > 0 &&
+                        cartItems?.map((e: any) => (
                           <div
                             style={{
                               display: "flex",
@@ -77,8 +75,9 @@ const Header = (props: HeaderProps) => {
                         fontSize: "1.1rem",
                         height: "2rem",
                         textAlign: "center",
+                        cursor: 'pointer'
                       }}
-                      onClick={emptyCart}
+                      onClick={_ => clearCart()}
                     >
                       CLEAR
                     </div>
@@ -90,17 +89,19 @@ const Header = (props: HeaderProps) => {
                 )
               }
               title={
-                <div style={{ textAlign: "right" }}>
+                <div style={{ textAlign: "right" }} onClick={_ => closeCart()}>
                   <CloseSvg />
                 </div>
               }
               trigger="click"
-              visible={cartItems.length < 1 ? false : visible}
+              visible={showCart}
               style={{ border: "4px solid #E4E4E4", width: 443 }}
             >
-              <Badge count={cartItems.length} offset={[0, 50]}>
-                <ShoppingCart />
-              </Badge>
+             <div onClick={_ => openCart()}>
+               <Badge count={cartItems?.length} offset={[0, 50]}>
+                 <ShoppingCart />
+               </Badge>
+             </div>
             </Popover>
           </div>
         </div>
@@ -113,10 +114,13 @@ const Header = (props: HeaderProps) => {
 
 const stateProps = (state: any) => ({
   cartItems: state.cart.carts,
+  showCart: state.cart.showCart
 });
 
 const dispatchProps = {
   clearCart,
+  closeCart,
+  openCart
 };
 
 export default connect(stateProps, dispatchProps)(Header);

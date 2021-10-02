@@ -1,5 +1,6 @@
-import {ADD_CART, CLEAR_CART} from "../../action/cart";
+import {ADD_CART, CLEAR_CART, CLOSE_CART, OPEN_CART} from "../../action/cart";
 import { Middleware } from 'redux';
+import {message} from "antd";
 
 
 const addCart: Middleware<unknown> =
@@ -8,7 +9,10 @@ const addCart: Middleware<unknown> =
   (action) => {
     next(action);
     if (action.type === ADD_CART.START) {
+        const name = action.payload.name;
       dispatch({ type: ADD_CART.SUCCESS, payload: action.payload });
+        message.success(`${name} successfully added to cart`);
+
     }
   };
 
@@ -19,4 +23,18 @@ const clearCart: Middleware<unknown> = ({dispatch}) => (next) => (action) => {
     }
 };
 
-export default [addCart, clearCart];
+const closeCart: Middleware<unknown> = ({dispatch}) => (next) => (action) => {
+    next(action);
+    if(action.type === CLOSE_CART.START){
+        dispatch({type: CLOSE_CART.SUCCESS})
+    }
+};
+
+const openCart: Middleware<unknown> = ({dispatch}) => (next) => (action) => {
+    next(action);
+    if(action.type === OPEN_CART.START){
+        dispatch({type: OPEN_CART.SUCCESS})
+    }
+};
+
+export default [addCart, clearCart, closeCart, openCart];

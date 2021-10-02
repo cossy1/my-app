@@ -1,10 +1,10 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./premium.scss";
-import {addCart} from "../../redux/action/cart";
-import {connect} from "react-redux";
+import { addCart } from "../../redux/action/cart";
+import { connect } from "react-redux";
 import Header from "../../app/layout/header";
 import { Tooltip, Button } from "antd";
-import {isMobile} from "react-device-detect";
+import { isMobile } from "react-device-detect";
 
 interface PremiumProps {
   height?: number | string;
@@ -25,11 +25,12 @@ const Premium = (props: PremiumProps) => {
     height,
     width,
     value,
-      src,
+    src,
     addCart,
     padLeft,
     bestSeller,
     addCartBtn = false,
+    featured,
   } = props;
 
   const addToCart = (val: any) => {
@@ -43,15 +44,31 @@ const Premium = (props: PremiumProps) => {
       style={{ paddingLeft: `${padLeft && "40px"}` }}
     >
       <div className="image">
-        <Tooltip title={
-          <Button type='text' style={{color: 'white'}} onClick={_ => addToCart(value)}>Add to Cart</Button>
-        }>
-          <img src={src ?? value.image.src} alt="img" width={width} height={height} />
-
+        <Tooltip
+          title={
+            <Button
+              type="text"
+              style={{ color: "white" }}
+              onClick={(_) => addToCart(value)}
+            >
+              Add to Cart
+            </Button>
+          }
+        >
+          <img
+            src={src ?? value.image.src}
+            alt="img"
+            width={width}
+            height={height}
+          />
         </Tooltip>
       </div>
 
-      {addCartBtn && <div className="add-cart" onClick={_ => addToCart(value)}>ADD TO CART</div>}
+      {addCartBtn && (
+        <div className="add-cart" onClick={(_) => addToCart(value)}>
+          ADD TO CART
+        </div>
+      )}
 
       {value?.category && <div className="title">{value?.category}</div>}
 
@@ -59,9 +76,13 @@ const Premium = (props: PremiumProps) => {
 
       {value?.price && <div className="price">{`$${value?.price}`}</div>}
 
-      {bestSeller && <div className={isMobile ? 'best-seller-mobile' : 'best-seller'}>Best Seller</div>}
+      {(featured || bestSeller) && (
+        <div className={isMobile ? "best-seller-mobile" : "best-seller"}>
+          {featured ? "Featured" : "Best Seller"}
+        </div>
+      )}
 
-      <Header show={false} visible={showItems}/>
+      <Header show={false} />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import {Checkbox, Menu, Modal} from "antd";
+import {Checkbox, Modal} from "antd";
 import React from "react";
 import './filterModal.scss';
 import { ReactComponent as CloseIcon } from "../../assets/svg/close.svg";
@@ -10,6 +10,11 @@ interface filterModalProps {
 
 const FilterModal = (props: filterModalProps) => {
   const { visible, onCancel } = props;
+
+    const onChange = () => {};
+
+    const onChange1 = () => {};
+
 
     const options = [
         { label: "People", value: "People" },
@@ -28,25 +33,12 @@ const FilterModal = (props: filterModalProps) => {
         { label: "More than $200", value: "More than $200" },
     ];
 
-    const menu = (
-        <Menu>
-            <Menu.Item key="0">
-                <a href="/">1st menu item</a>
-            </Menu.Item>
-            <Menu.Item key="1">
-                <a href="/">2nd menu item</a>
-            </Menu.Item>
-            <Menu.Divider />
-            <Menu.Item key="3">3rd menu item</Menu.Item>
-        </Menu>
-    );
-
   return (
     <div className='app-filterModal'>
       <Modal
         visible={visible}
         closable={false}
-        width={414}
+        width={'25rem'}
         maskClosable={false}
         centered
         footer={
@@ -74,7 +66,7 @@ const FilterModal = (props: filterModalProps) => {
                     <div>
                         <Checkbox.Group
                             options={options}
-                            onChange={()=>{}}
+                            onChange={onChange}
                             style={{ fontSize: 22, paddingBottom: 20, lineHeight: 2 }}
                         />
                     </div>
@@ -84,7 +76,7 @@ const FilterModal = (props: filterModalProps) => {
                     <div>
                         <Checkbox.Group
                             options={options1}
-                            onChange={()=>{}}
+                            onChange={onChange1}
                             style={{ fontSize: 22, paddingBottom: 20, lineHeight: 2}}
                         />
                     </div>

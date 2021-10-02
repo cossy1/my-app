@@ -1,7 +1,5 @@
 import { applyMiddleware, createStore } from "redux";
 import { createBrowserHistory } from "history";
-// import { routerMiddleware } from "connected-react-router";
-// import throttle from "lodash.throttle";
 import customMiddleWares from './middleware';
 import appReducers from "./reducer";
 import storage from 'redux-persist/lib/storage';
@@ -31,7 +29,7 @@ let parseMiddleware = applyMiddleware(...middleWares);
 
 const loadState = () => {
     try {
-        const serializedState = localStorage.getItem("todo-nest-api");
+        const serializedState = localStorage.getItem("my-app");
         if (serializedState === null) {
             return undefined;
         }
@@ -49,13 +47,6 @@ const persistedState = loadState();
 const store = createStore(persistedReducer, persistedState, parseMiddleware);
 
 export const  persistor = persistStore(store);
-
-//subscribe to store
-// store.subscribe(
-//     throttle(() => {
-//        // saveState({ auauthth: store.getState().auth });
-//     }, 1000)
-// );
 
 export default store;
 
