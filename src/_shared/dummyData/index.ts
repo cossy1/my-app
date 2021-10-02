@@ -27,11 +27,37 @@ export const Products = [
   },
   {
     name: "Dog",
+    category: "pets",
+    price: 100,
+    currency: "USD",
+    image: {
+      src: "https://images.pexels.com/photos/101635/pexels-photo-101635.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      alt: "dog",
+    },
+    bestseller: false,
+    featured: false,
+    details: null,
+  },
+  {
+    name: "Dog",
     category: "animal",
     price: 100,
     currency: "USD",
     image: {
-      src: "https://images.pexels.com/photos/8499234/pexels-photo-8499234.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      src: "https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      alt: "dog",
+    },
+    bestseller: false,
+    featured: false,
+    details: null,
+  },
+  {
+    name: "Dog",
+    category: "pets",
+    price: 100,
+    currency: "USD",
+    image: {
+      src: "https://images.pexels.com/photos/1851164/pexels-photo-1851164.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
       alt: "dog",
     },
     bestseller: false,
@@ -45,6 +71,32 @@ export const Products = [
     currency: "USD",
     image: {
       src: "https://images.pexels.com/photos/38008/pexels-photo-38008.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      alt: "dog",
+    },
+    bestseller: false,
+    featured: false,
+    details: null,
+  },
+  {
+    name: "Dog with kids",
+    category: "animal",
+    price: 100,
+    currency: "USD",
+    image: {
+      src: "https://images.pexels.com/photos/733416/pexels-photo-733416.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      alt: "dog",
+    },
+    bestseller: false,
+    featured: false,
+    details: null,
+  },
+  {
+    name: "Dog with kids",
+    category: "animal",
+    price: 100,
+    currency: "USD",
+    image: {
+      src: "https://images.pexels.com/photos/60050/huskies-husky-blue-eye-dog-60050.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
       alt: "dog",
     },
     bestseller: false,
@@ -92,7 +144,7 @@ export const Products = [
   },
   {
     name: "Dog with kids",
-    category: "animal",
+    category: "people",
     price: 100,
     currency: "USD",
     image: {
@@ -118,7 +170,7 @@ export const Products = [
   },
   {
     name: "lonely Dog",
-    category: "animal",
+    category: "people",
     price: 100,
     currency: "USD",
     image: {
@@ -135,7 +187,7 @@ export const Products = [
     price: 100,
     currency: "USD",
     image: {
-      src: "https://images.pexels.com/photos/1406506/pexels-photo-1406506.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      src: "https://images.pexels.com/photos/33287/dog-viszla-close.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500",
       alt: "dog",
     },
     bestseller: false,
@@ -153,7 +205,7 @@ export const Products = [
     },
     image: {
       src: "https://images.pexels.com/photos/9327037/pexels-photo-9327037.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      alt: 'img'
+      alt: "img",
     },
     bestseller: false,
     featured: false,
@@ -203,7 +255,7 @@ export const Products = [
   },
   {
     name: "Dog",
-    category: "animal",
+    category: "nature",
     price: 100,
     currency: "USD",
     image: {
@@ -242,7 +294,7 @@ export const Products = [
   },
   {
     name: "Dog",
-    category: "animal",
+    category: "nature",
     price: 100,
     currency: "USD",
     image: {

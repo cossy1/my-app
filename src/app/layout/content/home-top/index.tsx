@@ -6,24 +6,34 @@ import Flower from "../../../../assets/image/flower.png";
 import Yellow from "../../../../assets/image/yellow.png";
 import EggBallon from "../../../../assets/image/egg-ballon1.png";
 import { isMobile } from "react-device-detect";
+import {Products} from "../../../../_shared/dummyData";
+import { addCart } from "../../../../redux/action";
+import { connect } from "react-redux";
 
-const HomeTop = () => {
+
+interface HomeTopProps {
+  addCart?: any;
+}
+
+const HomeTop = ({addCart}: HomeTopProps) => {
+
+    const randomImage = Products[Math.floor(Math.random()* Products.length)];
 
   return (
     <div className="app-home-top">
       <div className="top-row">
-        <div className="sam">Samurai King Resting</div>
+        <div className="sam">{randomImage.name}</div>
 
-        <div className="addCart-row">
+        <div className="addCart-row" onClick={_ => addCart(randomImage)}>
           ADD TO CART
         </div>
       </div>
       <div className="dog">
-        <img alt="img" src={Dog} style={{ width: "100vw" }} />
+        <img alt="img" src={randomImage.image.src} style={{ width: "100vw", height: '34.5rem' }} />
       </div>
       <div className="photo">Photo of the day</div>
 
-      <div>{isMobile && <div className="add-mobile-cart">ADD TO CART</div>}</div>
+      <div>{isMobile && <div className="add-mobile-cart" onClick={_ => addCart(randomImage)}>ADD TO CART</div>}</div>
 
       <div className="about-pet-row">
         <div className="about">
@@ -89,4 +99,12 @@ const HomeTop = () => {
   );
 };
 
-export default HomeTop;
+const stateProps = (state: any) => ({
+  cartItems: state.cart.carts,
+});
+
+const dispatchProps = {
+  addCart,
+};
+
+export default connect(stateProps, dispatchProps)(HomeTop);
