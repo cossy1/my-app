@@ -1,6 +1,5 @@
 import React from "react";
 import "./home-top.scss";
-import Dog from "../../../../assets/image/dog.png";
 import Premium from "../../../../component/premium";
 import Flower from "../../../../assets/image/flower.png";
 import Yellow from "../../../../assets/image/yellow.png";
@@ -52,23 +51,23 @@ const HomeTop = ({addCart}: HomeTopProps) => {
           </div>
         </div>
 
-        <div className="people">
-          <div className="buy">People also buy</div>
-          <div className="images">
-            <div>
-              <Premium padLeft src={Yellow} />
-            </div>
-            <div>
-              <Premium padLeft src={Flower} />
-            </div>
-            <div>
-              <Premium padLeft src={EggBallon} />
-            </div>
-          </div>
-          <div className="details">Details</div>
-          <div className="detail">Size: 1020 x 1020 pixel</div>
-          <div className="detail">Size: 15 mb</div>
-        </div>
+          {!isMobile &&  <div className="side-people">
+              <div className="buy">People also buy</div>
+              <div className="images">
+                  <div>
+                      <Premium padLeft src={Yellow} />
+                  </div>
+                  <div>
+                      <Premium padLeft src={Flower} />
+                  </div>
+                  <div>
+                      <Premium padLeft src={EggBallon} />
+                  </div>
+              </div>
+              <div className="details">Details</div>
+              <div className="detail">Size: 1020 x 1020 pixel</div>
+              <div className="detail">Size: 15 mb</div>
+          </div>}
       </div>
 
       <div>

@@ -17,13 +17,13 @@ const FilterModal = (props: filterModalProps) => {
 
 
     const options = [
-        { label: "People", value: "People" },
-        { label: "Premium", value: "Premium" },
-        { label: "Pets", value: "Pets" },
-        { label: "Food", value: "Food" },
-        { label: "Landmarks", value: "Landmarks" },
-        { label: "Cities", value: "Cities" },
-        { label: "Nature", value: "Nature" },
+        { label: "People", value: "people" },
+        { label: "Premium", value: "premium" },
+        { label: "Pets", value: "pets" },
+        { label: "Food", value: "food" },
+        { label: "Landmarks", value: "landmarks" },
+        { label: "animal", value: "animal" },
+        { label: "Nature", value: "nature" },
     ];
 
     const options1 = [
