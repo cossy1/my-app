@@ -1,5 +1,5 @@
 import { Empty } from "antd";
-import { types } from "util";
+import React from "react";
 
 export const checkImageURL = (url: string) => {
   return url?.match(/\.(jpeg|jpg|gif|png)$/) !== null;
@@ -40,13 +40,6 @@ export const filterProducts = (data: any[], filters: any) => {
       // if category is an array runs this.
       if (Array.isArray(category)) {
         return category.some((keyEle: any) => filters.includes(keyEle));
-      }
-
-      if (!filters.includes(category)) {
-       console.log('e no dey here:::');
-        return
-            <Empty />
-        ;
       }
 
       return filters.includes(category)

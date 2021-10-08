@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import "./home-body.scss";
 import { ReactComponent as Arrow } from "../../../../assets/svg/arrow.svg";
-import { Checkbox, Col, Empty, Row, Space } from "antd";
+import { Checkbox, Col, Row, Space } from "antd";
 import Premium from "../../../../component/premium";
 import FilterModal from "../../../../component/filterModal";
 import { isMobile } from "react-device-detect";
