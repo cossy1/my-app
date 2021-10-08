@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import "./home-body.scss";
 import { ReactComponent as Arrow } from "../../../../assets/svg/arrow.svg";
-import { Checkbox, Col, Row, Space } from "antd";
+import { Checkbox, Col, Empty, Row, Space } from "antd";
 import Premium from "../../../../component/premium";
 import FilterModal from "../../../../component/filterModal";
 import { isMobile } from "react-device-detect";
@@ -43,7 +43,7 @@ const HomeBody = () => {
 
   const indexOfLastItem = paginate.currentPage * paginate.itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - paginate.itemsPerPage;
-  const currentItem = newProduct?.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItem = newProduct && newProduct?.slice(indexOfFirstItem, indexOfLastItem);
 
   const renderImages = currentItem.map((item:any, index: any) => {
     return !isEmpty(item.image?.src) && (
@@ -66,7 +66,7 @@ const HomeBody = () => {
   }
 
   const renderPageNumbers = pageNumbers.map(number => {
-    return (
+    return pageNumbers.length > 1 && (
         <div
             key={number}
             onClick={() => handleClick(number)}
