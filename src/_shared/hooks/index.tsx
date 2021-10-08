@@ -1,3 +1,6 @@
+import { Empty } from "antd";
+import React from "react";
+
 export const checkImageURL = (url: string) => {
   return url?.match(/\.(jpeg|jpg|gif|png)$/) !== null;
 };
@@ -30,59 +33,43 @@ export const sortProducts = (
   return sorted;
 };
 
-export const filterProducts = (data: Record<string, any>[], val: any) => {
-    console.log('see my datas:::::', val);
+export const filterProducts = (data: any[], filters: any) => {
+  return data.filter(({ category }: { category: string }) => {
+    return filters.every((key: string) => {
+      if (!filters.length) return true;
+      // if category is an array runs this.
+      if (Array.isArray(category)) {
+        return category.some((keyEle: any) => filters.includes(keyEle));
+      }
 
-  for (let k in val) {
-    if (val[k] === "animal"){
-        return data.filter((item) => item.category === 'animal');
-    }
-
-    if (val[k] === "landmarks"){
-        return data.filter((item) => item.category === 'landmarks');
-    }
-
-    if (val[k] === "food"){
-        return data.filter((item) => item.category === 'food');
-
-    }
-
-    if (val[k] === "pets"){
-        return data.filter((item) => item.category === 'pets');
-    }
-
-    if (val[k] === "nature"){
-        return data.filter((item) => item.category === 'nature');
-    }
-
-    if (val[k] === "people"){
-        return data.filter((item) => item.category === 'people');
-    }
-  }
-  // const sorted = data.filter((item) => item.category === val);
-
-    return data;
+      return filters.includes(category)
+    });
+  });
 };
 
 
-export const filterProductsByPrice = (data: Record<string, any>[], val: any) => {
+export const filterProductsByPrice = (
+  data: Record<string, any>[],
+  val: any
+) => {
+  console.log(val);
   for (let k in val) {
-    if (val[k] === "Lower $20"){
-        return data.filter((item) => item.price < 20);
+    if (val[k] === "Lower $20") {
+      return data.filter((item) => item.price < 20);
     }
 
-    if (val[k] === "$20 - $100"){
-        return data.filter((item) => (item.price >= 20 && item.price <= 100));
+    if (val[k] === "$20 - $100") {
+      return data.filter((item) => item.price >= 20 && item.price <= 100);
     }
 
-    if (val[k] === "$100 - $200"){
-        return data.filter((item) =>  (item.price >= 100 && item.price <= 200));
+    if (val[k] === "$100 - $200") {
+      return data.filter((item) => item.price >= 100 && item.price <= 200);
     }
 
-    if (val[k] === "More than $200"){
-        return data.filter((item) => item.category > 200);
+    if (val[k] === "More than $200") {
+      return data.filter((item) => item.category > 200);
     }
   }
 
-    return data;
+  return data;
 };
