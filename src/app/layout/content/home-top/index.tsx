@@ -16,7 +16,7 @@ interface HomeTopProps {
 
 const HomeTop = ({addCart}: HomeTopProps) => {
 
-    const randomImage = Products[Math.floor(Math.random()* Products.length)];
+    const randomImage = Products[Math.floor(Math.random() * Products.length)];
 
   return (
     <div className="app-home-top">

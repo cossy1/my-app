@@ -1,4 +1,3 @@
-import { Empty } from "antd";
 import React from "react";
 
 export const checkImageURL = (url: string) => {
@@ -10,27 +9,25 @@ export const sortProducts = (
   price: boolean,
   toggle?: boolean
 ) => {
-  const sorted = price
-    ? data.sort((a: any, b: any) => {
-        if (a.price < b.price) {
-          return toggle ? -1 : 1;
-        }
-        if (a.price > b.price) {
-          return toggle ? 1 : -1;
-        }
-        return 0;
+    return price
+      ? data.sort((a: any, b: any) => {
+          if (a.price < b.price) {
+              return toggle ? -1 : 1;
+          }
+          if (a.price > b.price) {
+              return toggle ? 1 : -1;
+          }
+          return 0;
       })
-    : data.sort((a: any, b: any) => {
-        if (a.name < b.name) {
-          return toggle ? 1 : -1;
-        }
-        if (a.name > b.name) {
-          return toggle ? -1 : 1;
-        }
-        return 0;
+      : data.sort((a: any, b: any) => {
+          if (a.name < b.name) {
+              return toggle ? 1 : -1;
+          }
+          if (a.name > b.name) {
+              return toggle ? -1 : 1;
+          }
+          return 0;
       });
-
-  return sorted;
 };
 
 export const filterProducts = (data: any[], filters: any) => {
@@ -42,11 +39,10 @@ export const filterProducts = (data: any[], filters: any) => {
         return category.some((keyEle: any) => filters.includes(keyEle));
       }
 
-      return filters.includes(category)
+      return filters.includes(category);
     });
   });
 };
-
 
 export const filterProductsByPrice = (
   data: Record<string, any>[],

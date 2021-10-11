@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./home-body.scss";
 import { ReactComponent as Arrow } from "../../../../assets/svg/arrow.svg";
-import { Checkbox, Col, Row, Space } from "antd";
+import { Checkbox, Col, Empty, Row, Space } from "antd";
 import Premium from "../../../../component/premium";
 import FilterModal from "../../../../component/filterModal";
 import { isMobile } from "react-device-detect";
@@ -10,23 +10,37 @@ import { Products } from "../../../../_shared/dummyData";
 import { isEmpty } from "lodash";
 import { addCart } from "../../../../redux/action/cart";
 import { connect } from "react-redux";
-import {filterProducts, filterProductsByPrice, sortProducts} from "../../../../_shared/hooks";
+import {
+  filterProducts,
+  filterProductsByPrice,
+  sortProducts,
+} from "../../../../_shared/hooks";
 
-const HomeBody = () => {
+interface Prop {
+  mobileFilter?: string[] | undefined;
+  show: boolean;
+}
+
+const HomeBody = ({ show, mobileFilter }: Prop) => {
   const [visible, setVisible] = useState(false);
   const [choice, setChoice] = useState(true);
   const [toggle, setToggle] = useState(true);
   const [filter, setFilter] = useState(undefined);
   const [price, setPrice] = useState(undefined);
 
-   let newProduct = sortProducts(Products, choice, toggle);
+  let newProduct = sortProducts(Products, choice, toggle);
 
-   if(filter){
-     newProduct = filterProducts(newProduct, filter);
-   }
-   if(price){
-     newProduct = filterProductsByPrice(newProduct, price);
-   }
+  if (isMobile && !isEmpty(mobileFilter)) {
+    newProduct = filterProducts(newProduct, mobileFilter);
+  }
+
+  if (filter) {
+    newProduct = filterProducts(newProduct, filter);
+  }
+
+  if (price) {
+    newProduct = filterProductsByPrice(newProduct, price);
+  }
 
   // PAGINATION
   const [paginate, setPaginate] = useState({
@@ -43,36 +57,47 @@ const HomeBody = () => {
 
   const indexOfLastItem = paginate.currentPage * paginate.itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - paginate.itemsPerPage;
-  const currentItem = newProduct && newProduct?.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItem = newProduct?.slice(indexOfFirstItem, indexOfLastItem);
 
-  const renderImages = currentItem.map((item:any, index: any) => {
-    return !isEmpty(item.image?.src) && (
+  const renderImages = !isEmpty(currentItem) ? (
+    currentItem?.map((item: any, index: any) => {
+      return (
+        !isEmpty(item.image?.src) && (
           <div key={index}>
             <Premium
-                bestSeller={item.bestseller}
-                height={400}
-                width={300}
-                addCartBtn
-                value={item}
-                featured={item.featured}
+              bestSeller={item.bestseller}
+              height={400}
+              width={300}
+              addCartBtn
+              value={item}
+              featured={item.featured}
             />
           </div>
-    );
-  });
+        )
+      );
+    })
+  ) : (
+    <div style={{ margin: "0 auto" }}>
+      <Empty />
+    </div>
+  );
 
   const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(newProduct.length / paginate.itemsPerPage); i++) {
+  for (
+    let i = 1;
+    i <= Math.ceil(newProduct.length / paginate.itemsPerPage);
+    i++
+  ) {
     pageNumbers.push(i);
   }
 
-  const renderPageNumbers = pageNumbers.map(number => {
-    return pageNumbers.length > 1 && (
-        <div
-            key={number}
-            onClick={() => handleClick(number)}
-        >
+  const renderPageNumbers = pageNumbers.map((number) => {
+    return (
+      pageNumbers.length > 1 && (
+        <div key={number} onClick={() => handleClick(number)}>
           {number}
         </div>
+      )
     );
   });
 
@@ -80,16 +105,16 @@ const HomeBody = () => {
 
   const onCancel = () => setVisible(!visible);
 
-  const onChange = (e:any) => {
+  const onChange = (e: any) => {
     setFilter(e);
   };
 
-  const onChange1 = (e:any) => {
+  const onChange1 = (e: any) => {
     setPrice(e);
   };
 
   const selectChange = (e: any) => {
-    const type: boolean = e.target.value === 'price';
+    const type: boolean = e.target.value === "price";
     setChoice(type);
   };
 
@@ -110,8 +135,7 @@ const HomeBody = () => {
     { label: "More than $200", value: "More than $200" },
   ];
 
-
-  return (
+  return show ? (
     <>
       <div className="app-home-body">
         <div className="body-header">
@@ -123,16 +147,19 @@ const HomeBody = () => {
           <div>
             {!isMobile ? (
               <Space>
-                <span onClick={_ => setToggle(!toggle)}>
+                <span onClick={(_) => setToggle(!toggle)}>
                   <Arrow />
                 </span>
 
                 <span className="sort-by">Sort By</span>
-                <select name="choice" onChange={selectChange} defaultValue={'price'}>
+                <select
+                  name="choice"
+                  onChange={selectChange}
+                  defaultValue={"price"}
+                >
                   <option value="price">Price</option>
                   <option value="letter">letter</option>
                 </select>
-
               </Space>
             ) : (
               <FilterSvg
@@ -170,11 +197,9 @@ const HomeBody = () => {
 
               <Col span={20}>
                 <div className="items-list" style={{ cursor: "pointer" }}>
-                    {renderImages}
+                  {renderImages}
                 </div>
-                <div className="page-numbers">
-                  {renderPageNumbers}
-                </div>
+                <div className="page-numbers">{renderPageNumbers}</div>
               </Col>
             </Row>
           </div>
@@ -191,16 +216,14 @@ const HomeBody = () => {
             >
               {renderImages}
 
-              <div className="page-numbers">
-                {renderPageNumbers}
-              </div>
+              <div className="page-numbers">{renderPageNumbers}</div>
             </div>
           </>
         )}
       </div>
       <FilterModal visible={visible} onCancel={onCancel} />
     </>
-  );
+  ) : null;
 };
 
 const stateProps = (state: any) => ({

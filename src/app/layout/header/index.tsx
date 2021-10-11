@@ -5,6 +5,7 @@ import { Badge, Popover } from "antd";
 import {clearCart, closeCart, openCart} from "../../../redux/action/cart";
 import { connect } from "react-redux";
 import { ReactComponent as CloseSvg } from "../../../assets/svg/close.svg";
+import { isMobile } from "react-device-detect";
 
 interface HeaderProps {
   show: boolean;
@@ -22,8 +23,8 @@ const Header = (props: HeaderProps) => {
     <div className="app-header">
       {show && (
         <div className="header">
-          <div>
-            <ShoppingCart />
+            <div className='logo'>
+              Logo
           </div>
 
           <div>
@@ -98,8 +99,8 @@ const Header = (props: HeaderProps) => {
               style={{ border: "4px solid #E4E4E4", width: 443 }}
             >
              <div onClick={_ => openCart()}>
-               <Badge count={cartItems?.length} offset={[0, 50]}>
-                 <ShoppingCart />
+               <Badge count={cartItems?.length} offset={!isMobile ? [-10, 35] : [-5, 23]}>
+                 <ShoppingCart className='shopping-cart' />
                </Badge>
              </div>
             </Popover>
