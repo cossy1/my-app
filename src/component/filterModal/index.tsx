@@ -2,8 +2,9 @@ import { Checkbox, Modal } from "antd";
 import React, { useState } from "react";
 import "./filterModal.scss";
 import { ReactComponent as CloseIcon } from "../../assets/svg/close.svg";
-import {Products} from "../../_shared/dummyData";
-import {filterProductsByPrice} from "../../_shared/hooks";
+import { Products } from "../../_shared/dummyData";
+import { filterProductsByPrice } from "../../_shared/hooks";
+import HomeBody from "../../app/layout/content/home-body";
 
 interface filterModalProps {
   visible: boolean;
@@ -15,9 +16,6 @@ const FilterModal = (props: filterModalProps) => {
   const [filter, setFilter] = useState(undefined);
   const [price, setPrice] = useState(undefined);
 
-  console.log("FILTER::::", filter);
-  console.log("Price::::", price);
-
   const onChange = (e: any) => {
     setFilter(e);
   };
@@ -27,15 +25,17 @@ const FilterModal = (props: filterModalProps) => {
   };
 
   const clearAll = (e: any) => {
-          setFilter(undefined );
-      };
+    setFilter(undefined);
+  };
+
+  const handleSave = () => onCancel();
 
   const handlePrice = () => {
-      let res = Products;
+    let res = Products;
 
-     const result = filterProductsByPrice(res, price);
+    const result = filterProductsByPrice(res, price);
 
-      return result;
+    return result;
   };
 
   const options = [
@@ -65,8 +65,10 @@ const FilterModal = (props: filterModalProps) => {
         centered
         footer={
           <div className="footer-tabs">
-            <div className="clear" onClick={_ => clearAll}>CLEAR</div>
-            <div className="save" onClick={handlePrice}>
+            <div className="clear" onClick={(_) => clearAll}>
+              CLEAR
+            </div>
+            <div className="save" onClick={handleSave}>
               SAVE
             </div>
           </div>
@@ -107,6 +109,8 @@ const FilterModal = (props: filterModalProps) => {
           </div>
         </div>
       </Modal>
+
+      <HomeBody show={false} mobileFilter={filter} />
     </div>
   );
 };

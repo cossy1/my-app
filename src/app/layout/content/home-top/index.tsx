@@ -16,7 +16,7 @@ interface HomeTopProps {
 
 const HomeTop = ({addCart}: HomeTopProps) => {
 
-    const randomImage = Products[Math.floor(Math.random()* Products.length)];
+    const randomImage = Products[Math.floor(Math.random() * Products.length)];
 
   return (
     <div className="app-home-top">
@@ -28,7 +28,7 @@ const HomeTop = ({addCart}: HomeTopProps) => {
         </div>
       </div>
       <div className="dog">
-        <img alt="img" src={randomImage.image.src} style={{ width: "100vw", height: '34.5rem' }} />
+        <img alt="img" src={randomImage.image.src} style={{ width: "100vw", height: '34.5rem', objectFit: 'cover', overflow: 'hidden' }} />
       </div>
       <div className="photo">Photo of the day</div>
 
@@ -36,7 +36,7 @@ const HomeTop = ({addCart}: HomeTopProps) => {
 
       <div className="about-pet-row">
         <div className="about">
-          <div className="ar">About the Samurai King Resting</div>
+          <div className="ar">{randomImage.name}</div>
           <div className="pets">Pets</div>
           <div className="so">
             So how did the classical Latin become so incoherent? According to
