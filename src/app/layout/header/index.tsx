@@ -39,14 +39,14 @@ const Header = (props: HeaderProps) => {
                             style={{
                               display: "flex",
                               justifyContent: "space-between",
-                              width: 443,
+                              width: isMobile ? 220 : 443,
                               padding: "10px 0",
                             }}
                           >
                             <div>
                               <div
                                 style={{
-                                  fontSize: "1rem",
+                                  fontSize: `${isMobile ? '12px' : "1rem"}`,
                                   fontWeight: "bold",
                                   textOverflow: "ellipsis",
                                 }}
@@ -54,14 +54,14 @@ const Header = (props: HeaderProps) => {
                                 {e?.name}
                               </div>
                               <div
-                                style={{ fontSize: "1rem" }}
+                                style={{ fontSize: `${isMobile ? "15px" : "29px"}`, fontFamily: 'Archivo, sans-serif' }}
                               >{`$${e?.price}`}</div>
                             </div>
                             <div>
                               <img
                                 src={e.image.src}
-                                width={"149px"}
-                                height={"86px"}
+                                width={`${isMobile ? '85px' : '149px'}`}
+                                height={`${isMobile ? "50px" : "86px"}`}
                               />
                             </div>
                           </div>
@@ -76,7 +76,7 @@ const Header = (props: HeaderProps) => {
                         fontSize: "1.1rem",
                         height: "2rem",
                         textAlign: "center",
-                        cursor: 'pointer'
+                        cursor: 'pointer',
                       }}
                       onClick={_ => clearCart()}
                     >

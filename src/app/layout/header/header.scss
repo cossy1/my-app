@@ -16,7 +16,7 @@
     font-weight: 500;
     font-size: 23px;
     line-height: 25px;
-    font-family: 'Archivo', sans-serif;;
+    font-family: 'Archivo', sans-serif;
     font-style: normal;
     width: 257px;
     height: 47px;
@@ -35,7 +35,7 @@
   .ant-badge-count {
     z-index: auto;
     width: 13px !important;
-    font-family: 'Archivo', sans-serif;;
+    font-family: 'Archivo', sans-serif;
     height: 22px;
     padding: 0 6px;
     color: #fff;
@@ -47,6 +47,23 @@
     background: #000000;
     border-radius: 0;
     box-shadow: 0 0 0 1px #fff;
+  }
+
+  .clear{
+    border: 3px solid #000000;
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 23px;
+    height: 55px;
+    text-align: center;
+    cursor: pointer;
+    min-width: 392px;
+    box-sizing: border-box;
+    letter-spacing: 0.07em;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    color: #000000;
   }
 
 }
@@ -75,7 +92,7 @@
       font-size: 16px;
       font-weight: 500;
       font-style: normal;
-      font-family: 'Archivo', sans-serif;;
+      font-family: 'Archivo', sans-serif;
 
     }
 
@@ -88,7 +105,7 @@
     .ant-badge-count {
       z-index: auto;
       width: 5px !important;
-      font-family: 'Archivo', sans-serif;;
+      font-family: 'Archivo', sans-serif;
       height: 18px;
       padding: 0 6px;
       color: #fff;
@@ -121,7 +138,7 @@
     .ant-badge-count {
       z-index: auto;
       width: 22px !important;
-      font-family: 'Archivo', sans-serif;;
+      font-family: 'Archivo', sans-serif;
       height: 22px;
       padding: 0 6px;
       color: #fff;
