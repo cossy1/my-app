@@ -1,4 +1,5 @@
 .app-header {
+  margin: 0 68px;
   .header {
     display: flex;
     justify-content: space-between;
@@ -7,6 +8,11 @@
   .shopping-cart{
     width: 54px;
     height: 37.97px;
+  }
+
+  hr {
+    border: 4px solid #e4e4e4;
+    max-width: 100vw;
   }
 
   .logo{
@@ -27,9 +33,21 @@
     align-items: center;
   }
 
-  hr {
-    border: 4px solid #e4e4e4;
-    max-width: 100vw;
+  .clear{
+    border: 3px solid #000000;
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 23px;
+    height: 55px;
+    text-align: center;
+    cursor: pointer;
+    min-width: 392px;
+    box-sizing: border-box;
+    letter-spacing: 0.07em;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    color: #000000;
   }
 
   .ant-badge-count {
@@ -49,29 +67,14 @@
     box-shadow: 0 0 0 1px #fff;
   }
 
-  .clear{
-    border: 3px solid #000000;
-    margin-top: 20px;
-    font-weight: 500;
-    font-size: 23px;
-    height: 55px;
-    text-align: center;
-    cursor: pointer;
-    min-width: 392px;
-    box-sizing: border-box;
-    letter-spacing: 0.07em;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    color: #000000;
-  }
-
 }
 
 // header for mobile phones styling
 @media (max-width: 575.98px) {
   .app-header {
     max-width: 100vw;
+    margin: 0 14px;
+
 
     .header {
       padding: 10px 10px;
@@ -104,14 +107,14 @@
 
     .ant-badge-count {
       z-index: auto;
-      width: 5px !important;
+      width: 3px !important;
       font-family: 'Archivo', sans-serif;
       height: 18px;
       padding: 0 6px;
       color: #fff;
       font-weight: 400;
       font-size: 10px;
-     line-height: 22px;
+      line-height: 22px;
       white-space: nowrap;
       text-align: center;
       background: #000000;
@@ -125,8 +128,46 @@
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .app-header {
+    margin: 0 50px;
+
     .header {
       padding: 10px 10px;
+    }
+
+    .shopping-cart{
+      width: 32px;
+      height: 22.5px;
+    }
+
+    .logo{
+      width: 124px;
+      height: 32px;
+      background-color: #000000;
+      color: #ffffff;
+      letter-spacing: 0.07em;
+      line-height: 17px;
+      font-size: 16px;
+      font-weight: 500;
+      font-style: normal;
+      font-family: 'Archivo', sans-serif;
+
+    }
+
+    .ant-badge-count {
+      z-index: auto;
+      width: 5px !important;
+      font-family: 'Archivo', sans-serif;
+      height: 18px;
+      padding: 0 6px;
+      color: #fff;
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 22px;
+      white-space: nowrap;
+      text-align: center;
+      background: #000000;
+      border-radius: 0;
+      box-shadow: 0 0 0 1px #fff;
     }
 
     hr {
@@ -134,24 +175,5 @@
       border: 4px solid #e4e4e4;
       margin-bottom: 32px;
     }
-
-    .ant-badge-count {
-      z-index: auto;
-      width: 22px !important;
-      font-family: 'Archivo', sans-serif;
-      height: 22px;
-      padding: 0 6px;
-      color: #fff;
-      font-weight: 400;
-      font-size: 22px;
-      line-height: 22px;
-      white-space: nowrap;
-      text-align: center;
-      background: #000000;
-      border-radius: 0;
-      box-shadow: 0 0 0 1px #fff;
-      top: 10px;
-    }
-
   }
 }

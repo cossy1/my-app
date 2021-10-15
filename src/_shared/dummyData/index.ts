@@ -41,7 +41,7 @@ export const Products = [
   {
     name: "Dog",
     category: "animal",
-    price: 100,
+    price: 102,
     currency: "USD",
     image: {
       src: "https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
@@ -80,7 +80,7 @@ export const Products = [
   {
     name: "Dog with kids",
     category: "animal",
-    price: 100,
+    price: 200,
     currency: "USD",
     image: {
       src: "https://images.pexels.com/photos/733416/pexels-photo-733416.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
@@ -93,7 +93,7 @@ export const Products = [
   {
     name: "Dog with kids",
     category: "animal",
-    price: 100,
+    price: 400,
     currency: "USD",
     image: {
       src: "https://images.pexels.com/photos/60050/huskies-husky-blue-eye-dog-60050.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
@@ -321,10 +321,10 @@ export const Products = [
   {
     name: "Dog",
     category: "animal",
-    price: 100,
+    price: 105,
     currency: "USD",
     image: {
-      src: "https://images.pexels.com/photos/532310/pexels-photo-532310.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      src: "https://images.pexels.com/photos/6302310/pexels-photo-6302310.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
       alt: "dog",
     },
     bestseller: false,

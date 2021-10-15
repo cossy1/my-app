@@ -29,9 +29,10 @@ const HomeBody = ({ show, mobileFilter }: Prop) => {
   const [price, setPrice] = useState(undefined);
 
   let newProduct = sortProducts(Products, choice, toggle);
+  let mobileProduct = sortProducts(Products, choice);
 
-  if (isMobile && !isEmpty(mobileFilter)) {
-    newProduct = filterProducts(newProduct, mobileFilter);
+  if (mobileFilter) {
+    mobileProduct = filterProducts(newProduct, mobileFilter);
   }
 
   if (filter) {
@@ -58,6 +59,7 @@ const HomeBody = ({ show, mobileFilter }: Prop) => {
   const indexOfLastItem = paginate.currentPage * paginate.itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - paginate.itemsPerPage;
   const currentItem = newProduct?.slice(indexOfFirstItem, indexOfLastItem);
+  const mobileItem = mobileProduct?.slice(indexOfFirstItem, indexOfLastItem);
 
   const renderImages = !isEmpty(currentItem) ? (
     currentItem?.map((item: any, index: any) => {
@@ -66,8 +68,32 @@ const HomeBody = ({ show, mobileFilter }: Prop) => {
           <div key={index}>
             <Premium
               bestSeller={item.bestseller}
-              height={400}
-              width={300}
+              height={isMobile ? 502 : 390.67}
+              width={isMobile ? 362 : 281.72}
+              addCartBtn
+              value={item}
+              featured={item.featured}
+            />
+          </div>
+        )
+      );
+    })
+  ) : (
+    <div style={{ margin: "0 auto" }}>
+      <Empty />
+    </div>
+  );
+
+  const renderMobileImages = !isEmpty(mobileItem) ? (
+    currentItem?.map((item: any, index: any) => {
+      console.log("mobile:::::", currentItem);
+      return (
+        !isEmpty(item.image?.src) && (
+          <div key={index}>
+            <Premium
+              bestSeller={item.bestseller}
+              height={502}
+              width={362}
               addCartBtn
               value={item}
               featured={item.featured}
@@ -102,6 +128,8 @@ const HomeBody = ({ show, mobileFilter }: Prop) => {
   });
 
   // PAGINATION END
+
+  const tog = () => setToggle(!toggle);
 
   const onCancel = () => setVisible(!visible);
 
@@ -146,8 +174,8 @@ const HomeBody = ({ show, mobileFilter }: Prop) => {
 
           <div>
             {!isMobile ? (
-              <Space>
-                <span onClick={(_) => setToggle(!toggle)}>
+              <Space size="middle">
+                <span onClick={tog}>
                   <Arrow />
                 </span>
 
@@ -214,7 +242,7 @@ const HomeBody = ({ show, mobileFilter }: Prop) => {
                 cursor: "pointer",
               }}
             >
-              {renderImages}
+              {renderMobileImages}
 
               <div className="page-numbers">{renderPageNumbers}</div>
             </div>

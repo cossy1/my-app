@@ -23,8 +23,8 @@ const Header = (props: HeaderProps) => {
     <div className="app-header">
       {show && (
         <div className="header">
-            <div className='logo'>
-              Logo
+          <div className='logo'>
+            Logo
           </div>
 
           <div>
@@ -54,14 +54,15 @@ const Header = (props: HeaderProps) => {
                                 {e?.name}
                               </div>
                               <div
-                                style={{ fontSize: `${isMobile ? "15px" : "29px"}`, fontFamily: 'Archivo, sans-serif' }}
+                                  style={{ fontSize: `${isMobile ? "15px" : "29px"}`, fontFamily: 'Archivo, sans-serif' }}
                               >{`$${e?.price}`}</div>
                             </div>
                             <div>
                               <img
-                                src={e.image.src}
-                                width={`${isMobile ? '85px' : '149px'}`}
-                                height={`${isMobile ? "50px" : "86px"}`}
+                                  src={e.image.src}
+                                  width={`${isMobile ? '85px' : '149px'}`}
+                                  height={`${isMobile ? "50px" : "86px"}`}
+                               alt={'img'}
                               />
                             </div>
                           </div>
@@ -76,7 +77,7 @@ const Header = (props: HeaderProps) => {
                         fontSize: "1.1rem",
                         height: "2rem",
                         textAlign: "center",
-                        cursor: 'pointer',
+                        cursor: 'pointer'
                       }}
                       onClick={_ => clearCart()}
                     >
@@ -99,7 +100,7 @@ const Header = (props: HeaderProps) => {
               style={{ border: "4px solid #E4E4E4", width: 443 }}
             >
              <div onClick={_ => openCart()}>
-               <Badge count={cartItems?.length} offset={!isMobile ? [-10, 35] : [-5, 23]}>
+               <Badge count={cartItems?.length} offset={!isMobile ? [-10, 25] : [-5, 23]}>
                  <ShoppingCart className='shopping-cart' />
                </Badge>
              </div>
