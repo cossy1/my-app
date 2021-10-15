@@ -80,8 +80,8 @@ const HomeBody = ({ show, mobileFilter }: Prop) => {
       );
     })
   ) : (
-    <div style={{ margin: "0 auto" }}>
-      <Empty />
+    <div style={{ margin: "0 auto"}}>
+      <Empty style={{marginTop: '300px'}} />
     </div>
   );
 
@@ -200,38 +200,48 @@ const HomeBody = ({ show, mobileFilter }: Prop) => {
         </div>
         {!isMobile ? (
           <div className="items">
-             <Row>
-               <Col span={4}>
-                 <ScrollBar>                 <div style={{ width: 140, height: 500 }}>
-                   <div className="category">Category</div>
-                   <div>
-                     <Checkbox.Group
-                         options={options}
-                         onChange={onChange}
-                         style={{ fontSize: 22, paddingBottom: 20, lineHeight: 3 }}
-                     />
-                   </div>
-                   <hr style={{ marginTop: 20, width: 268 }} />
+            <Row>
+              <Col span={4}>
+                <ScrollBar>
+                  {" "}
+                  <div style={{ width: 140, height: 500 }}>
+                    <div className="category">Category</div>
+                    <div>
+                      <Checkbox.Group
+                        options={options}
+                        onChange={onChange}
+                        style={{
+                          fontSize: 22,
+                          paddingBottom: 20,
+                          lineHeight: 3,
+                        }}
+                      />
+                    </div>
+                    <hr style={{ marginTop: 20, width: 268 }} />
 
-                   <div className="category">Price range</div>
-                   <div>
-                     <Checkbox.Group
-                         options={options1}
-                         onChange={onChange1}
-                         style={{ fontSize: 22, paddingBottom: 20, lineHeight: 3 }}
-                     />
-                   </div>
-                 </div>
-                 </ScrollBar>
-               </Col>
+                    <div className="category">Price range</div>
+                    <div>
+                      <Checkbox.Group
+                        options={options1}
+                        onChange={onChange1}
+                        style={{
+                          fontSize: 22,
+                          paddingBottom: 20,
+                          lineHeight: 3,
+                        }}
+                      />
+                    </div>
+                  </div>
+                </ScrollBar>
+              </Col>
 
-               <Col span={20}>
-                 <div className="items-list" style={{ cursor: "pointer" }}>
-                   {renderImages}
-                 </div>
-                 <div className="page-numbers">{renderPageNumbers}</div>
-               </Col>
-             </Row>
+              <Col span={20}>
+                <div className="items-list" style={{ cursor: "pointer" }}>
+                  {renderImages}
+                </div>
+                <div className="page-numbers">{renderPageNumbers}</div>
+              </Col>
+            </Row>
           </div>
         ) : (
           <>
