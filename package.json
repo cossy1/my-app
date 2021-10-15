@@ -17,6 +17,7 @@
     "history": "^5.0.1",
     "lodash": "^4.17.21",
     "lodash.throttle": "^4.1.1",
+    "react-perfect-scrollbar": "^1.5.8",
     "node-sass": "^5.0.0",
     "prettier": "^2.3.2",
     "react": "^17.0.2",
