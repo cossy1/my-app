@@ -66,7 +66,7 @@ const HomeBody = ({ show, mobileFilter }: Prop) => {
     currentItem?.map((item: any, index: any) => {
       return (
         !isEmpty(item.image?.src) && (
-          <div key={index}>
+          <div key={index} style={{paddingLeft: 37}}>
             <Premium
               bestSeller={item.bestseller}
               height={isMobile ? 502 : 390.67}
@@ -203,7 +203,6 @@ const HomeBody = ({ show, mobileFilter }: Prop) => {
             <Row>
               <Col span={4}>
                 <ScrollBar>
-                  {" "}
                   <div style={{ width: 140, height: 500 }}>
                     <div className="category">Category</div>
                     <div>
@@ -236,7 +235,7 @@ const HomeBody = ({ show, mobileFilter }: Prop) => {
               </Col>
 
               <Col span={20}>
-                <div className="items-list" style={{ cursor: "pointer" }}>
+                <div className="items-list" style={{ cursor: "pointer", justifyContent: 'flex-start' }}>
                   {renderImages}
                 </div>
                 <div className="page-numbers">{renderPageNumbers}</div>
