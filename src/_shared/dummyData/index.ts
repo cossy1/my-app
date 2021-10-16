@@ -2,6 +2,7 @@ export const Products = [
   {
     name: "Bull dogs",
     category: "dogs",
+    id: 1,
     price: 3.89,
     currency: "USD",
     image: {
@@ -17,6 +18,7 @@ export const Products = [
     category: "food",
     price: 93.89,
     currency: "USD",
+    id: 2,
     image: {
       alt: "",
       src: "https://images.pexels.com/photos/35638/labrador-breed-dogs-animal.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500",
@@ -27,6 +29,7 @@ export const Products = [
   },
   {
     name: "Dog",
+    id: 3,
     category: "pets",
     price: 100,
     currency: "USD",
@@ -40,6 +43,7 @@ export const Products = [
   },
   {
     name: "Dog",
+    id: 4,
     category: "animal",
     price: 102,
     currency: "USD",
@@ -53,6 +57,7 @@ export const Products = [
   },
   {
     name: "Dog",
+    id: 5,
     category: "pets",
     price: 100,
     currency: "USD",
@@ -66,6 +71,7 @@ export const Products = [
   },
   {
     name: "Dog",
+    id: 6,
     category: "animal",
     price: 100,
     currency: "USD",
@@ -79,6 +85,7 @@ export const Products = [
   },
   {
     name: "Dog with kids",
+    id: 7,
     category: "animal",
     price: 200,
     currency: "USD",
@@ -92,6 +99,7 @@ export const Products = [
   },
   {
     name: "Dog with kids",
+    id: 8,
     category: "animal",
     price: 400,
     currency: "USD",
@@ -105,6 +113,7 @@ export const Products = [
   },
   {
     name: "Dog with kids",
+    id: 9,
     category: "animal",
     price: 100,
     currency: "USD",
@@ -118,6 +127,7 @@ export const Products = [
   },
   {
     name: "Dog with kids",
+    id: 10,
     category: "animal",
     price: 100,
     currency: "USD",
@@ -131,6 +141,7 @@ export const Products = [
   },
   {
     name: "Dog kids",
+    id: 11,
     category: "animal",
     price: 100,
     currency: "USD",
@@ -144,6 +155,7 @@ export const Products = [
   },
   {
     name: "Dog with kids",
+    id: 12,
     category: "people",
     price: 100,
     currency: "USD",
@@ -157,6 +169,7 @@ export const Products = [
   },
   {
     name: "Dog with kids",
+    id: 13,
     category: "animal",
     price: 100,
     currency: "USD",
@@ -170,6 +183,7 @@ export const Products = [
   },
   {
     name: "lonely Dog",
+    id: 14,
     category: "people",
     price: 100,
     currency: "USD",
@@ -183,6 +197,7 @@ export const Products = [
   },
   {
     name: "lone Dog",
+    id: 15,
     category: "animal",
     price: 100,
     currency: "USD",
@@ -196,6 +211,7 @@ export const Products = [
   },
   {
     name: "Architecture",
+    id: 16,
     category: "landmarks",
     price: 101,
     currency: "USD",
@@ -213,6 +229,7 @@ export const Products = [
   },
   {
     name: "Samurai King Restling",
+    id: 17,
     category: "landmarks",
     price: 101,
     currency: "USD",
@@ -234,6 +251,7 @@ export const Products = [
   },
   {
     name: "Samurai King Restling",
+    id: 18,
     category: "landmarks",
     price: 101,
     currency: "USD",
@@ -255,6 +273,7 @@ export const Products = [
   },
   {
     name: "Dog",
+    id: 19,
     category: "nature",
     price: 100,
     currency: "USD",
@@ -268,6 +287,7 @@ export const Products = [
   },
   {
     name: "Dog",
+    id: 20,
     category: "animal",
     price: 100,
     currency: "USD",
@@ -281,6 +301,7 @@ export const Products = [
   },
   {
     name: "Dog",
+    id: 21,
     category: "animal",
     price: 100,
     currency: "USD",
@@ -294,6 +315,7 @@ export const Products = [
   },
   {
     name: "Dog",
+    id: 22,
     category: "nature",
     price: 100,
     currency: "USD",
@@ -307,6 +329,7 @@ export const Products = [
   },
   {
     name: "Dog",
+    id: 23,
     category: "animal",
     price: 100,
     currency: "USD",
@@ -323,6 +346,7 @@ export const Products = [
     category: "animal",
     price: 105,
     currency: "USD",
+    id: 24,
     image: {
       src: "https://images.pexels.com/photos/6302310/pexels-photo-6302310.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
       alt: "dog",

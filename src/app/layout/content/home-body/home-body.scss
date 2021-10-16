@@ -1,11 +1,11 @@
 .app-home-body {
   margin: 0 68px;
   .body-header {
+    margin: 68px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2.6rem;
-    margin-top: 3rem;
 
     .photo {
       color: #000000;
@@ -49,6 +49,7 @@
     }
   }
   .items{
+    margin: 0 68px;
     .category{
       color: #000000;
       font-weight: bold;
@@ -130,7 +131,11 @@
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .app-home-body {
+    margin: 0 14px;
+
     .body-header {
+      margin-right: 14px;
+      margin-left: 14px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -180,3 +185,62 @@
   }
 
 }
+
+@media (max-width: 768px) {
+  .app-home-body {
+    margin: 0 14px;
+    width: 100%;
+
+    .body-header {
+      margin-right: 14px;
+      margin-left: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+
+      .photo {
+        line-height: 20px;
+        color: #000000;
+        font-size: 32px;
+        font-weight: bold;
+      }
+
+      .premium {
+        position: absolute;
+        font-weight: normal;
+        font-size: 32px;
+        line-height: 20px;
+        color: #9b9b9b;
+        padding-left: 10px;
+      }
+    }
+    .seller{
+      font-size: 32px;
+      position: absolute;
+      background-color: #ffffff;
+      width: 163.7px;
+      text-align: center;
+      left: 72px;
+    }
+    .items-list{
+      display: flex;
+      justify-content: space-evenly;
+      padding-right: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .page-numbers {
+      color: #000000;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+      font-size: 29px;
+      text-indent: 0.5in;
+    }
+  }
+
+}
+

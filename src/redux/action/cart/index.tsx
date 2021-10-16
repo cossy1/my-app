@@ -4,6 +4,7 @@ export const ADD_CART = createActionType("ADD_CART", "cart");
 export const CLEAR_CART = createActionType("CLEAR_CART", "cart");
 export const CLOSE_CART = createActionType("CLOSE_CART", "cart");
 export const OPEN_CART = createActionType("OPEN_CART", "cart");
+export const DELETE_CART_ITEM = createActionType("DELETE_CART_ITEM", "cart");
 
 
 export const addCart = (payload: any) => ({
@@ -21,4 +22,11 @@ export const closeCart = () => ({
 
 export const openCart = () => ({
     type: OPEN_CART.START,
+});
+
+export const deleteCartItem = (id: number) => ({
+    type: DELETE_CART_ITEM.START,
+    payload: {
+        id
+    }
 });

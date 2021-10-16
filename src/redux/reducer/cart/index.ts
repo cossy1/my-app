@@ -1,4 +1,4 @@
-import {ADD_CART, CLEAR_CART, CLOSE_CART, OPEN_CART} from "../../action/cart";
+import {ADD_CART, CLEAR_CART, CLOSE_CART, DELETE_CART_ITEM, OPEN_CART} from "../../action/cart";
 
 export interface initialState {
   carts: Record<string, any>[];
@@ -26,6 +26,12 @@ const cart = (state = initialStateDefault, action: any) => {
 
     case OPEN_CART.SUCCESS:
       return {...state, showCart: true};
+
+    case DELETE_CART_ITEM.SUCCESS:{
+      const filteredCart = state.carts.filter(e => e.id !== action.payload.id);
+      return {...state, carts: filteredCart};
+    }
+
 
     default:
       return state;

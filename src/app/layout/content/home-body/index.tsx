@@ -66,7 +66,7 @@ const HomeBody = ({ show, mobileFilter }: Prop) => {
     currentItem?.map((item: any, index: any) => {
       return (
         !isEmpty(item.image?.src) && (
-          <div key={index} style={{paddingLeft: 37}}>
+          <div key={index} style={{paddingLeft: !isMobile ? 30 : 0}}>
             <Premium
               bestSeller={item.bestseller}
               height={isMobile ? 502 : 390.67}
@@ -85,29 +85,6 @@ const HomeBody = ({ show, mobileFilter }: Prop) => {
     </div>
   );
 
-  const renderMobileImages = !isEmpty(mobileItem) ? (
-    currentItem?.map((item: any, index: any) => {
-      console.log("mobile:::::", currentItem);
-      return (
-        !isEmpty(item.image?.src) && (
-          <div key={index}>
-            <Premium
-              bestSeller={item.bestseller}
-              height={502}
-              width={362}
-              addCartBtn
-              value={item}
-              featured={item.featured}
-            />
-          </div>
-        )
-      );
-    })
-  ) : (
-    <div style={{ margin: "0 auto" }}>
-      <Empty />
-    </div>
-  );
 
   const pageNumbers = [];
   for (
@@ -253,7 +230,7 @@ const HomeBody = ({ show, mobileFilter }: Prop) => {
                 cursor: "pointer",
               }}
             >
-              {renderMobileImages}
+              {renderImages}
 
               <div className="page-numbers">{renderPageNumbers}</div>
             </div>
