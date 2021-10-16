@@ -1,5 +1,5 @@
 .app-header {
-  margin: 0 68px;
+  margin: 0 68px !important;
   .header {
     display: flex;
     justify-content: space-between;
@@ -73,7 +73,7 @@
 @media (max-width: 575.98px) {
   .app-header {
     max-width: 100vw;
-    margin: 0 14px;
+    margin: 0 14px !important;
 
 
     .header {
@@ -126,9 +126,9 @@
 }
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .app-header {
-    margin: 0 14px;
+    margin: 0 14px !important;
 
     .header {
       padding: 10px 10px;

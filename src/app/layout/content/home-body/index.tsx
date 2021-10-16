@@ -30,11 +30,7 @@ const HomeBody = ({ show, mobileFilter }: Prop) => {
   const [price, setPrice] = useState(undefined);
 
   let newProduct = sortProducts(Products, choice, toggle);
-  let mobileProduct = sortProducts(Products, choice);
 
-  if (mobileFilter) {
-    mobileProduct = filterProducts(newProduct, mobileFilter);
-  }
 
   if (filter) {
     newProduct = filterProducts(newProduct, filter);
@@ -60,13 +56,12 @@ const HomeBody = ({ show, mobileFilter }: Prop) => {
   const indexOfLastItem = paginate.currentPage * paginate.itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - paginate.itemsPerPage;
   const currentItem = newProduct?.slice(indexOfFirstItem, indexOfLastItem);
-  const mobileItem = mobileProduct?.slice(indexOfFirstItem, indexOfLastItem);
 
   const renderImages = !isEmpty(currentItem) ? (
     currentItem?.map((item: any, index: any) => {
       return (
         !isEmpty(item.image?.src) && (
-          <div key={index} style={{paddingLeft: !isMobile ? 30 : 0}}>
+          <div key={index} style={{paddingLeft: !isMobile ? 47 : 0}}>
             <Premium
               bestSeller={item.bestseller}
               height={isMobile ? 502 : 390.67}
@@ -182,7 +177,7 @@ const HomeBody = ({ show, mobileFilter }: Prop) => {
                 <ScrollBar>
                   <div style={{ width: 140, height: 500 }}>
                     <div className="category">Category</div>
-                    <div>
+                    <div style={{marginLeft: '10px'}}>
                       <Checkbox.Group
                         options={options}
                         onChange={onChange}
@@ -193,10 +188,10 @@ const HomeBody = ({ show, mobileFilter }: Prop) => {
                         }}
                       />
                     </div>
-                    <hr style={{ marginTop: 20, width: 268 }} />
+                    <hr style={{ marginTop: 20, width: 268, marginLeft: '10px' }} />
 
                     <div className="category">Price range</div>
-                    <div>
+                    <div style={{marginLeft: '10px'}}>
                       <Checkbox.Group
                         options={options1}
                         onChange={onChange1}
