@@ -18,11 +18,10 @@ import {
 import ScrollBar from "react-perfect-scrollbar";
 
 interface Prop {
-  mobileFilter?: string[] | undefined;
   show: boolean;
 }
 
-const HomeBody = ({ show, mobileFilter }: Prop) => {
+const HomeBody = ({ show }: Prop) => {
   const [visible, setVisible] = useState(false);
   const [choice, setChoice] = useState(true);
   const [toggle, setToggle] = useState(true);
