@@ -15,13 +15,13 @@ import {
   filterProductsByPrice,
   sortProducts,
 } from "../../../../_shared/hooks";
+import ScrollBar from "react-perfect-scrollbar";
 
 interface Prop {
-  mobileFilter?: string[] | undefined;
   show: boolean;
 }
 
-const HomeBody = ({ show, mobileFilter }: Prop) => {
+const HomeBody = ({ show }: Prop) => {
   const [visible, setVisible] = useState(false);
   const [choice, setChoice] = useState(true);
   const [toggle, setToggle] = useState(true);
@@ -30,9 +30,6 @@ const HomeBody = ({ show, mobileFilter }: Prop) => {
 
   let newProduct = sortProducts(Products, choice, toggle);
 
-  if (isMobile && !isEmpty(mobileFilter)) {
-    newProduct = filterProducts(newProduct, mobileFilter);
-  }
 
   if (filter) {
     newProduct = filterProducts(newProduct, filter);
@@ -63,11 +60,11 @@ const HomeBody = ({ show, mobileFilter }: Prop) => {
     currentItem?.map((item: any, index: any) => {
       return (
         !isEmpty(item.image?.src) && (
-          <div key={index}>
+          <div key={index} style={{paddingLeft: !isMobile ? 47 : 0}}>
             <Premium
               bestSeller={item.bestseller}
-              height={400}
-              width={300}
+              height={isMobile ? 502 : 390.67}
+              width={isMobile ? 362 : 281.72}
               addCartBtn
               value={item}
               featured={item.featured}
@@ -77,10 +74,11 @@ const HomeBody = ({ show, mobileFilter }: Prop) => {
       );
     })
   ) : (
-    <div style={{ margin: "0 auto" }}>
-      <Empty />
+    <div style={{ margin: "0 auto"}}>
+      <Empty style={{marginTop: '300px'}} />
     </div>
   );
+
 
   const pageNumbers = [];
   for (
@@ -102,6 +100,8 @@ const HomeBody = ({ show, mobileFilter }: Prop) => {
   });
 
   // PAGINATION END
+
+  const tog = () => setToggle(!toggle);
 
   const onCancel = () => setVisible(!visible);
 
@@ -146,8 +146,8 @@ const HomeBody = ({ show, mobileFilter }: Prop) => {
 
           <div>
             {!isMobile ? (
-              <Space>
-                <span onClick={(_) => setToggle(!toggle)}>
+              <Space size="middle">
+                <span onClick={tog}>
                   <Arrow />
                 </span>
 
@@ -173,30 +173,40 @@ const HomeBody = ({ show, mobileFilter }: Prop) => {
           <div className="items">
             <Row>
               <Col span={4}>
-                <div style={{ width: 140, height: 500 }}>
-                  <div className="category">Category</div>
-                  <div>
-                    <Checkbox.Group
-                      options={options}
-                      onChange={onChange}
-                      style={{ fontSize: 22, paddingBottom: 20, lineHeight: 3 }}
-                    />
-                  </div>
-                  <hr style={{ marginTop: 20, width: 268 }} />
+                <ScrollBar>
+                  <div style={{ width: 140, height: 500 }}>
+                    <div className="category">Category</div>
+                    <div style={{marginLeft: '10px'}}>
+                      <Checkbox.Group
+                        options={options}
+                        onChange={onChange}
+                        style={{
+                          fontSize: 22,
+                          paddingBottom: 20,
+                          lineHeight: 3,
+                        }}
+                      />
+                    </div>
+                    <hr style={{ marginTop: 20, width: 268, marginLeft: '10px' }} />
 
-                  <div className="category">Price range</div>
-                  <div>
-                    <Checkbox.Group
-                      options={options1}
-                      onChange={onChange1}
-                      style={{ fontSize: 22, paddingBottom: 20, lineHeight: 3 }}
-                    />
+                    <div className="category">Price range</div>
+                    <div style={{marginLeft: '10px'}}>
+                      <Checkbox.Group
+                        options={options1}
+                        onChange={onChange1}
+                        style={{
+                          fontSize: 22,
+                          paddingBottom: 20,
+                          lineHeight: 3,
+                        }}
+                      />
+                    </div>
                   </div>
-                </div>
+                </ScrollBar>
               </Col>
 
               <Col span={20}>
-                <div className="items-list" style={{ cursor: "pointer" }}>
+                <div className="items-list" style={{ cursor: "pointer", justifyContent: 'flex-start' }}>
                   {renderImages}
                 </div>
                 <div className="page-numbers">{renderPageNumbers}</div>

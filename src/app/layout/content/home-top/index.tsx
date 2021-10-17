@@ -8,6 +8,7 @@ import { isMobile } from "react-device-detect";
 import {Products} from "../../../../_shared/dummyData";
 import { addCart } from "../../../../redux/action";
 import { connect } from "react-redux";
+import {Divider, Space} from "antd";
 
 
 interface HomeTopProps {
@@ -20,24 +21,25 @@ const HomeTop = ({addCart}: HomeTopProps) => {
 
   return (
     <div className="app-home-top">
-      <div className="top-row">
-        <div className="sam">{randomImage.name}</div>
+        <div className="top-row">
+            <div className="sam">{randomImage.name}</div>
 
-        <div className="addCart-row" onClick={_ => addCart(randomImage)}>
-          ADD TO CART
+            <div className="addCart-row" onClick={_ => addCart(randomImage)}>
+                ADD TO CART
+            </div>
         </div>
-      </div>
-      <div className="dog">
-        <img alt="img" src={randomImage.image.src} style={{ width: "100vw", height: '34.5rem', objectFit: 'cover', overflow: 'hidden' }} />
-      </div>
-      <div className="photo">Photo of the day</div>
 
-      <div>{isMobile && <div className="add-mobile-cart" onClick={_ => addCart(randomImage)}>ADD TO CART</div>}</div>
+        <div className="dog">
+            <img alt="img" src={randomImage.image.src} style={{ width: !isMobile ? "91vw" : "100vw", height: !isMobile ? '553px' : '239px', objectFit: 'cover', overflow: 'hidden' }} />
+        </div>
+        <div className="photo">Photo of the day</div>
+
+        <div>{isMobile && <div className="add-mobile-cart" onClick={_ => addCart(randomImage)}>ADD TO CART</div>}</div>
 
       <div className="about-pet-row">
         <div className="about">
-          <div className="ar">{randomImage.name}</div>
-          <div className="pets">Pets</div>
+          <div className="ar">About the Samurai King Resting</div>
+          <div className="pets-ar">Pets</div>
           <div className="so">
             So how did the classical Latin become so incoherent? According to
             McClintock, a 15th century typesetter likely scrambled part of
@@ -54,20 +56,18 @@ const HomeTop = ({addCart}: HomeTopProps) => {
           {!isMobile &&  <div className="side-people">
               <div className="buy">People also buy</div>
               <div className="images">
-                  <div>
-                      <Premium padLeft src={Yellow} />
-                  </div>
-                  <div>
-                      <Premium padLeft src={Flower} />
-                  </div>
-                  <div>
-                      <Premium padLeft src={EggBallon} />
-                  </div>
+                  <Space size='large'>
+                      <Premium src={Yellow} />
+                      <Premium src={Flower} />
+                      <Premium src={EggBallon} />
+                  </Space>
+
               </div>
               <div className="details">Details</div>
               <div className="detail">Size: 1020 x 1020 pixel</div>
               <div className="detail">Size: 15 mb</div>
           </div>}
+
       </div>
 
       <div>
@@ -92,8 +92,8 @@ const HomeTop = ({addCart}: HomeTopProps) => {
         )}
       </div>
 
-      <hr style={{ marginTop: 65, width: '100vw' }} />
 
+      <Divider  style={{ border: '4px solid #E4E4E4', marginTop: 65 }} />
     </div>
   );
 };

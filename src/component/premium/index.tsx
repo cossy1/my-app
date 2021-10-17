@@ -10,7 +10,6 @@ interface PremiumProps {
   height?: number | string;
   width?: number | string;
   addCartBtn?: boolean;
-  padLeft?: boolean;
   src?: string;
   bestSeller?: boolean;
   featured?: boolean;
@@ -27,7 +26,6 @@ const Premium = (props: PremiumProps) => {
     value,
     src,
     addCart,
-    padLeft,
     bestSeller,
     addCartBtn = false,
     featured,
@@ -41,7 +39,6 @@ const Premium = (props: PremiumProps) => {
   return (
     <div
       className="app-premium"
-      style={{ paddingLeft: `${padLeft && "40px"}` }}
     >
       <div className="image">
         <Tooltip
@@ -60,6 +57,7 @@ const Premium = (props: PremiumProps) => {
             alt="img"
             width={width}
             height={height}
+            style={{objectFit: 'cover'}}
           />
         </Tooltip>
       </div>

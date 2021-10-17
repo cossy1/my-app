@@ -2,9 +2,7 @@ import { Checkbox, Modal } from "antd";
 import React, { useState } from "react";
 import "./filterModal.scss";
 import { ReactComponent as CloseIcon } from "../../assets/svg/close.svg";
-import { Products } from "../../_shared/dummyData";
-import { filterProductsByPrice } from "../../_shared/hooks";
-import HomeBody from "../../app/layout/content/home-body";
+
 
 interface filterModalProps {
   visible: boolean;
@@ -24,19 +22,11 @@ const FilterModal = (props: filterModalProps) => {
     setPrice(e);
   };
 
-  const clearAll = (e: any) => {
-    setFilter(undefined);
+  const handleSave = () => {
+    console.log('price::::::', price);
+    onCancel();
   };
 
-  const handleSave = () => onCancel();
-
-  const handlePrice = () => {
-    let res = Products;
-
-    const result = filterProductsByPrice(res, price);
-
-    return result;
-  };
 
   const options = [
     { label: "People", value: "people" },
@@ -65,7 +55,7 @@ const FilterModal = (props: filterModalProps) => {
         centered
         footer={
           <div className="footer-tabs">
-            <div className="clear" onClick={(_) => clearAll}>
+            <div className="clear">
               CLEAR
             </div>
             <div className="save" onClick={handleSave}>
@@ -110,7 +100,6 @@ const FilterModal = (props: filterModalProps) => {
         </div>
       </Modal>
 
-      <HomeBody show={false} mobileFilter={filter} />
     </div>
   );
 };

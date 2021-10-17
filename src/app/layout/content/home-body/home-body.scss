@@ -1,45 +1,64 @@
 .app-home-body {
+  margin: 0 68px !important;
   .body-header {
+    margin: 68px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2.6rem;
-    margin-top: 3rem;
 
     .photo {
-      line-height: 2rem;
       color: #000000;
-      font-size: 1.8rem;
       font-weight: bold;
+      font-family: 'Archivo', sans-serif;
+      font-style: normal;
+      font-size: 30px;
+      line-height: 33px;
     }
 
     select {
       border: 0;
       outline: 0;
+      font-family: 'Archivo', sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 22px;
+      line-height: 24px;
+      color: #000000;
+      padding-right: 10px;
+      margin-right: 30px;
     }
 
     .sort-by {
       color: #9b9b9b;
-      line-height: 1.5rem;
-      font-size: 1.3rem;
       font-weight: normal;
+      font-family: 'Archivo', sans-serif;
+      font-style: normal;
+      font-size: 22px;
+      line-height: 24px;
     }
 
     .premium {
       position: absolute;
       font-weight: normal;
-      font-size: 1.8rem;
-      line-height: 2rem;
       color: #9b9b9b;
-      padding-left: 0.6rem;
+      padding-left: 10px;
+      font-family: 'Archivo', sans-serif;
+      font-style: normal;
+      font-size: 30px;
+      line-height: 33px;
     }
   }
   .items{
     .category{
       color: #000000;
-      font-size: 1.3rem;
       font-weight: bold;
       margin: 0.6rem 0;
+      font-family: 'Archivo', sans-serif;
+      font-style: normal;
+      font-size: 22px;
+      line-height: 24px;
+      margin-left: 20px !important;
+
     }
 
     .items-list{
@@ -62,6 +81,8 @@
 @media (max-width: 575.98px) {
   .app-home-body {
     overflow: hidden;
+    margin: 0 14px !important;
+
     .body-header {
       display: flex;
       justify-content: space-between;
@@ -70,20 +91,23 @@
       margin-top: 1rem;
 
       .photo {
-        line-height: 1rem;
         color: #000000;
-        font-size: 0.8rem;
         font-weight: bold;
-        margin-left: 0.6rem;
+        font-family: 'Archivo', sans-serif;
+        font-style: normal;
+        font-size: 18px !important;
+        line-height: 20px ;
       }
 
       .premium {
         position: absolute;
         font-weight: normal;
-        font-size: 0.8rem;
-        line-height: 1.5rem;
         color: #9b9b9b;
         padding-left: 0.6rem;
+        font-family: 'Archivo', sans-serif;
+        font-style: normal;
+        font-size: 18px !important;
+        line-height: 20px;
       }
     }
 
@@ -97,6 +121,7 @@
           display: flex;
           justify-content: center;
           letter-spacing: 1rem;
+          text-indent: 0.15in;
         }
 
       }
@@ -107,7 +132,71 @@
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .app-home-body {
+    margin: 0 14px !important;
+
     .body-header {
+      margin-right: 14px;
+      margin-left: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+
+      .photo {
+        line-height: 20px;
+        color: #000000;
+        font-size: 32px;
+        font-weight: bold;
+      }
+
+      .premium {
+        position: absolute;
+        font-weight: normal;
+        font-size: 32px;
+        line-height: 20px;
+        color: #9b9b9b;
+        padding-left: 10px;
+        font-family: 'Archivo', sans-serif;
+      }
+    }
+    .seller{
+      font-size: 32px;
+      position: absolute;
+      background-color: #ffffff;
+      width: 163.7px;
+      text-align: center;
+      font-family: 'Archivo', sans-serif;
+      left: 72px;
+    }
+    .items-list{
+      display: flex;
+      justify-content: space-evenly;
+      padding-right: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .page-numbers {
+      color: #000000;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+      font-size: 29px;
+      text-indent: 0.5in;
+    }
+  }
+
+}
+
+@media (max-width: 768px) {
+  .app-home-body {
+    margin: 0 14px !important;
+    width: 100%;
+
+    .body-header {
+      margin-right: 14px;
+      margin-left: 14px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -157,3 +246,4 @@
   }
 
 }
+

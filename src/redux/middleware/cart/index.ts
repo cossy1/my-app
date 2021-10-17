@@ -1,4 +1,4 @@
-import {ADD_CART, CLEAR_CART, CLOSE_CART, OPEN_CART} from "../../action/cart";
+import {ADD_CART, CLEAR_CART, CLOSE_CART, DELETE_CART_ITEM, OPEN_CART} from "../../action/cart";
 import { Middleware } from 'redux';
 import {message} from "antd";
 
@@ -37,4 +37,11 @@ const openCart: Middleware<unknown> = ({dispatch}) => (next) => (action) => {
     }
 };
 
-export default [addCart, clearCart, closeCart, openCart];
+const deleteCartItem: Middleware<unknown> = ({dispatch}) => (next) => (action) => {
+    next(action);
+    if(action.type === DELETE_CART_ITEM.START){
+        dispatch({type: DELETE_CART_ITEM.SUCCESS, payload: action.payload})
+    }
+};
+
+export default [addCart, clearCart, closeCart, openCart, deleteCartItem];

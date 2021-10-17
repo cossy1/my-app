@@ -1,22 +1,25 @@
 .app-entry{
   margin: 0 82px;
   max-width: 100vw;
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
 // Max
 // X-Small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
   .app-entry{
-    overflow: hidden;
-    margin: 0;
+    overflow: hidden !important;
+    margin: 0 20px 0 0;
+    max-width: 100vw;
   }
 }
 
 // Medium devices (tablets, less than 992px)
 @media (min-width: 768px) {
   .app-entry{
-    overflow: hidden;
+    overflow: hidden !important;
     margin: 0 10px;
+    max-width: 100vw;
+
   }
 }

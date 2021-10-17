@@ -2,7 +2,7 @@ import React from "react";
 import "./header.scss";
 import { ReactComponent as ShoppingCart } from "../../../assets/svg/shopping-cart.svg";
 import { Badge, Popover } from "antd";
-import {clearCart, closeCart, openCart} from "../../../redux/action/cart";
+import {clearCart, closeCart, deleteCartItem, openCart} from "../../../redux/action/cart";
 import { connect } from "react-redux";
 import { ReactComponent as CloseSvg } from "../../../assets/svg/close.svg";
 import { isMobile } from "react-device-detect";
@@ -14,18 +14,21 @@ interface HeaderProps {
   clearCart?: any;
   closeCart?: any;
   openCart?: any;
+  deleteCartItem?: any;
 }
 
 const Header = (props: HeaderProps) => {
-  const { clearCart, cartItems, showCart, show, openCart, closeCart } = props;
+  const { clearCart, deleteCartItem, cartItems, showCart, show, openCart, closeCart } = props;
+
+  const handleDelete = (val: number) => {
+    deleteCartItem(val);
+  };
 
   return (
     <div className="app-header">
       {show && (
         <div className="header">
-            <div className='logo'>
-              Logo
-          </div>
+          <div className="logo">Logo</div>
 
           <div>
             <Popover
@@ -46,7 +49,7 @@ const Header = (props: HeaderProps) => {
                             <div>
                               <div
                                 style={{
-                                  fontSize: `${isMobile ? '12px' : "1rem"}`,
+                                  fontSize: `${isMobile ? "12px" : "1rem"}`,
                                   fontWeight: "bold",
                                   textOverflow: "ellipsis",
                                 }}
@@ -54,15 +57,27 @@ const Header = (props: HeaderProps) => {
                                 {e?.name}
                               </div>
                               <div
-                                style={{ fontSize: `${isMobile ? "15px" : "29px"}`, fontFamily: 'Archivo, sans-serif' }}
+                                style={{
+                                  fontSize: `${isMobile ? "15px" : "29px"}`,
+                                  fontFamily: "Archivo, sans-serif",
+                                }}
                               >{`$${e?.price}`}</div>
                             </div>
                             <div>
                               <img
                                 src={e.image.src}
-                                width={`${isMobile ? '85px' : '149px'}`}
+                                width={`${isMobile ? "85px" : "149px"}`}
                                 height={`${isMobile ? "50px" : "86px"}`}
+                                alt="img"
+                                style={{objectFit: 'cover'}}
                               />
+
+                              <span style={{position: 'absolute'}} onClick={() => handleDelete(e.id)}>
+                                <i
+                                  className="ri-delete-bin-6-line"
+                                  style={{ color: "red", fontSize: 15 }}
+                                />
+                              </span>
                             </div>
                           </div>
                         ))}
@@ -76,9 +91,9 @@ const Header = (props: HeaderProps) => {
                         fontSize: "1.1rem",
                         height: "2rem",
                         textAlign: "center",
-                        cursor: 'pointer',
+                        cursor: "pointer",
                       }}
-                      onClick={_ => clearCart()}
+                      onClick={(_) => clearCart()}
                     >
                       CLEAR
                     </div>
@@ -90,7 +105,10 @@ const Header = (props: HeaderProps) => {
                 )
               }
               title={
-                <div style={{ textAlign: "right" }} onClick={_ => closeCart()}>
+                <div
+                  style={{ textAlign: "right" }}
+                  onClick={(_) => closeCart()}
+                >
                   <CloseSvg />
                 </div>
               }
@@ -98,11 +116,14 @@ const Header = (props: HeaderProps) => {
               visible={showCart}
               style={{ border: "4px solid #E4E4E4", width: 443 }}
             >
-             <div onClick={_ => openCart()}>
-               <Badge count={cartItems?.length} offset={!isMobile ? [-10, 35] : [-5, 23]}>
-                 <ShoppingCart className='shopping-cart' />
-               </Badge>
-             </div>
+              <div onClick={(_) => openCart()}>
+                <Badge
+                  count={cartItems?.length}
+                  offset={!isMobile ? [-10, 25] : [-5, 23]}
+                >
+                  <ShoppingCart className="shopping-cart" />
+                </Badge>
+              </div>
             </Popover>
           </div>
         </div>
@@ -115,13 +136,14 @@ const Header = (props: HeaderProps) => {
 
 const stateProps = (state: any) => ({
   cartItems: state.cart.carts,
-  showCart: state.cart.showCart
+  showCart: state.cart.showCart,
 });
 
 const dispatchProps = {
   clearCart,
   closeCart,
-  openCart
+  openCart,
+  deleteCartItem
 };
 
 export default connect(stateProps, dispatchProps)(Header);
