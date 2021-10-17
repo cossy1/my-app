@@ -63,7 +63,7 @@ export const filterProductsByPrice = (
     }
 
     if (val[k] === "More than $200") {
-      return data.filter((item) => item.category > 200);
+      return data.filter((item) => item.price > 200);
     }
   }
 

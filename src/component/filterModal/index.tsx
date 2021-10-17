@@ -1,16 +1,20 @@
 import { Checkbox, Modal } from "antd";
-import React, { useState } from "react";
+import React, {useState} from "react";
 import "./filterModal.scss";
 import { ReactComponent as CloseIcon } from "../../assets/svg/close.svg";
+import {filterProductsByCategory, filterProductsByPrice} from "../../redux/action/products";
+import {connect} from "react-redux";
 
 
 interface filterModalProps {
   visible: boolean;
   onCancel: () => void;
+  filterProductsByCategory?: any;
+  filterProductsByPrice?: any;
 }
 
 const FilterModal = (props: filterModalProps) => {
-  const { visible, onCancel } = props;
+  const { visible, onCancel, filterProductsByCategory, filterProductsByPrice } = props;
   const [filter, setFilter] = useState(undefined);
   const [price, setPrice] = useState(undefined);
 
@@ -23,7 +27,12 @@ const FilterModal = (props: filterModalProps) => {
   };
 
   const handleSave = () => {
-    console.log('price::::::', price);
+    if(filter)
+      filterProductsByCategory(filter);
+
+    if(price)
+      filterProductsByPrice(price);
+
     onCancel();
   };
 
@@ -104,4 +113,14 @@ const FilterModal = (props: filterModalProps) => {
   );
 };
 
-export default FilterModal;
+const stateProps = (state: any) => ({
+  cartItems: state.cart.carts,
+  products: state.products.products
+});
+
+const dispatchProps = {
+  filterProductsByCategory,
+  filterProductsByPrice
+};
+
+export default connect(stateProps, dispatchProps)(FilterModal);
