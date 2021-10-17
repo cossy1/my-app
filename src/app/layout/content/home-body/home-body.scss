@@ -118,9 +118,10 @@
         flex-direction: column;
 
         .page-numbers{
-          display: flex !important;
-          justify-content: center !important;
-          letter-spacing: 1rem !important;
+          display: flex;
+          justify-content: center;
+          letter-spacing: 1rem;
+          text-indent: 0.15in;
         }
 
       }
