@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import "./home-body.scss";
 import { ReactComponent as Arrow } from "../../../../assets/svg/arrow.svg";
 import { Checkbox, Col, Empty, Row, Space } from "antd";
@@ -6,9 +6,8 @@ import Premium from "../../../../component/premium";
 import FilterModal from "../../../../component/filterModal";
 import { isMobile } from "react-device-detect";
 import { ReactComponent as FilterSvg } from "../../../../assets/svg/filter.svg";
-import { Products } from "../../../../_shared/dummyData";
+ import { Products } from "../../../../_shared/dummyData";
 import { isEmpty } from "lodash";
-import { addCart } from "../../../../redux/action/cart";
 import { connect } from "react-redux";
 import {
   filterProducts,
@@ -16,20 +15,28 @@ import {
   sortProducts,
 } from "../../../../_shared/hooks";
 import ScrollBar from "react-perfect-scrollbar";
+import {getProducts} from "../../../../redux/action/products";
 
 interface Prop {
   show: boolean;
+  getProducts?: any;
+  products?: any;
 }
 
-const HomeBody = ({ show }: Prop) => {
+const HomeBody = (props: Prop) => {
+  const { show, getProducts, products } = props;
   const [visible, setVisible] = useState(false);
   const [choice, setChoice] = useState(true);
   const [toggle, setToggle] = useState(true);
   const [filter, setFilter] = useState(undefined);
   const [price, setPrice] = useState(undefined);
 
-  let newProduct = sortProducts(Products, choice, toggle);
+  useEffect(() => {
+    getProducts(Products)
+  }, []);
 
+
+  let newProduct = sortProducts(products, choice, toggle);
 
   if (filter) {
     newProduct = filterProducts(newProduct, filter);
@@ -194,6 +201,7 @@ const HomeBody = ({ show }: Prop) => {
                       <Checkbox.Group
                         options={options1}
                         onChange={onChange1}
+                        defaultValue={['']}
                         style={{
                           fontSize: 22,
                           paddingBottom: 20,
@@ -238,10 +246,11 @@ const HomeBody = ({ show }: Prop) => {
 
 const stateProps = (state: any) => ({
   cartItems: state.cart.carts,
+  products: state.products.products
 });
 
 const dispatchProps = {
-  addCart,
+  getProducts,
 };
 
 export default connect(stateProps, dispatchProps)(HomeBody);
