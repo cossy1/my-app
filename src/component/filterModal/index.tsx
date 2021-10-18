@@ -15,15 +15,21 @@ interface filterModalProps {
 
 const FilterModal = (props: filterModalProps) => {
   const { visible, onCancel, filterProductsByCategory, filterProductsByPrice } = props;
-  const [filter, setFilter] = useState(undefined);
+  const [filter, setFilter] = useState( undefined);
   const [price, setPrice] = useState(undefined);
+
+
+  const clearAll = () => {
+    setFilter(undefined);
+    setPrice(undefined);
+  };
 
   const onChange = (e: any) => {
     setFilter(e);
   };
 
-  const onChange1 = (e: any) => {
-    setPrice(e);
+  const onChange1 = (a: any) => {
+    setPrice(a);
   };
 
   const handleSave = () => {
@@ -64,7 +70,7 @@ const FilterModal = (props: filterModalProps) => {
         centered
         footer={
           <div className="footer-tabs">
-            <div className="clear">
+            <div className="clear" onClick={clearAll}>
               CLEAR
             </div>
             <div className="save" onClick={handleSave}>
@@ -92,6 +98,7 @@ const FilterModal = (props: filterModalProps) => {
                   options={options}
                   onChange={onChange}
                   style={{ fontSize: 22, paddingBottom: 20, lineHeight: 2 }}
+                  value={filter}
                 />
               </div>
               <hr style={{ marginTop: 20, width: 210 }} />
@@ -102,6 +109,8 @@ const FilterModal = (props: filterModalProps) => {
                   options={options1}
                   onChange={onChange1}
                   style={{ fontSize: 22, paddingBottom: 20, lineHeight: 2 }}
+                  value={price}
+
                 />
               </div>
             </div>
@@ -114,7 +123,6 @@ const FilterModal = (props: filterModalProps) => {
 };
 
 const stateProps = (state: any) => ({
-  cartItems: state.cart.carts,
   products: state.products.products
 });
 
