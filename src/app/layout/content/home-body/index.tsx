@@ -154,9 +154,9 @@ const HomeBody = (props: Prop) => {
           <div>
             {!isMobile ? (
               <Space size="middle">
-                <span onClick={tog}>
+                <div onClick={tog}>
                   <Arrow />
-                </span>
+                </div>
 
                 <span className="sort-by">Sort By</span>
                 <select

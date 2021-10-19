@@ -37,29 +37,37 @@ const Premium = (props: PremiumProps) => {
   };
 
   return (
-    <div
-      className="app-premium"
-    >
+    <div className="app-premium">
       <div className="image">
-        <Tooltip
-          title={
-            <Button
-              type="text"
-              style={{ color: "white" }}
-              onClick={(_) => addToCart(value)}
-            >
-              Add to Cart
-            </Button>
-          }
-        >
+        {addCartBtn ? (
+          <Tooltip
+            title={
+              <Button
+                type="text"
+                style={{ color: "white" }}
+                onClick={(_) => addToCart(value)}
+              >
+                Add to Cart
+              </Button>
+            }
+          >
+            <img
+              src={src ?? value.image.src}
+              alt="img"
+              width={width}
+              height={height}
+              style={{ objectFit: "cover" }}
+            />
+          </Tooltip>
+        ) : (
           <img
             src={src ?? value.image.src}
             alt="img"
             width={width}
             height={height}
-            style={{objectFit: 'cover'}}
+            style={{ objectFit: "cover" }}
           />
-        </Tooltip>
+        )}
       </div>
 
       {addCartBtn && (
