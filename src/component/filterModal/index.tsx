@@ -65,7 +65,7 @@ const FilterModal = (props: filterModalProps) => {
       <Modal
         visible={visible}
         closable={false}
-        width={"25rem"}
+        width={414}
         maskClosable={false}
         centered
         footer={
@@ -124,7 +124,7 @@ const FilterModal = (props: filterModalProps) => {
 
 const stateProps = (state: any) => ({
   products: state.products.products
-});
+ });
 
 const dispatchProps = {
   filterProductsByCategory,

@@ -81,12 +81,12 @@
 @media (max-width: 575.98px) {
   .app-home-body {
     overflow: hidden;
-    margin: 0 14px !important;
+    margin: 0 !important;
 
     .body-header {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      justify-content: space-between !important;
+      align-items: center !important;
       margin-bottom: 1.8rem;
       margin-top: 1rem;
 
@@ -191,7 +191,7 @@
 
 @media (max-width: 768px) {
   .app-home-body {
-    margin: 0 14px !important;
+    margin: 0 !important;
     width: 100%;
 
     .body-header {
@@ -246,4 +246,34 @@
   }
 
 }
+
+@media screen and (min-width: 300px) and (max-width: 320px) {
+  .app-home-body {
+
+    .body-header {
+
+      .photo {
+        color: #000000;
+        font-weight: bold;
+        font-family: 'Archivo', sans-serif;
+        font-style: normal;
+        font-size: 14px !important;
+        line-height: 15px ;
+      }
+
+      .premium {
+        position: absolute;
+        font-weight: normal;
+        color: #9b9b9b;
+        padding-left: 0.2rem;
+        font-family: 'Archivo', sans-serif;
+        font-style: normal;
+        font-size: 14px !important;
+        line-height: 25px;
+      }
+    }
+
+  }
+}
+
 
