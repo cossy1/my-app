@@ -1,12 +1,12 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import "./home-body.scss";
 import { ReactComponent as Arrow } from "../../../../assets/svg/arrow.svg";
-import { Checkbox, Col, Empty, Row, Space } from "antd";
+import { Checkbox, Col, Empty, Row, Space, Radio } from "antd";
 import Premium from "../../../../component/premium";
 import FilterModal from "../../../../component/filterModal";
 import { isMobile } from "react-device-detect";
 import { ReactComponent as FilterSvg } from "../../../../assets/svg/filter.svg";
- import { Products } from "../../../../_shared/dummyData";
+import { Products } from "../../../../_shared/dummyData";
 import { isEmpty } from "lodash";
 import { connect } from "react-redux";
 import {
@@ -15,16 +15,15 @@ import {
   sortProducts,
 } from "../../../../_shared/hooks";
 import ScrollBar from "react-perfect-scrollbar";
-import {getProducts} from "../../../../redux/action/products";
+import { getProducts } from "../../../../redux/action/products";
 
 interface Prop {
-  show: boolean;
   getProducts?: any;
   products?: any;
 }
 
 const HomeBody = (props: Prop) => {
-  const { show, getProducts, products } = props;
+  const { getProducts, products } = props;
   const [visible, setVisible] = useState(false);
   const [choice, setChoice] = useState(true);
   const [toggle, setToggle] = useState(true);
@@ -32,9 +31,8 @@ const HomeBody = (props: Prop) => {
   const [price, setPrice] = useState(undefined);
 
   useEffect(() => {
-    getProducts(Products)
+    getProducts(Products);
   }, []);
-
 
   let newProduct = sortProducts(products, choice, toggle);
 
@@ -67,7 +65,7 @@ const HomeBody = (props: Prop) => {
     currentItem?.map((item: any, index: any) => {
       return (
         !isEmpty(item.image?.src) && (
-          <div key={index} style={{paddingLeft: !isMobile ? 30 : 0}}>
+          <div key={index} style={{ paddingLeft: !isMobile ? 30 : 0 }}>
             <Premium
               bestSeller={item.bestseller}
               height={isMobile ? 502 : 390.67}
@@ -81,11 +79,10 @@ const HomeBody = (props: Prop) => {
       );
     })
   ) : (
-    <div style={{ margin: "0 auto"}}>
-      <Empty style={{marginTop: '300px'}} />
+    <div style={{ margin: "0 auto" }}>
+      <Empty style={{ marginTop: "300px" }} />
     </div>
   );
-
 
   const pageNumbers = [];
   for (
@@ -117,7 +114,9 @@ const HomeBody = (props: Prop) => {
   };
 
   const onChange1 = (e: any) => {
-    setPrice(e);
+    const res = e.target.value;
+    const ans = res.split('  ');
+    setPrice(ans);
   };
 
   const selectChange = (e: any) => {
@@ -136,13 +135,13 @@ const HomeBody = (props: Prop) => {
   ];
 
   const options1 = [
-    { label: "Lower $20", value: "20" },
-    { label: "$20 - $100", value: "20 - 100" },
+    { label: "Lower $20", value: "lower than $20" },
+    { label: "$20 - $100", value: "$20 - $100" },
     { label: "$100 - $200", value: "$100 - $200" },
     { label: "More than $200", value: "More than $200" },
   ];
 
-  return show ? (
+  return (
     <>
       <div className="app-home-body">
         <div className="body-header">
@@ -183,7 +182,7 @@ const HomeBody = (props: Prop) => {
                 <ScrollBar>
                   <div style={{ width: 150, height: 500 }}>
                     <div className="category">Category</div>
-                    <div style={{marginLeft: '10px'}}>
+                    <div style={{ marginLeft: "10px" }}>
                       <Checkbox.Group
                         options={options}
                         onChange={onChange}
@@ -194,11 +193,13 @@ const HomeBody = (props: Prop) => {
                         }}
                       />
                     </div>
-                    <hr style={{ marginTop: 20, width: 268, marginLeft: '10px' }} />
+                    <hr
+                      style={{ marginTop: 20, width: 268, marginLeft: "10px" }}
+                    />
 
                     <div className="category">Price range</div>
-                    <div style={{marginLeft: '10px'}}>
-                      <Checkbox.Group
+                    <div style={{ marginLeft: "10px" }}>
+                      <Radio.Group
                         options={options1}
                         onChange={onChange1}
                         defaultValue={['']}
@@ -214,7 +215,10 @@ const HomeBody = (props: Prop) => {
               </Col>
 
               <Col span={20}>
-                <div className="items-list" style={{ cursor: "pointer", justifyContent: 'flex-start' }}>
+                <div
+                  className="items-list"
+                  style={{ cursor: "pointer", justifyContent: "flex-start" }}
+                >
                   {renderImages}
                 </div>
                 <div className="page-numbers">{renderPageNumbers}</div>
@@ -241,12 +245,12 @@ const HomeBody = (props: Prop) => {
       </div>
       <FilterModal visible={visible} onCancel={onCancel} />
     </>
-  ) : null;
+  );
 };
 
 const stateProps = (state: any) => ({
   cartItems: state.cart.carts,
-  products: state.products.products
+  products: state.products.products,
 });
 
 const dispatchProps = {

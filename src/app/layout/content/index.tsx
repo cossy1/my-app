@@ -5,7 +5,7 @@ const Content = () => {
     return(
         <>
             <HomeTop/>
-            <HomeBody show={true} />
+            <HomeBody />
         </>
     );
 };

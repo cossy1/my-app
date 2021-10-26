@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./premium.scss";
 import { addCart } from "../../redux/action/cart";
 import { connect } from "react-redux";
-import Header from "../../app/layout/header";
 import { Tooltip, Button } from "antd";
 import { isMobile } from "react-device-detect";
 
@@ -88,7 +87,6 @@ const Premium = (props: PremiumProps) => {
         </div>
       )}
 
-      <Header show={false} />
     </div>
   );
 };

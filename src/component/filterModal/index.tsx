@@ -1,10 +1,9 @@
-import { Checkbox, Modal } from "antd";
+import {Checkbox, Modal, Radio} from "antd";
 import React, {useState} from "react";
 import "./filterModal.scss";
 import { ReactComponent as CloseIcon } from "../../assets/svg/close.svg";
 import {filterProductsByCategory, filterProductsByPrice} from "../../redux/action/products";
 import {connect} from "react-redux";
-
 
 interface filterModalProps {
   visible: boolean;
@@ -18,7 +17,6 @@ const FilterModal = (props: filterModalProps) => {
   const [filter, setFilter] = useState( undefined);
   const [price, setPrice] = useState(undefined);
 
-
   const clearAll = () => {
     setFilter(undefined);
     setPrice(undefined);
@@ -28,8 +26,10 @@ const FilterModal = (props: filterModalProps) => {
     setFilter(e);
   };
 
-  const onChange1 = (a: any) => {
-    setPrice(a);
+  const onChange1 = (e: any) => {
+    const res = e.target.value;
+    const ans = res.split('  ');
+    setPrice(ans);
   };
 
   const handleSave = () => {
@@ -54,7 +54,7 @@ const FilterModal = (props: filterModalProps) => {
   ];
 
   const options1 = [
-    { label: "Lower $20", value: "Lower $20" },
+    { label: "Lower $20", value: "lower than $20" },
     { label: "$20 - $100", value: "$20 - $100" },
     { label: "$100 - $200", value: "$100 - $200" },
     { label: "More than $200", value: "More than $200" },
@@ -105,12 +105,15 @@ const FilterModal = (props: filterModalProps) => {
 
               <div className="pprice">Price range</div>
               <div>
-                <Checkbox.Group
-                  options={options1}
-                  onChange={onChange1}
-                  style={{ fontSize: 22, paddingBottom: 20, lineHeight: 2 }}
-                  value={price}
-
+                <Radio.Group
+                    options={options1}
+                    onChange={onChange1}
+                    defaultValue={['']}
+                    style={{
+                      fontSize: 22,
+                      paddingBottom: 20,
+                      lineHeight: 2,
+                    }}
                 />
               </div>
             </div>
