@@ -44,28 +44,40 @@ export const filterProducts = (data: any[], filters: any) => {
   });
 };
 
-export const filterProductsByPrice = (
-  data: Record<string, any>[],
-  val: any
-) => {
-  console.log(val);
-  for (let k in val) {
-    if (val[k] === "Lower $20") {
-      return data.filter((item) => item.price < 20);
-    }
+export const filterProductsByPrice = (data: any[], val: any) => {
+    return data.filter(({price}: {price: number}) => {
+        return val.every((key: any) => {
+            if (Array.isArray(price)) {
+                return price.some((keyEle: any) => val.includes(keyEle));
+            }
 
-    if (val[k] === "$20 - $100") {
-      return data.filter((item) => item.price >= 20 && item.price <= 100);
-    }
+            return val.includes(price);
 
-    if (val[k] === "$100 - $200") {
-      return data.filter((item) => item.price >= 100 && item.price <= 200);
-    }
-
-    if (val[k] === "More than $200") {
-      return data.filter((item) => item.price > 200);
-    }
-  }
-
-  return data;
+        })
+    })
 };
+
+// export const filterProductsByPrice = (
+//   data: Record<string, any>[],
+//   val: any
+// ) => {
+//   for (let k in val) {
+//     if (val[k] === "Lower $20") {
+//       return data.filter((item) => item.price < 20);
+//     }
+//
+//     if (val[k] === "$20 - $100") {
+//       return data.filter((item) => item.price >= 20 && item.price <= 100);
+//     }
+//
+//     if (val[k] === "$100 - $200") {
+//       return data.filter((item) => item.price >= 100 && item.price <= 200);
+//     }
+//
+//     if (val[k] === "More than $200") {
+//       return data.filter((item) => item.price > 200);
+//     }
+//   }
+//
+//   return data;
+// };

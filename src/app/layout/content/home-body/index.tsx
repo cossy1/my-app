@@ -49,7 +49,7 @@ const HomeBody = (props: Prop) => {
   // PAGINATION
   const [paginate, setPaginate] = useState({
     currentPage: 1,
-    itemsPerPage: isMobile ? 6 : 8,
+    itemsPerPage: isMobile ? 6 : 9,
   });
 
   const handleClick = (e: any) => {
@@ -67,7 +67,7 @@ const HomeBody = (props: Prop) => {
     currentItem?.map((item: any, index: any) => {
       return (
         !isEmpty(item.image?.src) && (
-          <div key={index} style={{paddingLeft: !isMobile ? 47 : 0}}>
+          <div key={index} style={{paddingLeft: !isMobile ? 30 : 0}}>
             <Premium
               bestSeller={item.bestseller}
               height={isMobile ? 502 : 390.67}
@@ -136,8 +136,8 @@ const HomeBody = (props: Prop) => {
   ];
 
   const options1 = [
-    { label: "Lower $20", value: "Lower $20" },
-    { label: "$20 - $100", value: "$20 - $100" },
+    { label: "Lower $20", value: "20" },
+    { label: "$20 - $100", value: "20 - 100" },
     { label: "$100 - $200", value: "$100 - $200" },
     { label: "More than $200", value: "More than $200" },
   ];
@@ -181,7 +181,7 @@ const HomeBody = (props: Prop) => {
             <Row>
               <Col span={4}>
                 <ScrollBar>
-                  <div style={{ width: 140, height: 500 }}>
+                  <div style={{ width: 150, height: 500 }}>
                     <div className="category">Category</div>
                     <div style={{marginLeft: '10px'}}>
                       <Checkbox.Group

@@ -30,7 +30,7 @@ const HomeTop = ({addCart}: HomeTopProps) => {
         </div>
 
         <div className="dog">
-            <img alt="img" src={randomImage.image.src} style={{ width: !isMobile ? "91vw" : "100vw", height: !isMobile ? '553px' : '239px', objectFit: 'cover', overflow: 'hidden' }} />
+            <img alt="img" src={randomImage.image.src} style={{ width: !isMobile ? "92vw" : "100vw", height: !isMobile ? '553px' : '239px', objectFit: 'cover', overflow: 'hidden' }} />
         </div>
         <div className="photo">Photo of the day</div>
 
