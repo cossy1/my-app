@@ -4,5 +4,3 @@ export const createActionType = (type: string, entity: string) => ({
     ERROR: `@@[${entity}] ${type}_ERROR`,
     END: `@@[${entity}] ${type}_END`
 });
-
-export const createActionString = (type: string, entity: string) => `[${entity}] ${type}`;

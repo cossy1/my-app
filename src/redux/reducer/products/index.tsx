@@ -28,7 +28,8 @@ const products = (state = initialStateDefault, action: any) => {
 
         case FILTER_PRODUCTS_BY_PRICE.SUCCESS: {
             const filter = action.payload;
-             const filteredPrice = filterProductsByPrice(Products, filter);
+
+            const filteredPrice = filterProductsByPrice(Products, filter);
             return {
                 ...state,
                products: [...filteredPrice]

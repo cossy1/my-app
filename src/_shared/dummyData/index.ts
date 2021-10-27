@@ -1,12 +1,12 @@
 export const Products = [
   {
     name: "Bull dogs",
-    category: "dogs",
+    category: "pets",
     id: 1,
     price: 3.89,
     currency: "USD",
     image: {
-      src: "https://images.pexels.com/photos/850602/pexels-photo-850602.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      src: "https://tinyurl.com/ydemmpmz",
       alt: "dogs-img",
     },
     bestseller: true,
@@ -21,7 +21,7 @@ export const Products = [
     id: 2,
     image: {
       alt: "",
-      src: "https://images.pexels.com/photos/35638/labrador-breed-dogs-animal.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      src: "https://tinyurl.com/rd27ptsb",
     },
     bestseller: false,
     featured: true,
@@ -34,7 +34,7 @@ export const Products = [
     price: 100,
     currency: "USD",
     image: {
-      src: "https://images.pexels.com/photos/101635/pexels-photo-101635.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      src: "https://tinyurl.com/28rp73j5",
       alt: "dog",
     },
     bestseller: false,
@@ -48,7 +48,7 @@ export const Products = [
     price: 102,
     currency: "USD",
     image: {
-      src: "https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      src: "https://tinyurl.com/3hrhz9ke",
       alt: "dog",
     },
     bestseller: false,
@@ -62,7 +62,7 @@ export const Products = [
     price: 100,
     currency: "USD",
     image: {
-      src: "https://images.pexels.com/photos/1851164/pexels-photo-1851164.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      src: "https://tinyurl.com/bp9pspe5",
       alt: "dog",
     },
     bestseller: false,
@@ -76,7 +76,7 @@ export const Products = [
     price: 100,
     currency: "USD",
     image: {
-      src: "https://images.pexels.com/photos/38008/pexels-photo-38008.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      src: "https://tinyurl.com/3b5a3uzy",
       alt: "dog",
     },
     bestseller: false,
@@ -90,7 +90,7 @@ export const Products = [
     price: 200,
     currency: "USD",
     image: {
-      src: "https://images.pexels.com/photos/733416/pexels-photo-733416.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      src: "https://tinyurl.com/73y82nnk",
       alt: "dog",
     },
     bestseller: false,
@@ -104,7 +104,7 @@ export const Products = [
     price: 400,
     currency: "USD",
     image: {
-      src: "https://images.pexels.com/photos/60050/huskies-husky-blue-eye-dog-60050.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      src: "https://tinyurl.com/4zsndu5t",
       alt: "dog",
     },
     bestseller: false,
@@ -118,7 +118,7 @@ export const Products = [
     price: 100,
     currency: "USD",
     image: {
-      src: "https://images.pexels.com/photos/3198049/pexels-photo-3198049.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      src: "https://tinyurl.com/ekk46uh3",
       alt: "dog",
     },
     bestseller: false,
@@ -132,7 +132,7 @@ export const Products = [
     price: 100,
     currency: "USD",
     image: {
-      src: "https://images.pexels.com/photos/4671145/pexels-photo-4671145.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      src: "https://tinyurl.com/r25zc4ts",
       alt: "dog",
     },
     bestseller: false,
@@ -146,7 +146,7 @@ export const Products = [
     price: 100,
     currency: "USD",
     image: {
-      src: "https://images.pexels.com/photos/257540/pexels-photo-257540.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      src: "https://tinyurl.com/y6ds8z6r",
       alt: "dog",
     },
     bestseller: false,
@@ -160,7 +160,7 @@ export const Products = [
     price: 100,
     currency: "USD",
     image: {
-      src: "https://images.pexels.com/photos/9327035/pexels-photo-9327035.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      src: "https://tinyurl.com/xud4nv2w",
       alt: "dog",
     },
     bestseller: false,
@@ -174,7 +174,7 @@ export const Products = [
     price: 100,
     currency: "USD",
     image: {
-      src: "https://images.pexels.com/photos/604681/pexels-photo-604681.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      src: "https://tinyurl.com/43bwjh3h",
       alt: "dog",
     },
     bestseller: false,
@@ -188,7 +188,7 @@ export const Products = [
     price: 100,
     currency: "USD",
     image: {
-      src: "https://images.pexels.com/photos/9660872/pexels-photo-9660872.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      src: "https://tinyurl.com/5apufyv9",
       alt: "dog",
     },
     bestseller: false,
@@ -202,7 +202,7 @@ export const Products = [
     price: 100,
     currency: "USD",
     image: {
-      src: "https://images.pexels.com/photos/33287/dog-viszla-close.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      src: "https://tinyurl.com/ckeyfkps",
       alt: "dog",
     },
     bestseller: false,
@@ -220,7 +220,7 @@ export const Products = [
       height: 1020,
     },
     image: {
-      src: "https://images.pexels.com/photos/9327037/pexels-photo-9327037.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      src: "https://tinyurl.com/ysnwwuse",
       alt: "img",
     },
     bestseller: false,
@@ -234,7 +234,7 @@ export const Products = [
     price: 101,
     currency: "USD",
     image: {
-      src: "https://images.pexels.com/photos/4000092/pexels-photo-4000092.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      src: "https://tinyurl.com/42w6exva",
       alt: "",
     },
     bestseller: false,
@@ -256,7 +256,7 @@ export const Products = [
     price: 101,
     currency: "USD",
     image: {
-      src: "https://images.pexels.com/photos/4083443/pexels-photo-4083443.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      src: "https://tinyurl.com/n6s3wuac",
       alt: "",
     },
     bestseller: false,
@@ -278,7 +278,7 @@ export const Products = [
     price: 100,
     currency: "USD",
     image: {
-      src: "https://images.pexels.com/photos/8499234/pexels-photo-8499234.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      src: "https://tinyurl.com/2jk3aktn",
       alt: "dog",
     },
     bestseller: false,
@@ -292,7 +292,7 @@ export const Products = [
     price: 100,
     currency: "USD",
     image: {
-      src: "https://images.pexels.com/photos/4130054/pexels-photo-4130054.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      src: "https://tinyurl.com/2dv6wpef",
       alt: "dog",
     },
     bestseller: false,
@@ -306,7 +306,7 @@ export const Products = [
     price: 100,
     currency: "USD",
     image: {
-      src: "https://images.pexels.com/photos/6291572/pexels-photo-6291572.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      src: "https://tinyurl.com/fnd466zf",
       alt: "dog",
     },
     bestseller: false,
@@ -320,7 +320,7 @@ export const Products = [
     price: 100,
     currency: "USD",
     image: {
-      src: "https://images.pexels.com/photos/8499859/pexels-photo-8499859.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      src: "https://tinyurl.com/ccd2z8h5",
       alt: "dog",
     },
     bestseller: false,
@@ -334,7 +334,7 @@ export const Products = [
     price: 100,
     currency: "USD",
     image: {
-      src: "https://images.pexels.com/photos/6302310/pexels-photo-6302310.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      src: "https://tinyurl.com/3pdju6yr",
       alt: "dog",
     },
     bestseller: false,
@@ -348,7 +348,7 @@ export const Products = [
     currency: "USD",
     id: 24,
     image: {
-      src: "https://images.pexels.com/photos/6302310/pexels-photo-6302310.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      src: "https://tinyurl.com/3pdju6yr",
       alt: "dog",
     },
     bestseller: false,

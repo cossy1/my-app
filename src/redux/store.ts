@@ -3,7 +3,7 @@ import { createBrowserHistory } from "history";
 import customMiddleWares from './middleware';
 import appReducers from "./reducer";
 import storage from 'redux-persist/lib/storage';
-import { persistReducer, persistStore } from 'redux-persist'
+import { persistReducer } from 'redux-persist'
 
 export const history = createBrowserHistory();
 
@@ -19,7 +19,7 @@ const persistConfig = {
     storage,
 };
 
-// add and aply the middleWares
+// add and apply the middleWares
 const middleWares = [...customMiddleWares];
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -46,14 +46,5 @@ const persistedState = loadState();
 // create the store
 const store = createStore(persistedReducer, persistedState, parseMiddleware);
 
-export const  persistor = persistStore(store);
 
 export default store;
-
-const saveState = (state: any) => {
-    try {
-        localStorage.setItem("my-app", JSON.stringify(state));
-    } catch (e) {
-        console.log(e)
-    }
-};

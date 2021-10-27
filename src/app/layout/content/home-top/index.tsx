@@ -30,7 +30,7 @@ const HomeTop = ({addCart}: HomeTopProps) => {
         </div>
 
         <div className="dog">
-            <img alt="img" src={randomImage.image.src} style={{ width: !isMobile ? "91vw" : "100vw", height: !isMobile ? '553px' : '239px', objectFit: 'cover', overflow: 'hidden' }} />
+            <img alt="img" src={randomImage.image.src} style={{ width: !isMobile ? "92vw" : "100vw", height: !isMobile ? '553px' : '239px', objectFit: 'cover', overflow: 'hidden' }} />
         </div>
         <div className="photo">Photo of the day</div>
 
@@ -57,9 +57,9 @@ const HomeTop = ({addCart}: HomeTopProps) => {
               <div className="buy">People also buy</div>
               <div className="images">
                   <Space size='large'>
-                      <Premium src={Yellow} />
-                      <Premium src={Flower} />
-                      <Premium src={EggBallon} />
+                      <Premium src={Yellow} width={'117px'} height={'147px'} />
+                      <Premium src={Flower} width={'117px'} height={'147px'} />
+                      <Premium src={EggBallon} width={'117px'} height={'147px'} />
                   </Space>
 
               </div>

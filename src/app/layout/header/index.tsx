@@ -13,7 +13,6 @@ import { ReactComponent as CloseSvg } from "../../../assets/svg/close.svg";
 import { isMobile } from "react-device-detect";
 
 interface HeaderProps {
-  show: boolean;
   showCart: boolean;
   cartItems?: any;
   clearCart?: any;
@@ -28,7 +27,6 @@ const Header = (props: HeaderProps) => {
     deleteCartItem,
     cartItems,
     showCart,
-    show,
     openCart,
     closeCart,
   } = props;
@@ -39,7 +37,7 @@ const Header = (props: HeaderProps) => {
 
   return (
     <div className="app-header">
-      {show && (
+
         <div className="header">
           <div className="logo">Logo</div>
 
@@ -155,7 +153,7 @@ const Header = (props: HeaderProps) => {
               <div onClick={(_) => openCart()}>
                 <Badge
                   count={cartItems?.length}
-                  offset={!isMobile ? [-10, 25] : [-5, 23]}
+                  offset={!isMobile ? [-10, 25] : [-18, 20]}
                 >
                   <ShoppingCart className="shopping-cart" />
                 </Badge>
@@ -163,9 +161,8 @@ const Header = (props: HeaderProps) => {
             </Popover>
           </div>
         </div>
-      )}
 
-      {show && <hr />}
+      <hr />
     </div>
   );
 };

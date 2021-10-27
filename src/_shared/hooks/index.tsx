@@ -1,8 +1,4 @@
-import React from "react";
 
-export const checkImageURL = (url: string) => {
-  return url?.match(/\.(jpeg|jpg|gif|png)$/) !== null;
-};
 
 export const sortProducts = (
   data: Record<string, any>,
@@ -32,7 +28,7 @@ export const sortProducts = (
 
 export const filterProducts = (data: any[], filters: any) => {
   return data.filter(({ category }: { category: string }) => {
-    return filters.every((key: string) => {
+    return filters.every(() => {
       if (!filters.length) return true;
       // if category is an array runs this.
       if (Array.isArray(category)) {
@@ -44,13 +40,13 @@ export const filterProducts = (data: any[], filters: any) => {
   });
 };
 
+
 export const filterProductsByPrice = (
   data: Record<string, any>[],
   val: any
 ) => {
-  console.log(val);
   for (let k in val) {
-    if (val[k] === "Lower $20") {
+    if (val[k] === "lower than $20") {
       return data.filter((item) => item.price < 20);
     }
 

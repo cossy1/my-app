@@ -1,6 +1,6 @@
 .app-home-body {
-  margin: 0 68px !important;
   .body-header {
+    width: 90vw;
     margin: 68px 0;
     display: flex;
     justify-content: space-between;
@@ -52,12 +52,11 @@
     .category{
       color: #000000;
       font-weight: bold;
-      margin: 0.6rem 0;
       font-family: 'Archivo', sans-serif;
       font-style: normal;
       font-size: 22px;
       line-height: 24px;
-      margin-left: 20px !important;
+      margin: 10px 0 10px 10px ;
 
     }
 
@@ -72,8 +71,8 @@
       display: flex;
       justify-content: center;
       letter-spacing: 1rem;
+      width: auto;
     }
-
   }
 }
 
@@ -130,9 +129,8 @@
   }
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
+@media  (min-width: 768px) {
   .app-home-body {
-    margin: 0 14px !important;
 
     .body-header {
       margin-right: 14px;
@@ -184,6 +182,7 @@
       margin: 0 auto;
       font-size: 29px;
       text-indent: 0.5in;
+      width: 100vw;
     }
   }
 
