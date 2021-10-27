@@ -41,39 +41,6 @@ export const filterProducts = (data: any[], filters: any) => {
 };
 
 
-// export const filterProductsByPrice = (data: any[], val: any) => {
-//     const filterKeys = Object.keys(val);
-//     console.log('filterKeys:::', filterKeys);
-//
-//     return data.filter(({price}: {price: number}) => {
-//         return val.every((key: string) => {
-//
-//             if(!val.length) return true;
-//
-//             if(key === 'lower than $20')
-//                 return data.includes(price < 20);
-//
-//             if(key === '$20 - $100')
-//                 return val.filter((e: any) => e.price >= 20 && e.price <= 100);
-//
-//             if(key === '$100 - $200')
-//                 return val.filter((e: any) => e.price >= 100 && e.price <= 200);
-//
-//
-//             if(key === 'More than $200')
-//                 return val.filter((e: any) => e.price > 200);
-//
-//
-//             if (Array.isArray(price)) {
-//                 return price.some((keyEle: any) => val.includes(keyEle));
-//             }
-//
-//             return val.filter((e: any) => e.price < 20);
-//
-//         })
-//     })
-// };
-
 export const filterProductsByPrice = (
   data: Record<string, any>[],
   val: any
