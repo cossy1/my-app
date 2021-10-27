@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, memo } from "react";
 import "./home-body.scss";
 import { ReactComponent as Arrow } from "../../../../assets/svg/arrow.svg";
 import { Checkbox, Col, Empty, Row, Space, Radio } from "antd";
@@ -257,4 +257,4 @@ const dispatchProps = {
   getProducts,
 };
 
-export default connect(stateProps, dispatchProps)(HomeBody);
+export default memo(connect(stateProps, dispatchProps)(HomeBody));

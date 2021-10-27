@@ -1,4 +1,4 @@
-import React from "react";
+import React, {memo} from "react";
 
 const Content = React.lazy(() => import('./content'));
 const Header = React.lazy(() => import('./header'));
@@ -12,4 +12,4 @@ const Layout = () => {
     );
 };
 
-export default Layout
+export default memo(Layout);
