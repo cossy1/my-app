@@ -7,7 +7,6 @@ import store from "./redux/store";
 import 'remixicon/fonts/remixicon.css'
 
 
-
 ReactDOM.render(
   <React.StrictMode>
   <Provider store={store}>

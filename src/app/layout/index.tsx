@@ -1,6 +1,7 @@
 import React from "react";
-import Header from "./header";
-import Content from "./content";
+
+const Content = React.lazy(() => import('./content'));
+const Header = React.lazy(() => import('./header'));
 
 const Layout = () => {
     return(

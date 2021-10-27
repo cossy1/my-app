@@ -4,6 +4,7 @@ import './App.scss'
 
 
 const AppLayout = lazy(() => import('./app/layout'));
+
 function App() {
   return (
    <main className='app-entry'>
