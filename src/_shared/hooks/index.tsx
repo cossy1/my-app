@@ -1,5 +1,4 @@
 
-
 export const sortProducts = (
   data: Record<string, any>,
   price: boolean,
@@ -65,3 +64,4 @@ export const filterProductsByPrice = (
 
   return data;
 };
+

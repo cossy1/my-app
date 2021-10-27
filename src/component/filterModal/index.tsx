@@ -1,5 +1,5 @@
 import {Checkbox, Modal, Radio} from "antd";
-import React, {useState} from "react";
+import React, {useState, memo} from "react";
 import "./filterModal.scss";
 import { ReactComponent as CloseIcon } from "../../assets/svg/close.svg";
 import {filterProductsByCategory, filterProductsByPrice} from "../../redux/action/products";
@@ -134,4 +134,4 @@ const dispatchProps = {
   filterProductsByPrice
 };
 
-export default connect(stateProps, dispatchProps)(FilterModal);
+export default memo(connect(stateProps, dispatchProps)(FilterModal));

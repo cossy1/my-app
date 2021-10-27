@@ -1,4 +1,4 @@
-import React from "react";
+import React, {memo} from "react";
 import "./header.scss";
 import { ReactComponent as ShoppingCart } from "../../../assets/svg/shopping-cart.svg";
 import { Badge, Popover, Space, Popconfirm } from "antd";
@@ -179,4 +179,4 @@ const dispatchProps = {
   deleteCartItem,
 };
 
-export default connect(stateProps, dispatchProps)(Header);
+export default memo(connect(stateProps, dispatchProps)(Header));

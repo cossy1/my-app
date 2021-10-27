@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import "./premium.scss";
 import { addCart } from "../../redux/action/cart";
 import { connect } from "react-redux";
@@ -99,4 +99,4 @@ const dispatchProps = {
   addCart,
 };
 
-export default connect(stateProps, dispatchProps)(Premium);
+export default memo(connect(stateProps, dispatchProps)(Premium));

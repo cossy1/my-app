@@ -1,4 +1,4 @@
-import React from "react";
+import React, {memo} from "react";
 import "./home-top.scss";
 import Premium from "../../../../component/premium";
 import Flower from "../../../../assets/image/flower.png";
@@ -106,4 +106,4 @@ const dispatchProps = {
   addCart,
 };
 
-export default connect(stateProps, dispatchProps)(HomeTop);
+export default memo(connect(stateProps, dispatchProps)(HomeTop));
